@@ -1,0 +1,16 @@
+'''
+this a output module
+provide function print_lol(),which can print out item of
+a list/ multi-layer list, 
+'''
+def print_lol(the_list):
+    '''
+the_list is data of list type,it can be any kinds of list
+multi-layer/single-layer. each element will be print onto screen
+'''
+    for item in the_list:
+        if isinstance(item,list):
+            print_lol(item)
+        else:
+            print(item)
+
