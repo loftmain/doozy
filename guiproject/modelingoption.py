@@ -1,8 +1,11 @@
-from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
-                               QCheckBox, QRadioButton, QVBoxLayout,
-                               QHBoxLayout, QGroupBox, QGridLayout,
-                               QLabel, QComboBox, QBoxLayout)
 import sys
+
+from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
+                               QRadioButton, QVBoxLayout, QLineEdit,
+                               QHBoxLayout, QGroupBox, QGridLayout,
+                               QLabel, QComboBox, QFormLayout, QDateEdit)
+from PySide2.QtCore import QDate
+from labelingoption import LineEdit
 
 class ModelingOption(QWidget):
     def __init__(self,parent=None):
@@ -14,7 +17,6 @@ class ModelingOption(QWidget):
         self.okButton = QPushButton("ok", self)
 
 
-
         self.button1 = QRadioButton("일간 예측",predBox)
         self.button2 = QRadioButton("월간 예측",predBox)
         self.button2.setChecked(True)
@@ -24,9 +26,6 @@ class ModelingOption(QWidget):
         self.knnButton = QRadioButton("K-NN", algorithmBox)
         self.lrButton = QRadioButton("Linear Regression", algorithmBox)
         self.xgbButton = QRadioButton("XGBoost", algorithmBox)
-
-
-
 
 
         groupBoxLayout1 = QHBoxLayout(predBox)
@@ -51,14 +50,61 @@ class ModelingOption(QWidget):
         groupBoxLayout3.addWidget(QLabel(self.tr("~")))
         groupBoxLayout3.addWidget(self.endNum)
 
-        self.gb = QGroupBox(self.tr("Serial"))
+        self.gb = QGroupBox(self.tr("알고리즘 설정"))
         self.grid_box = QGridLayout()
+
+        gb_3 = QGroupBox("경로 지정", self)
+        formLayout = QFormLayout(gb_3)
+        self.dependent_file_path = LineEdit()
+        self.condition_list = QLineEdit()
+        self.independent_file_path = LineEdit()
+        formLayout.addRow(QLabel("dependent file path: "), self.dependent_file_path)
+        formLayout.addRow(QLabel("condition list: "), self.condition_list)
+        formLayout.addRow(QLabel("independent folder path: "), self.independent_file_path)
+
+        hb_2 = QHBoxLayout()
+        hb_3 = QHBoxLayout()
+
+        self.lb_train = QLabel("training date: ", self)
+        self.de_train_start = QDateEdit(self)
+        # self.dateed_start.setDate(QDate(2017, 1, 3))
+        self.de_train_start.setDate(QDate.currentDate())
+        self.de_train_start.setCalendarPopup(True)
+
+        self.de_train_end = QDateEdit(self)
+        # self.de_train_end.setDate(QDate(2017, 1, 3))
+        self.de_train_end.setDate(QDate.currentDate())
+        self.de_train_end.setCalendarPopup(True)
+
+        self.lb_test = QLabel("test date: ", self)
+        self.de_test_start = QDateEdit(self)
+        # self.de_test_start.setDate(QDate(2017, 1, 3))
+        self.de_test_start.setDate(QDate.currentDate())
+        self.de_test_start.setCalendarPopup(True)
+
+        self.de_test_end = QDateEdit(self)
+        # self.de_test_end.setDate(QDate(2017, 1, 3))
+        self.de_test_end.setDate(QDate.currentDate())
+        self.de_test_end.setCalendarPopup(True)
+
+        hb_2.addWidget(self.lb_train)
+        hb_2.addWidget(self.de_train_start)
+        hb_2.addWidget(QLabel(" ~ ", self))
+        hb_2.addWidget(self.de_train_end)
+
+        hb_3.addWidget(self.lb_test)
+        hb_3.addWidget(self.de_test_start)
+        hb_3.addWidget(QLabel(" ~ ", self))
+        hb_3.addWidget(self.de_test_end)
 
         self.mainlayout = QVBoxLayout()
         self.mainlayout.addWidget(predBox)
         self.mainlayout.addWidget(algorithmBox)
         self.mainlayout.addWidget(self.gb)
         self.mainlayout.addWidget(numberOfCombinationBox)
+        self.mainlayout.addWidget(gb_3)
+        self.mainlayout.addLayout(hb_2)
+        self.mainlayout.addLayout(hb_3)
         self.mainlayout.addStretch()
         self.mainlayout.addWidget(self.okButton)
 

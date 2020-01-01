@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: cashew
+Version: 0.4.1
+Summary: Plugin System
+Home-page: http://dexy.github.io/cashew/
+Author: Ana Nelson
+Author-email: ana@ananelson.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: inflection (>=0.2.0)
+Requires-Dist: PyYAML
+
+UNKNOWN
+
+
