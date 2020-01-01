@@ -50,7 +50,7 @@ class ModelingOption(QWidget):
         groupBoxLayout3.addWidget(QLabel(self.tr("~")))
         groupBoxLayout3.addWidget(self.endNum)
 
-        self.gb = QGroupBox(self.tr("Serial"))
+        self.gb = QGroupBox(self.tr("알고리즘 설정"))
         self.grid_box = QGridLayout()
 
         gb_3 = QGroupBox("경로 지정", self)
