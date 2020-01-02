@@ -8,7 +8,7 @@ Created on Mon Dec 30 14:52:29 2019
 import pandas as pd
 import numpy as np
 
-class Labeling:
+class Marking:
     def set_option(self, df, x_opt, y_opt, z_opt):
         self._df = df
         self._x_opt = x_opt
@@ -31,33 +31,34 @@ class Labeling:
         
     def check_option(self):
         for x, y in zip(self._x_opt,self._y_opt):
-            if not Labeling._is_number(x) or not Labeling._is_string(y):
+            if not Marking._is_number(x) or not Marking._is_string(y):
                 return False
         return True    
     
     def create_label(self):
         
-        if not Labeling.check_option(self): return False
+        if not Marking.check_option(self): return False
         
         if self._z_opt == 'up':
-            df[self._y_opt[2]] = \
+            self._df[self._y_opt[2]] = \
             np.where((
-                    df[self._y_opt[0]].shift(float(self._x_opt[0]))/
-                    df[self._y_opt[1]].shift(float(self._x_opt[1]))-1 
+                    self._df[self._y_opt[0]].shift(float(self._x_opt[0]))/
+                    self._df[self._y_opt[1]].shift(float(self._x_opt[1]))-1
                     >= float(self._x_opt[2])),1,0)
             
         elif self._z_opt == 'down':
-            df[self._y_opt[2]] = \
+            self._df[self._y_opt[2]] = \
             np.where((
-                    df[self._y_opt[0]].shift(float(self._x_opt[0]))/
-                    df[self._y_opt[1]].shift(float(self._x_opt[1]))-1 
+                    self._df[self._y_opt[0]].shift(float(self._x_opt[0]))/
+                    self._df[self._y_opt[1]].shift(float(self._x_opt[1]))-1
                     <= float(self._x_opt[2])),1,0)
         else:
             return False
-        return df
-        
-df = pd.read_csv('^DJI.csv')
-t = Labeling()
-t.set_option(df, ['0', '0',  '0.04'], ['High', 'Open', 'HM4UP'], 'up')
-result = t.create_label()
-result.to_csv('test.csv', header=True, index=False, encoding='ms949')
+        return self._df
+
+if __name__ == '__main__':
+    df = pd.read_csv('^DJI.csv')
+    t = Marking()
+    t.set_option(df, ['0', '0',  '0.04'], ['High', 'Open', 'HM4UP'], 'up')
+    result = t.create_label()
+    result.to_csv('test.csv', header=True, index=False, encoding='ms949')
