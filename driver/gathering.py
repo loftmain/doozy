@@ -14,13 +14,13 @@ from fredapi import Fred
 
 fred = Fred(api_key='3b2795f81c94f1a105d1e4fc3661a45e')
 
-
 def inspect_index_folder():
     if not os.path.exists(os.path.join(os.getcwd(), 'independent')):
         os.mkdir(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'independent'))
     folderpath = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'independent')
     return folderpath
-
+x
+'''
 def inspect_column_file():
     if not os.path.join(os.path.dirname(os.path.realpath(__file__)), 'column.txt'):    
         print('column option file does not exist')     
@@ -29,12 +29,11 @@ def inspect_column_file():
     line = f.readline()
     index_list = list(map(str, (line.split(','))))
     return index_list
-
+'''
 def Gathering():
     folderpath = inspect_index_folder()
     index_list = inspect_column_file()
-    if not index_list():
-        return False
+    if index_list == False: return False
     
     time_point = datetime.strptime('2000-01-01', '%Y-%m-%d').date()
     
@@ -75,3 +74,4 @@ def Gathering():
         df.to_excel(os.path.join(folderpath,index)+'.xlsx', sheet_name='Sheet1', index=False)
         #df_info.to_excel(writer, sheet_name='Sheet2', index=False)
 
+Gathering()
