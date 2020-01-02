@@ -1,11 +1,9 @@
 import sys
-
-from PyQt5.QtCore import pyqtSignal, pyqtSlot, QProcess, QTextCodec, QObject, QEventLoop
-from PyQt5.QtGui import QTextCursor
-from PyQt5.QtWidgets import QApplication, QPlainTextEdit, QWidget
+from PySide2.QtWidgets import QWidget
+from PySide2.QtCore  import QObject, Signal
 
 class StdoutRedirect(QObject):
-    printOccur = pyqtSignal(str, str, name="print")
+    printOccur = Signal(str, str, name="print")
 
     def __init__(self, *param):
         QObject.__init__(self, None)
@@ -24,5 +22,4 @@ class StdoutRedirect(QObject):
     def write(self, s, color="black"):
         sys.stdout.flush()
         self.printOccur.emit(s, color)
-
 

@@ -9,7 +9,7 @@ from modelingoption import ModelingOption
 from labelingoption import labeling
 from filetreeview import Tree
 from PySide2.QtCore import Slot, Qt
-
+from orderexcute import OrderRunWidget
 class Mytreeview(QWidget):
 
     def __init__(self, parent):
@@ -144,7 +144,7 @@ class MainWindow(QMainWindow):
 
         self.orderexcuteAction = QAction("&order excute", self)
         self.orderexcuteAction.setStatusTip("order excute")
-        self.orderexcuteAction.triggered.connect(self.close)
+        self.orderexcuteAction.triggered.connect(self.createOrderExecuteTab)
 
         # visualization menu
         self.chartAction = QAction("&단일 그래프 chart", self)
@@ -278,6 +278,15 @@ class MainWindow(QMainWindow):
             )
         )
         self.tabWidget.addTab(widget, "modeling option setting")
+
+    def createOrderExecuteTab(self):
+        widget = OrderRunWidget()
+        widget.destroyed.connect(
+            lambda obj: print(
+                "deleted {}, count: {}".format(obj, self.tabWidget.count())
+            )
+        )
+        self.tabWidget.addTab(widget, "order execute")
 
     def toggleFileView(self, state):
         if state:

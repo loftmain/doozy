@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="5eddba45-4fa7-49e4-84cb-860fd0501672" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="5eddba45-4fa7-49e4-84cb-860fd0501672" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/guiproject/orderexcute.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiproject/gui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/modelingoption.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiproject/modelingoption.py" afterDir="false" />
+    </list>
+>>>>>>> 8e7f368bd422e6915a026b0c7183c37ae01e211d
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +27,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
+<<<<<<< HEAD
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
       <set>
@@ -25,6 +35,8 @@
       </set>
     </option>
   </component>
+=======
+>>>>>>> 8e7f368bd422e6915a026b0c7183c37ae01e211d
   <component name="ProjectId" id="1Vjgdu7x7pNIUwa1fOtuh4Q1N8d" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -36,7 +48,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+<<<<<<< HEAD
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+=======
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+>>>>>>> 8e7f368bd422e6915a026b0c7183c37ae01e211d
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -44,6 +60,31 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.myPlot">
+<<<<<<< HEAD
+=======
+    <configuration name="gui" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="doozy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/guiproject" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/guiproject/gui.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+>>>>>>> 8e7f368bd422e6915a026b0c7183c37ae01e211d
     <configuration name="labelingoption" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="doozy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -135,6 +176,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.myPlot" />
+<<<<<<< HEAD
+=======
+        <item itemvalue="Python.gui" />
+>>>>>>> 8e7f368bd422e6915a026b0c7183c37ae01e211d
         <item itemvalue="Python.orderexcute (1)" />
         <item itemvalue="Python.orderexcute" />
         <item itemvalue="Python.labelingoption" />
@@ -169,7 +214,10 @@
       <workItem from="1577791988652" duration="120000" />
       <workItem from="1577880752669" duration="752000" />
       <workItem from="1577881520998" duration="3857000" />
+<<<<<<< HEAD
       <workItem from="1577945012295" duration="371000" />
+=======
+>>>>>>> 8e7f368bd422e6915a026b0c7183c37ae01e211d
     </task>
     <task id="LOCAL-00001" summary="change">
       <created>1577881551048</created>
@@ -197,6 +245,7 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+<<<<<<< HEAD
         <entry key="1">
           <value>
             <State>
@@ -222,6 +271,8 @@
             </State>
           </value>
         </entry>
+=======
+>>>>>>> 8e7f368bd422e6915a026b0c7183c37ae01e211d
         <entry key="MAIN">
           <value>
             <State>
@@ -231,11 +282,14 @@
         </entry>
       </map>
     </option>
+<<<<<<< HEAD
     <option name="OPEN_TABS">
       <set>
         <option value="1" />
       </set>
     </option>
+=======
+>>>>>>> 8e7f368bd422e6915a026b0c7183c37ae01e211d
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="change" />
@@ -246,10 +300,13 @@
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="654" y="150" width="603" height="809" key="#gui/0.25.1920.1055@0.25.1920.1055" timestamp="1577791443776" />
+<<<<<<< HEAD
     <state x="1649" y="299" key="#myPlot" timestamp="1577945106099">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1649" y="299" key="#myPlot/0.0.2560.1400@0.0.2560.1400" timestamp="1577945106099" />
+=======
+>>>>>>> 8e7f368bd422e6915a026b0c7183c37ae01e211d
     <state x="4696" y="282" key="CommitChangelistDialog2" timestamp="1577887307162">
       <screen x="3840" y="0" width="2560" height="1400" />
     </state>
@@ -275,11 +332,18 @@
       <screen x="3840" y="0" width="2560" height="1400" />
     </state>
     <state width="2517" height="400" key="GridCell.Tab.0.right/0.0.2560.1400/3840.0.2560.1400@3840.0.2560.1400" timestamp="1577887091228" />
+<<<<<<< HEAD
     <state x="782" y="343" width="1007" height="733" key="SettingsEditor" timestamp="1577945385421">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="4622" y="343" key="SettingsEditor/0.0.2560.1400/3840.0.2560.1400@3840.0.2560.1400" timestamp="1577887244124" />
     <state x="782" y="343" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1577945385421" />
+=======
+    <state x="4622" y="343" width="1007" height="733" key="SettingsEditor" timestamp="1577887244124">
+      <screen x="3840" y="0" width="2560" height="1400" />
+    </state>
+    <state x="4622" y="343" key="SettingsEditor/0.0.2560.1400/3840.0.2560.1400@3840.0.2560.1400" timestamp="1577887244124" />
+>>>>>>> 8e7f368bd422e6915a026b0c7183c37ae01e211d
     <state x="587" y="283" width="1007" height="733" key="SettingsEditor/0.25.1920.1055@0.25.1920.1055" timestamp="1577792106209" />
     <state x="4713" y="434" key="Vcs.Push.Dialog.v2" timestamp="1577772997541">
       <screen x="3840" y="0" width="2560" height="1400" />
@@ -294,10 +358,13 @@
       <screen x="3840" y="0" width="2560" height="1400" />
     </state>
     <state x="4924" y="618" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/3840.0.2560.1400@3840.0.2560.1400" timestamp="1577881451272" />
+<<<<<<< HEAD
     <state x="1695" y="416" key="git4idea.branch.GitSmartOperationDialog" timestamp="1577945041201">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1695" y="416" key="git4idea.branch.GitSmartOperationDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1577945041201" />
+=======
+>>>>>>> 8e7f368bd422e6915a026b0c7183c37ae01e211d
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/doozy$output.coverage" NAME="output Coverage Results" MODIFIED="1577772789010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/guiproject" />
