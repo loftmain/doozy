@@ -20,7 +20,6 @@ def inspect_index_folder():
     folderpath = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'independent')
     return folderpath
 
-'''
 def inspect_column_file():
     if not os.path.join(os.path.dirname(os.path.realpath(__file__)), 'column.txt'):    
         print('column option file does not exist')     
@@ -29,7 +28,7 @@ def inspect_column_file():
     line = f.readline()
     index_list = list(map(str, (line.split(','))))
     return index_list
-'''
+
 def Gathering():
     folderpath = inspect_index_folder()
     index_list = inspect_column_file()
