@@ -10,6 +10,11 @@ from labelingoption import labeling
 from filetreeview import Tree
 from PySide2.QtCore import Slot, Qt
 from orderexcute import OrderRunWidget
+import PySide2
+dirname = os.path.dirname(PySide2.__file__)
+plugin_path = os.path.join(dirname, 'plugins', 'platforms')
+os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = plugin_path
+
 class Mytreeview(QWidget):
 
     def __init__(self, parent):
@@ -31,7 +36,6 @@ from PySide2.QtWidgets import (QMainWindow, QAction, QActionGroup, QToolBar,
                                QLabel,QMessageBox, QTextEdit)
 from PySide2.QtGui import QIcon
 from PySide2.QtCore import QSettings
-
 
 class MainWindow(QMainWindow):
     def __init__(self,parent=None):

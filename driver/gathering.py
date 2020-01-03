@@ -19,17 +19,12 @@ def inspect_index_folder():
         os.mkdir(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'independent'))
     folderpath = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'independent')
     return folderpath
-x
-'''
+
 def inspect_column_file():
-    if not os.path.join(os.path.dirname(os.path.realpath(__file__)), 'column.txt'):    
-        print('column option file does not exist')     
-        return False
-    f = open(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'column.txt'), 'r')
-    line = f.readline()
+    line = 'BAA,CSUSHPINSA,PCE,LREMTTTTUSM156S,DGORDER,TWEXBMTH,UNRATENSA,TCU,INDPRO,PPIACO,CPIAUCSL,HOUST,HSN1F,FEDFUNDS,USSLIND,TOTALSA,NEWORDER,UMCSENT,AMBNS,EXJPUS,EXKOUS,EXCHUS,T10Y2YM,XTEXVA01CNM667S,GACDFSA066MSFRBPHI,XTIMVA01KRM667S,KORPROINDMISMEI,KORCPIALLMINMEI,LRUNTTTTKRM156S,IR3TCD01KRM156N'
     index_list = list(map(str, (line.split(','))))
     return index_list
-'''
+
 def Gathering():
     folderpath = inspect_index_folder()
     index_list = inspect_column_file()
@@ -73,5 +68,6 @@ def Gathering():
         # Write to excel file
         df.to_excel(os.path.join(folderpath,index)+'.xlsx', sheet_name='Sheet1', index=False)
         #df_info.to_excel(writer, sheet_name='Sheet2', index=False)
+    return True
 
-Gathering()
+result = Gathering()
