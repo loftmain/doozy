@@ -75,6 +75,6 @@ reader = ProcessOutputReader()
 console = MyConsole()
 reader.produce_output.connect(console.append_output)
 
-reader.start('python3', ['-u', 'test.py'])  # start the process
+reader.start('python3', ['-u', 'shape.py'])  # start the process
 console.show()                              # make the console visible
 app.exec_()                                 # run the PyQt main loop

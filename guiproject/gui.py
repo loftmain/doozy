@@ -4,12 +4,13 @@ from PySide2.QtWidgets import QWidget, QTreeView, QFileSystemModel, QGridLayout,
     ,QVBoxLayout, QTabWidget, QListWidget, QTextBrowser, QFileDialog
 from PySide2.QtGui import QPalette, QPainter, QTextCursor
 from PySide2.QtCore import Signal,Qt, QRect, QPointF, QEventLoop
-from output import StdoutRedirect
-from modelingoption import ModelingOption
-from markingwidget import MarkingWidget
-from filetreeview import Tree
+from guiproject.output import StdoutRedirect
+from guiproject.modelingoption import ModelingOption
+from guiproject.markingwidget import MarkingWidget
+from guiproject.filetreeview import Tree
 from PySide2.QtCore import Slot, Qt
-from orderexcute import OrderRunWidget
+from guiproject.orderexcute import OrderRunWidget
+from guiproject.download import DlIndependentDialog
 
 from PySide2.QtWidgets import (QMainWindow, QAction, QActionGroup, QToolBar,
                                QLabel,QMessageBox, QTextEdit)
@@ -23,7 +24,6 @@ class MainWindow(QMainWindow):
         widget = QWidget()
         layout = QVBoxLayout(widget)
         layout.addWidget(QTextEdit())
-
         self.path_to_file = ""
         self.treeview_widget = Tree()
 
@@ -73,7 +73,7 @@ class MainWindow(QMainWindow):
 
         self.saveDataAction = QAction("&지표 데이터 파일저장", self)
         self.saveDataAction.setStatusTip("import files")
-        self.saveDataAction.triggered.connect(self.close)
+        self.saveDataAction.triggered.connect(self.dl_independents)
 
         self.errorCheckDataAction = QAction("&지표 데이터 에러체크", self)
         self.errorCheckDataAction.setStatusTip("import files")
@@ -234,7 +234,13 @@ class MainWindow(QMainWindow):
     def load_folder(self):
         self.path_to_file = QFileDialog.getExistingDirectory(self, self.tr("Load folder"), self.tr("~/Desktop/"), QFileDialog.ShowDirsOnly
                                              | QFileDialog.DontResolveSymlinks)
+        print(self.path_to_file)
         self.treeview_widget.change_root_index(self.path_to_file)
+
+    def dl_independents(self):
+        dlg = DlIndependentDialog(self.path_to_file)
+        dlg.exec_()
+
 
     def _append_text(self, msg):
         self.textBrowser.moveCursor(QTextCursor.End)

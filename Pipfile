@@ -11,6 +11,11 @@ numpy = "*"
 pyside2 = "*"
 fredapi = "*"
 openpyxl = "*"
+pyyaml = "*"
+scikit-learn = "*"
+statsmodels = "*"
+xgboost = "*"
+xlrd = "*"
 
 [requires]
 python_version = "3.7"
