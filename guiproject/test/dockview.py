@@ -4,8 +4,7 @@ from PySide2.QtWidgets import QWidget, QTreeView, QFileSystemModel, QGridLayout,
     ,QVBoxLayout, QTabWidget
 from PySide2.QtGui import QPalette, QPainter
 from PySide2.QtCore import Signal,Qt, QRect, QPointF
-from output import StdoutRedirect
-from modelingoption import MyForm
+
 
 def createDcokWindows(self):
     #table View
