@@ -11,6 +11,7 @@ from filetreeview import Tree
 from PySide2.QtCore import Slot, Qt
 from orderexcute import OrderRunWidget
 
+
 class Mytreeview(QWidget):
 
     def __init__(self, parent):
@@ -32,7 +33,6 @@ from PySide2.QtWidgets import (QMainWindow, QAction, QActionGroup, QToolBar,
                                QLabel,QMessageBox, QTextEdit)
 from PySide2.QtGui import QIcon
 from PySide2.QtCore import QSettings
-
 
 class MainWindow(QMainWindow):
     def __init__(self,parent=None):
