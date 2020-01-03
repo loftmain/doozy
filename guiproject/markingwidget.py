@@ -1,9 +1,12 @@
+import sys, os
 from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
                                QVBoxLayout, QHBoxLayout, QGroupBox,
                                QGridLayout, QLabel, QComboBox, QSpinBox,
                                QLineEdit, QFormLayout)
-import sys
+
 from PySide2.QtCore import Slot, Qt
+from driver.labeling import Marking
+import pandas as pd
 
 class LineEdit(QLineEdit):
     def __init__(self):
@@ -22,7 +25,7 @@ class LineEdit(QLineEdit):
     def dropEvent(self, e):
         self.setText(e.mimeData().text())
 
-class labeling(QWidget):
+class MarkingWidget(QWidget):
     def __init__(self,parent=None):
         QWidget.__init__(self,parent)
         self.setWindowTitle('create Label')
@@ -100,27 +103,35 @@ class labeling(QWidget):
         #self.statusBar.showMessage(msg)
 
     def _fill_columns_info(self):
-        cloumn_name = ["open", "high", "low", "close"]
+        cloumn_name = ["Open", "High", "Low", "Close"]
         self.firstColumnComboBox.insertItems(0, [x for x in cloumn_name])
         self.secondColumnComboBox.insertItems(0, [x for x in cloumn_name])
 
     @Slot(name="clickedOkButton")
     def slot_clicked_ok_button(self):
-        serial_info = {
-            "file_root": self.file_name.text(),
-            "first_index": self.firstIndexSpinBox.value(),
-            "first_column": self.firstColumnComboBox.currentText(),
-            "second_index": self.secondIndexSpinBox.value(),
-            "second_column": self.secondColumnComboBox.currentText(),
-            "per": self.sb_per.value(),
-            "updown": self.cb_updown.currentText(),
-            "name": self.te_label_name.text(),
+        marking_info = {
+            "file_root": str(self.file_name.text()),
+            "first_index": str(self.firstIndexSpinBox.value()),
+            "first_column": str(self.firstColumnComboBox.currentText()),
+            "second_index": str(self.secondIndexSpinBox.value()),
+            "second_column": str(self.secondColumnComboBox.currentText()),
+            "per": str(self.sb_per.value()*0.01),
+            "updown": str(self.cb_updown.currentText()),
+            "name": str(self.te_label_name.text()),
         }
-        print(serial_info)
-        #.currentText()
+        print(marking_info)
+        self.run_markiing(marking_info)
+
+    def run_markiing(self, dic):
+        df = pd.read_csv(dic["file_root"])
+        mark = Marking()
+        mark.set_option(df, [dic["first_index"], dic["second_index"], dic["per"]],
+                        [dic["first_column"], dic['second_column'], dic["name"]], dic["updown"])
+        result = mark.create_label()
+        result.to_csv('test.csv', header=True, index=False, encoding='ms949')
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    form = labeling()
+    form = MarkingWidget()
     form.show()
     app.exec_()

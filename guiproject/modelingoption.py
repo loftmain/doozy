@@ -5,7 +5,7 @@ from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
                                QHBoxLayout, QGroupBox, QGridLayout,
                                QLabel, QComboBox, QFormLayout, QDateEdit)
 from PySide2.QtCore import QDate
-from labelingoption import LineEdit
+from markingwidget import LineEdit
 
 class ModelingOption(QWidget):
     def __init__(self,parent=None):

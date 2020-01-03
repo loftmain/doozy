@@ -6,14 +6,11 @@ from PySide2.QtGui import QPalette, QPainter, QTextCursor
 from PySide2.QtCore import Signal,Qt, QRect, QPointF, QEventLoop
 from output import StdoutRedirect
 from modelingoption import ModelingOption
-from labelingoption import labeling
+from markingwidget import MarkingWidget
 from filetreeview import Tree
 from PySide2.QtCore import Slot, Qt
 from orderexcute import OrderRunWidget
-import PySide2
-dirname = os.path.dirname(PySide2.__file__)
-plugin_path = os.path.join(dirname, 'plugins', 'platforms')
-os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = plugin_path
+
 
 class Mytreeview(QWidget):
 
@@ -266,13 +263,13 @@ class MainWindow(QMainWindow):
             self.shapeWidget.blue()
 
     def createLabelTab(self):
-        widget = labeling()
+        widget = MarkingWidget()
         widget.destroyed.connect(
             lambda obj: print(
                 "deleted {}, count: {}".format(obj, self.tabWidget.count())
             )
         )
-        self.tabWidget.addTab(widget, "labeling")
+        self.tabWidget.addTab(widget, "marking")
 
     def createModelOptionTab(self):
         widget = ModelingOption()
