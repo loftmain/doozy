@@ -5,12 +5,12 @@ from PySide2.QtCore import QFileInfo, QDir, QFile
 class Tree(QTreeView):
     def __init__(self):
         QTreeView.__init__(self)
-        model = QFileSystemModel()
-        model.setRootPath(QDir.currentPath())
+        self.model = QFileSystemModel()
+        self.model.setRootPath(QDir.currentPath())
 
-        self.setModel(model)
-        self.setRootIndex(model.index(QDir.currentPath()))
-        model.setReadOnly(False)
+        self.setModel(self.model)
+        self.setRootIndex(self.model.index(QDir.currentPath()))
+        self.model.setReadOnly(False)
 
         self.setSelectionMode(self.SingleSelection)
         self.setDragDropMode(QAbstractItemView.InternalMove)
@@ -56,6 +56,9 @@ class Tree(QTreeView):
                     accepted = True
                 if accepted:
                     event.acceptProposedAction()
+
+    def change_root_index(self, path):
+        self.setRootIndex(self.model.index(path))
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
