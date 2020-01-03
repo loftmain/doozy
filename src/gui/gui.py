@@ -4,13 +4,13 @@ from PySide2.QtWidgets import QWidget, QTreeView, QFileSystemModel, QGridLayout,
     ,QVBoxLayout, QTabWidget, QListWidget, QTextBrowser, QFileDialog
 from PySide2.QtGui import QPalette, QPainter, QTextCursor
 from PySide2.QtCore import Signal,Qt, QRect, QPointF, QEventLoop
-from guiproject.output import StdoutRedirect
-from guiproject.modelingoption import ModelingOption
-from guiproject.markingwidget import MarkingWidget
-from guiproject.filetreeview import Tree
+from src.gui.output import StdoutRedirect
+from src.gui.modelingoption import ModelingOption
+from src.gui.markingwidget import MarkingWidget
+from src.gui.filetreeview import Tree
 from PySide2.QtCore import Slot, Qt
-from guiproject.orderexcute import OrderRunWidget
-from guiproject.download import DlIndependentDialog
+from src.gui.orderexcute import OrderRunWidget
+from src.gui.download import DlIndependentDialog
 
 from PySide2.QtWidgets import (QMainWindow, QAction, QActionGroup, QToolBar,
                                QLabel,QMessageBox, QTextEdit)
