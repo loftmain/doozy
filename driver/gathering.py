@@ -20,6 +20,7 @@ def inspect_index_folder():
     folderpath = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'independent')
     return folderpath
 
+
 def inspect_column_file():
     line = 'BAA,CSUSHPINSA,PCE,LREMTTTTUSM156S,DGORDER,TWEXBMTH,UNRATENSA,TCU,INDPRO,PPIACO,CPIAUCSL,HOUST,HSN1F,FEDFUNDS,USSLIND,TOTALSA,NEWORDER,UMCSENT,AMBNS,EXJPUS,EXKOUS,EXCHUS,T10Y2YM,XTEXVA01CNM667S,GACDFSA066MSFRBPHI,XTIMVA01KRM667S,KORPROINDMISMEI,KORCPIALLMINMEI,LRUNTTTTKRM156S,IR3TCD01KRM156N'
     index_list = list(map(str, (line.split(','))))
