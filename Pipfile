@@ -10,6 +10,7 @@ pandas = "*"
 numpy = "*"
 pyside2 = "*"
 fredapi = "*"
+openpyxl = "*"
 
 [requires]
 python_version = "3.7"

@@ -1,7 +1,7 @@
 ## ShapeWidget
 import os
 from PySide2.QtWidgets import QWidget, QTreeView, QFileSystemModel, QGridLayout, QDockWidget\
-    ,QVBoxLayout, QTabWidget, QListWidget, QTextBrowser
+    ,QVBoxLayout, QTabWidget, QListWidget, QTextBrowser, QFileDialog
 from PySide2.QtGui import QPalette, QPainter, QTextCursor
 from PySide2.QtCore import Signal,Qt, QRect, QPointF, QEventLoop
 from output import StdoutRedirect
@@ -10,24 +10,6 @@ from markingwidget import MarkingWidget
 from filetreeview import Tree
 from PySide2.QtCore import Slot, Qt
 from orderexcute import OrderRunWidget
-
-
-class Mytreeview(QWidget):
-
-    def __init__(self, parent):
-        QWidget.__init__(self)
-
-        self.m_TreeView = QTreeView()
-        self.m_TreeView.dragEnabled()
-
-        m = QFileSystemModel()
-        m.setRootPath("")
-        self.m_TreeView.setModel(m)
-        self.m_TreeView.setRootIndex(m.index(os.getcwd()))
-        layout = QGridLayout()
-        layout.addWidget(self.m_TreeView)
-        self.setLayout(layout)
-
 
 from PySide2.QtWidgets import (QMainWindow, QAction, QActionGroup, QToolBar,
                                QLabel,QMessageBox, QTextEdit)
@@ -42,6 +24,7 @@ class MainWindow(QMainWindow):
         layout = QVBoxLayout(widget)
         layout.addWidget(QTextEdit())
 
+        self.path_to_file = ""
         self.treeview_widget = Tree()
 
         self.dockTree = QDockWidget("TreeView", self)
@@ -86,7 +69,7 @@ class MainWindow(QMainWindow):
         #self.exitAction.setIcon(QIcon(":/images/exit.png"))
         self.importAction.setShortcut("Ctrl+I")
         self.importAction.setStatusTip("import files")
-        self.importAction.triggered.connect(self.close)
+        self.importAction.triggered.connect(self.load_folder)
 
         self.saveDataAction = QAction("&지표 데이터 파일저장", self)
         self.saveDataAction.setStatusTip("import files")
@@ -248,6 +231,11 @@ class MainWindow(QMainWindow):
         self.writeSettings()
 
     # slot
+    def load_folder(self):
+        self.path_to_file = QFileDialog.getExistingDirectory(self, self.tr("Load folder"), self.tr("~/Desktop/"), QFileDialog.ShowDirsOnly
+                                             | QFileDialog.DontResolveSymlinks)
+        self.treeview_widget.change_root_index(self.path_to_file)
+
     def _append_text(self, msg):
         self.textBrowser.moveCursor(QTextCursor.End)
         self.textBrowser.insertPlainText(msg)
