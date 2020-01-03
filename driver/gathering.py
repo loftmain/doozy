@@ -19,7 +19,7 @@ def inspect_index_folder():
         os.mkdir(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'independent'))
     folderpath = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'independent')
     return folderpath
-x
+
 '''
 def inspect_column_file():
     if not os.path.join(os.path.dirname(os.path.realpath(__file__)), 'column.txt'):    

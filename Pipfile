@@ -9,6 +9,7 @@ verify_ssl = true
 pandas = "*"
 numpy = "*"
 pyside2 = "*"
+fredapi = "*"
 
 [requires]
 python_version = "3.7"
