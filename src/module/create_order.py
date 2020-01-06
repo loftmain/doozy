@@ -43,4 +43,5 @@ for x, row in df.iterrows():
         if status == False:
             data['buy'][temp.index[0]] = 1
             data['sell'][temp.index[-1]] = 1
+data.to_excel('test.xlsx', index=False, header=True)
 
