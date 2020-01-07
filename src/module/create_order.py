@@ -35,7 +35,7 @@ for x, row in df.iterrows():
         
         for y, _ in temp.iterrows():
            
-            if temp['Adj Close'][y]/comp_v >= 1.04:
+            if temp['Adj Close'][y]/comp_v >= 1.04 and status == True:
                 data['buy'][temp.index[0]] = 1
                 data['sell'][y] = 1
                 status = True
@@ -45,3 +45,4 @@ for x, row in df.iterrows():
             data['buy'][temp.index[0]] = 1
             data['sell'][temp.index[-1]] = 1
 
+data.to_excel('input_+order.xlsx', header=True, index=False)
