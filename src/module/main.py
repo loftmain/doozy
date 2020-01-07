@@ -120,7 +120,7 @@ def check_classifier(setting, log_data):
             print("columns list option ERROR!!!")
     else:
         print("not right type!!")
-    
+
 
 if __name__ == '__main__':
     opt0 = 'KNN'
