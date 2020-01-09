@@ -5,7 +5,7 @@ from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
                                QLineEdit, QFormLayout)
 
 from PySide2.QtCore import Slot, Qt
-from driver.marking import Marking
+from src.module.marking import Marking
 import pandas as pd
 
 class LineEdit(QLineEdit):
