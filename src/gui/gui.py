@@ -16,6 +16,10 @@ from PySide2.QtWidgets import (QMainWindow, QAction, QActionGroup, QToolBar,
                                QLabel,QMessageBox, QTextEdit)
 from PySide2.QtGui import QIcon
 from PySide2.QtCore import QSettings
+import PySide2
+dirname = os.path.dirname(PySide2.__file__)
+plugin_path = os.path.join(dirname, 'plugins', 'platforms')
+os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = plugin_path
 
 class MainWindow(QMainWindow):
     def __init__(self,parent=None):
