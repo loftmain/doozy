@@ -101,6 +101,6 @@ if __name__ == '__main__':
     elif strategy == 'LMBS':
         result = _lmbs(df, yahoo, ['LM4DN_predict', 0.4]) # form에서 입력받음[컬럼이름과, 비율]
     elif strategy == 'LMBNS':
-        result = _lmbs(df, yahoo, ['HM4UP_predict', math.inf]) # form에서 입력받음[컬럼이름과, 비율]
+        result = _lmbs(df, yahoo, ['LM4DN_predict', math.inf]) # form에서 입력받음[컬럼이름과, 비율]
 
     result.to_excel('input_order.xlsx', header=True, index=False)
