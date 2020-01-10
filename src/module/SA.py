@@ -32,6 +32,8 @@ class SA(object):
         self.seperate_date=seperate_date
         self.end_date=end_date
         self.y_prediction = None
+        if 'Date' in self.dataframe:
+            self.dataframe.rename(columns={'Date': 'DATE'}, inplace=True)
         self.dependent_columns=list(self.dataframe)
         self.dependent_columns.remove("DATE")
 
