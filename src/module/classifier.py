@@ -458,16 +458,16 @@ class SA_LinearRegression(SA):
 
 if __name__ == '__main__':
     opt0 = 'KNN'
-    opt1 = [3, 5, 7]
+    opt1 = [3, 5]
     opt2 = 'subset'
-    opt3 = [['BAArate', 'HOUSTrate', 'DGORDERrate']]
-    opt4 = ['HM4UP']
-    opt5 = 'dependent/^DJI-Monthly.xlsx'
+    opt3 = [['UNRATENSArate', 'UMCSENTrate', 'AMBNSrate', 'LRUNTTTTKRM156Srate']]
+    opt4 = ['LM4DN']
+    opt5 = 'dependent/dow.xlsx'
     opt6 = 'independent'
     opt7 = 'save'
-    opt8 = [2009, 9, 1]
-    opt9 = [2016, 1, 1]
-    opt10 = [2019, 4, 1]
+    opt8 = [2009, 2, 1]
+    opt9 = [2016, 8, 1]
+    opt10 = [2019, 7, 1]
     # =============================================================================
     #     KNN
     # =============================================================================

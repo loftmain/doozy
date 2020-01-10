@@ -50,7 +50,7 @@ def _lmbs(df, data, opt):
 
             for y, _ in temp.iterrows():
 
-                if (temp['Adj Close'][y] / comp_v) - 1 >= opt[1] and status == True:  # n% opt
+                if (temp['Adj Close'][y] / comp_v) - 1 <= opt[1] and status == True:  # n% opt
                     data['buy'][temp.index[0]] = 1
                     data['sell'][y] = 1
                     status = True
@@ -84,7 +84,7 @@ def read_df_from_yahoo(index, start, end):
 if __name__ == '__main__':
 
     path = 'save/input_order.xlsx' # form에서 입력받음 [파일경로]
-    option = ['HM4UP', math.inf] # [컬럼이름과, 비율]
+    option = ['predicted_K3', -0.04] # [컬럼이름과, 비율]
 
     df = input_df(path, option[0])
 
@@ -92,7 +92,7 @@ if __name__ == '__main__':
     index = '^DJI' # form에서 입력받음
 
     yahoo = read_df_from_yahoo(index, start, end)
-    strategy = 'HMBLS' # form에서 입력받음 [전략]
+    strategy = 'LMBS' # form에서 입력받음 [전략]
 
     # 전략종류
     # HMBS : hmup이 1일 때, 월초 매수하여 월중 n%상승 등장일에 매도
