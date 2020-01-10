@@ -127,8 +127,8 @@ if __name__ == '__main__':
     opt1 = [3,5,7]    
     opt2 = 'subset'
     opt3 = [['BAArate', 'HOUSTrate', 'DGORDERrate']]
-    opt4 = ['HM3UP']
-    opt5 = 'dependent/^DJI.xlsx'
+    opt4 = ['HM4UP']
+    opt5 = 'dependent/^DJI-Monthly.xlsx'
     opt6 = 'independent'
     opt7 = 'save'
     opt8 = [2009, 9, 1]
