@@ -11,12 +11,14 @@ import math
 # pip install pandas_datareader
 # pip install xlrd
 
+pd.options.mode.chained_assignment = None
+
 def _hmbs(df, data, opt):
     status = False
 
     for _, row in df.iterrows():
         if row[opt[0]] == 1: # column opt
-            year, month, day = row['Date'].year, row['Date'].month, row['Date'].day
+            year, month, day = row['DATE'].year, row['DATE'].month, row['DATE'].day
 
             temp = data[data['year'] == year]
             temp = temp[temp['month'] == month]
@@ -61,7 +63,6 @@ def _lmbs(df, data, opt):
 
 def input_df(path, column):
     df = pd.read_excel(path)
-    df.rename(columns={'Date': 'DATE'}, inplace=True)
     df = pd.DataFrame(df, columns=['DATE', column])
     return df
 
@@ -73,7 +74,7 @@ def calculate_date(df):
 def read_df_from_yahoo(index, start, end):
     data = web.DataReader(index, 'yahoo', start, end)
     data = data.reset_index()
-    data['DATE'] = data["Date"].apply(lambda x: x.year)
+    data['year'] = data["Date"].apply(lambda x: x.year)
     data['month'] = data["Date"].apply(lambda x: x.month)
     data.rename(columns={'Date': 'DATE'}, inplace=True)
     data['buy'] = 0
@@ -82,8 +83,8 @@ def read_df_from_yahoo(index, start, end):
 
 if __name__ == '__main__':
 
-    path = 'dependent/^DJI.xlsx' # form에서 입력받음 [파일경로]
-    option = ['HM3UP', math.inf] # [컬럼이름과, 비율]
+    path = 'save/input_order.xlsx' # form에서 입력받음 [파일경로]
+    option = ['HM4UP', math.inf] # [컬럼이름과, 비율]
 
     df = input_df(path, option[0])
 
