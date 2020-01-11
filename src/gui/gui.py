@@ -270,7 +270,7 @@ class MainWindow(QMainWindow):
         self.tabWidget.addTab(widget, "marking")
 
     def createModelOptionTab(self):
-        widget = ModelingOption()
+        widget = ModelingOption(self.path_to_file)
         widget.destroyed.connect(
             lambda obj: print(
                 "deleted {}, count: {}".format(obj, self.tabWidget.count())

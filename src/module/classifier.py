@@ -54,16 +54,19 @@ def check_classifier(setting, log_data):
         if setting["column_option_list"]['option'] == "subset":
             rf.analyze(log=log_data,
                        n_estimators=setting["type_option_list"]["n_estimators"],
-                       max_depth=int(setting["type_option_list"]["max_depth"]),
-                       random_state=int(setting["type_option_list"]["random_state"])
-                       )
+                       max_depth=setting["type_option_list"]["max_depth"],
+                       random_state=setting["type_option_list"]["random_state"],
+                       max_features=setting["type_option_list"]['max_features'],
+                       bootstrap=setting["type_option_list"]['bootstrap'])
 
         elif setting["column_option_list"]['option'] == "all":
             rf.analyze_auto(log=log_data,
                             range_of_column_no=setting["column_option_list"]["range_of_column_no"],
                             n_estimators=setting["type_option_list"]["n_estimators"],
                             max_depth=setting["type_option_list"]["max_depth"],
-                            random_state=setting["type_option_list"]["random_state"])
+                            random_state=setting["type_option_list"]["random_state"],
+                            max_features=setting["type_option_list"]['max_features'],
+                            bootstrap=setting["type_option_list"]['bootstrap'])
         else:
             print("columns list option ERROR!!!")
 
@@ -150,7 +153,7 @@ class SA_Randomforest(SA):
             end_date,
             column_list)
 
-    def analyze(self, log, n_estimators=100, max_depth=8, random_state=0):
+    def analyze(self, log, n_estimators, max_depth, random_state, max_features, bootstrap):
         super().read_excel_files()
         for columns in self.column_list:
             for condition in self.condition_list:
@@ -158,7 +161,8 @@ class SA_Randomforest(SA):
 
                 random_clf = RandomForestClassifier(n_estimators=n_estimators,
                                                     n_jobs=-1, max_depth=max_depth,
-                                                    random_state=random_state)
+                                                    random_state=random_state,
+                                                    max_features=max_features)
 
                 random_clf.fit(X_train, np.ravel(y_train))
                 self.y_prediction = random_clf.predict(X_test)
@@ -177,7 +181,7 @@ class SA_Randomforest(SA):
                                                           f'{max_depth} random_state={random_state}']
                 self.save_excel_file(copy_dataframe, "RF", condition, columns)
 
-    def analyze_auto(self, log, range_of_column_no, n_estimators=100, max_depth=None, random_state=0):
+    def analyze_auto(self, log, range_of_column_no, n_estimators=100, max_depth=None, random_state=0, max_features='auto', bootstrap=True):
         super().read_excel_files()
         number_of_case_columns = self.get_independent_columns()
         X_train, y_train, X_test, y_test = super().seperate_data(number_of_case_columns, self.condition_list)
@@ -191,7 +195,10 @@ class SA_Randomforest(SA):
                 for columns in column_list_index:
                     random_clf = RandomForestClassifier(n_estimators=n_estimators,
                                                         n_jobs=-1, max_depth=max_depth,
-                                                        random_state=random_state)
+                                                        random_state=random_state,
+                                                        max_features=max_features,
+                                                        bootstrap=bootstrap)
+
                     random_clf.fit(X_train[list(columns)], y_train[condition])
                     self.y_prediction = random_clf.predict(X_test[list(columns)])
                     accuracy = accuracy_score(y_test[condition], self.y_prediction)
@@ -455,10 +462,21 @@ class SA_LinearRegression(SA):
 
                     self.save_excel_file(pre_dataframe, "KNN", condition, columns)"""
 
+def run_modeling(start_setting, path):
+    if not os.path.exists(os.path.join(path, 'save')):
+        os.mkdir(os.path.join(path, 'save'))
+    save_path = os.path.join(path, 'save')
+    log_data = pd.DataFrame(columns=['classifier', 'condition', 'columns', 'accuracy',
+                                     'precision', 'recall', 'option'])
+    for setting in start_setting['setting']:
+        check_setting_file(setting)
+        check_classifier(setting, log_data)
+        print('-----------------------------------------------------------------')
+    log_data.to_excel(save_path + 'log_' + datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S') + '.xlsx')
 
 if __name__ == '__main__':
     opt0 = 'KNN'
-    opt1 = [3, 5, 7]
+    opt1 = [3, 5]
     opt2 = 'subset'
     opt3 = [['BAArate', 'HOUSTrate', 'DGORDERrate']]
     opt4 = ['HM3UP']
@@ -520,7 +538,10 @@ if __name__ == '__main__':
                             'classifier': opt0,
                             'type_option_list': {'n_estimators': opt1[0],
                                                  'max_depth': opt1[1],
-                                                 'random_state': opt1[2]},
+                                                 'random_state': 0,
+                                                 'max_features': opt1[2],
+                                                 'bootstrap':  opt1[3]
+                                                 },
                             'column_option_list': {'option': opt2, 'column_list': opt3},
                             'condition_list': opt4,
                             'dependent_file_path': opt5,
