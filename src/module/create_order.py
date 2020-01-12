@@ -85,7 +85,8 @@ if __name__ == '__main__':
 
     path = 'save/input_order.xlsx' # form에서 입력받음 [파일경로]
     option = ['predicted_K3', -0.04] # [컬럼이름과, 비율]
-
+    # HMBLS, LMBLS는 option[1]에 math.inf를 삽입하면됨
+    
     df = input_df(path, option[0])
 
     start, end = calculate_date(df)
