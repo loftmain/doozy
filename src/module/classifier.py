@@ -173,12 +173,12 @@ class SA_Randomforest(SA):
                 copy_dataframe = self.dataframe.loc[self.seperate_date:, :]
                 copy_dataframe = copy_dataframe.drop(copy_dataframe.index[0])
                 copy_dataframe[condition + '_predict'] = self.y_prediction
-                result_data = f'accuracy: {accuracy: .2%} precision: {precision:.2%}  recall:{recall:.2%}\n ' \
-                              f' {condition}  "RF" {columns}\n'
+                result_data = 'accuracy: {} precision: {}  recall:{}\n {}  "RF" {}\n' \
+                    .format(round(accuracy, 2), round(precision, 2), round(recall,2), condition, columns)
                 print(result_data)
-                log.loc[len(log)] = ["RF", condition, columns, accuracy, precision, recall,
-                                      f'n_estimators={n_estimators} max_depth='
-                                                          f'{max_depth} random_state={random_state}']
+                log.loc[len(log)] = \
+                    ["RF", condition, columns, accuracy, precision, recall,
+                    'n_estimators={} max_depth={} random_state={}'.format(n_estimators, max_depth, random_state)]
                 self.save_excel_file(copy_dataframe, "RF", condition, columns)
 
     def analyze_auto(self, log, range_of_column_no, n_estimators=100, max_depth=None, random_state=0, max_features='auto', bootstrap=True):
@@ -208,12 +208,12 @@ class SA_Randomforest(SA):
                     copy_dataframe = self.dataframe.loc[self.seperate_date:, :]
                     copy_dataframe = copy_dataframe.drop(copy_dataframe.index[0])
                     copy_dataframe[condition + '_predict'] = self.y_prediction
-                    result_data = f'accuracy: {accuracy: .2%} precision: {precision:.2%}  recall:{recall:.2%}\n ' \
-                                  f' {condition}  "RF" {columns}\n'
+                    result_data = 'accuracy: {} precision: {}  recall:{}\n {}  "RF" {}\n' \
+                        .format(round(accuracy, 2), round(precision, 2), round(recall, 2), condition, columns)
                     print(result_data)
-                    log.loc[len(log)] = ["RF", condition, columns, accuracy, precision, recall,
-                                          f'n_estimators={n_estimators} max_depth='
-                                                              f'{max_depth} random_state={random_state}']
+                    log.loc[len(log)] = \
+                        ["RF", condition, columns, accuracy, precision, recall,
+                        'n_estimators={} max_depth={} random_state={}'.format(n_estimators, max_depth, random_state)]
 
                     # self.save_excel_file(copy_dataframe, "RF", condition, columns)
 
@@ -267,12 +267,13 @@ class SA_Knn(SA):
                     pre_dataframe = self.dataframe.loc[self.seperate_date:, :]
                     pre_dataframe = pre_dataframe.drop(pre_dataframe.index[0])
                     pre_dataframe[condition + '_predict'] = self.y_prediction
-                    result_data = f'accuracy: {accuracy: .2%} precision: {precision:.2%}  recall:{recall:.2%} ' \
-                                  f'\n' \
-                                  f' {condition}  "n_neighbors" {self.n_neighbors}  "KNN" {columns}\n'
+                    result_data = \
+                        'accuracy: {} precision: {}  recall:{}\n {}\
+                        "n_neighbors" {}  "KNN" {}\n'.format(round(accuracy, 2), round(precision, 2),
+                                                             round(recall, 2), condition, self.n_neighbors, columns)
                     print(result_data)
                     log.loc[len(log)] = ["KNN", condition, columns, accuracy, precision, recall,
-                                          f'n_neighbors={self.n_neighbors}']
+                                          'n_neighbors={}'.format(self.n_neighbors)]
 
                     self.save_excel_file(pre_dataframe, "KNN", condition, columns)
 
@@ -299,12 +300,13 @@ class SA_Knn(SA):
                         pre_dataframe = self.dataframe.loc[self.seperate_date:, :]
                         pre_dataframe = pre_dataframe.drop(pre_dataframe.index[0])
                         pre_dataframe[condition + '_predict'] = self.y_prediction
-                        result_data = f'accuracy: {accuracy: .2%} precision: {precision:.2%}  recall:{recall:.2%} ' \
-                                      f' \n' \
-                                      f' {condition}  "n_neighbors" {self.n_neighbors}  "KNN" {columns}\n'
+                        result_data = \
+                            'accuracy: {} precision: {}  recall:{}\n {}\
+                            "n_neighbors" {}  "KNN" {}\n'.format(round(accuracy, 2), round(precision, 2),
+                                                                 round(recall, 2), condition, self.n_neighbors, columns)
                         print(result_data)
                         log.loc[len(log)] = ["KNN", condition, columns, accuracy, precision, recall,
-                                             f'n_neighbors={self.n_neighbors}']
+                                             'n_neighbors={}'.format(self.n_neighbors)]
 
 
 class SA_xgboost(SA):
@@ -351,13 +353,12 @@ class SA_xgboost(SA):
                 pre_dataframe = self.dataframe.loc[self.seperate_date:, :]
                 pre_dataframe = pre_dataframe.drop(pre_dataframe.index[0])
                 pre_dataframe[condition + '_predict'] = self.y_prediction
-                result_data = f'accuracy: {accuracy: .2%} precision: {precision:.2%}  recall:{recall:.2%}\n ' \
-                              f' {condition}  "XGboost" {columns}\n'
+                result_data = 'accuracy: {} precision: {}  recall:{}\n {}  "XGboost" {}\n' \
+                    .format(round(accuracy, 2), round(precision, 2), round(recall, 2), condition, columns)
                 print(result_data)
                 log.loc[len(log)] = ["XGBOOST", condition, columns, accuracy, precision, recall,
-                                      f'n_estimators={n_estimators} '
-                                                          f'min_child_weight={min_child_weight} '
-                                                          f'max_depth={max_depth} gamma={gamma}']
+                                      'n_estimators={} min_child_weight={} max_depth={} gamma={}'
+                                          .format(n_estimators, min_child_weight,max_depth, gamma)]
 
                 self.save_excel_file(pre_dataframe, "xgboost", condition, columns)
 
@@ -391,18 +392,14 @@ class SA_xgboost(SA):
                     pre_dataframe = self.dataframe.loc[self.seperate_date:, :]
                     pre_dataframe = pre_dataframe.drop(pre_dataframe.index[0])
                     pre_dataframe[condition + '_predict'] = self.y_prediction
-                    result_data = f'accuracy: {accuracy: .2%} precision: {precision:.2%}  recall:{recall:.2%}\n ' \
-                                  f' {condition}  "XGboost" {columns}\n'
+                    result_data = 'accuracy: {} precision: {}  recall:{}\n {}  "XGboost" {}\n' \
+                        .format(round(accuracy, 2), round(precision, 2), round(recall, 2), condition, columns)
                     print(result_data)
                     log.loc[len(log)] = ["XGBOOST", condition, columns, accuracy, precision, recall,
-                                          f'n_estimators={n_estimators} '
-                                                              f'min_child_weight={min_child_weight} '
-                                                              f'max_depth={max_depth} gamma={gamma}']
+                                         'n_estimators={} min_child_weight={} max_depth={} gamma={}'
+                                             .format(n_estimators, min_child_weight, max_depth, gamma)]
 
                     # self.save_excel_file(pre_dataframe, "xgboost", condition, columns)
-                    """
-
-"""
 
 
 class SA_LinearRegression(SA):
@@ -448,11 +445,10 @@ class SA_LinearRegression(SA):
                 pre_dataframe = self.dataframe.loc[self.seperate_date:, :]
                 pre_dataframe = pre_dataframe.drop(pre_dataframe.index[0])
                 pre_dataframe[condition + '_predict'] = self.y_prediction
-                result_data = f'accuracy: {accuracy: .2%} precision: {precision:.2%}  recall:{recall:.2%}\n ' \
-                              f' {condition}  "LR" {columns}\n'
+                result_data = 'accuracy: {} precision: {}  recall:{}\n {}  "LR" {}\n' \
+                    .format(round(accuracy, 2), round(precision, 2), round(recall, 2), condition, columns)
                 print(result_data)
-                log.loc[len(log)] = ["LR", condition, columns, accuracy, precision, recall,
-                                      f'None']
+                log.loc[len(log)] = ["LR", condition, columns, accuracy, precision, recall,'None']
                 self.save_excel_file(pre_dataframe, "LR", condition, columns)
                 """
 
