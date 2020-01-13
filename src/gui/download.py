@@ -1,10 +1,24 @@
-import sys, os
-from PySide2.QtWidgets import QDialog, QLabel, QProgressBar, QPushButton, QVBoxLayout\
-                        , QApplication
+#!interpreter [project-doozy]
+# -*- coding: utf-8 -*-
+
+"""
+gui runcher
+{License_info} 라이센스 정해야함
+"""
+
+# Built-in/Generic Imports
+import sys
+import os
+
+# Libs
 import pandas as pd
 from fredapi import Fred
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
+from PySide2.QtWidgets import QDialog, QLabel, QProgressBar, QPushButton, QVBoxLayout\
+                        , QApplication
+
+
 fred = Fred(api_key='3b2795f81c94f1a105d1e4fc3661a45e')
 
 class DlIndependentDialog(QDialog):

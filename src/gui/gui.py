@@ -1,22 +1,39 @@
-## ShapeWidget
+#!interpreter [project-doozy]
+# -*- coding: utf-8 -*-
+
+"""
+gui runcher
+{License_info} 라이센스 정해야함
+"""
+
+# Built-in/Generic Imports
 import os
-from PySide2.QtWidgets import QWidget, QTreeView, QFileSystemModel, QGridLayout, QDockWidget\
-    ,QVBoxLayout, QTabWidget, QListWidget, QTextBrowser, QFileDialog
-from PySide2.QtGui import QPalette, QPainter, QTextCursor
-from PySide2.QtCore import Signal,Qt, QRect, QPointF, QEventLoop
+
+# Libs
+import PySide2
+from PySide2.QtWidgets import (QWidget, QDockWidget,QVBoxLayout, QTabWidget, QTextBrowser, QFileDialog \
+    , QMainWindow, QAction, QLabel, QMessageBox,QTextEdit)
+from PySide2.QtGui import QTextCursor, QIcon
+from PySide2.QtCore import QEventLoop, QSettings
+from PySide2.QtCore import Qt
+
+# Own modules
 from src.gui.output import StdoutRedirect
 from src.gui.modelingoption import ModelingOption
 from src.gui.markingwidget import MarkingWidget
 from src.gui.filetreeview import Tree
-from PySide2.QtCore import Slot, Qt
 from src.gui.orderexcute import OrderRunWidget
 from src.gui.download import DlIndependentDialog
 
-from PySide2.QtWidgets import (QMainWindow, QAction, QActionGroup, QToolBar,
-                               QLabel,QMessageBox, QTextEdit)
-from PySide2.QtGui import QIcon
-from PySide2.QtCore import QSettings
-import PySide2
+__author__ = 'loftmain'
+__copyright__ = 'Copyright 2020, doozy'
+__credits__ = ['loftmain']
+__license__ = '{license}'
+__version__ = '0.0.1'
+__maintainer__ = 'loftmain'
+__email__ = 'leejinjae7@gmail.com'
+__status__ = 'Dev'
+
 dirname = os.path.dirname(PySide2.__file__)
 plugin_path = os.path.join(dirname, 'plugins', 'platforms')
 os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = plugin_path

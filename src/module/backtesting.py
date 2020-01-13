@@ -23,13 +23,12 @@ def initialize(context):
     context.hold = False
 
 def handle_data(context, data):
-
     buy = False
     sell = False
 
     pred_buy = data.current(context.sym1, 'price')
-
     pred_sell = data.current(context.sym2, 'price')
+
     if pred_buy == 1 and context.hold == False:
         order_percent(context.sym, 0.99)
         context.hold = True
@@ -43,14 +42,15 @@ def handle_data(context, data):
 
 def backtesting(file):
     df = pd.read_excel(file)
-    df["Date"] = pd.to_datetime(df["Date"])
-    df = df.set_index("Date")
+    df["DATE"] = pd.to_datetime(df["DATE"])
+    df = df.set_index("DATE")
     newdata = df[['Adj Close', "buy", 'sell']]
     newdata.columns = ['DJI', "buy", 'sell']
 
     newdata = newdata.tz_localize('UTC')
     algo = TradingAlgorithm(initialize = initialize, handle_data = handle_data)
     result = algo.run(newdata)
+    result.to_csv("resultBacktesting.csv")
     return result
 
 def plot_moneyflow(result):
@@ -66,8 +66,8 @@ def plot_moneyflow(result):
 
     print(result[['starting_cash', 'ending_cash', 'ending_value']])
     print(result['portfolio_value'][-1]/result['portfolio_value'][0])
-    result.to_csv("result1.csv")
+
 
 if __name__ == '__main__':
-    result = backtesting("test.xlsx")
+    result = backtesting("input_order.xlsx")
     plot_moneyflow(result)

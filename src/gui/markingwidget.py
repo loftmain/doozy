@@ -1,10 +1,21 @@
-import sys, os
+#!interpreter [project-doozy]
+# -*- coding: utf-8 -*-
+
+"""
+gui runcher
+{License_info} 라이센스 정해야함
+"""
+
+# Built-in/Generic Imports
+import sys
+
+# Libs
 from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
                                QVBoxLayout, QHBoxLayout, QGroupBox,
                                QGridLayout, QLabel, QComboBox, QSpinBox,
                                QLineEdit, QFormLayout)
 
-from PySide2.QtCore import Slot, Qt
+from PySide2.QtCore import Slot
 from src.module.marking import Marking
 import pandas as pd
 

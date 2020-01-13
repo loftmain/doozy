@@ -1,6 +1,18 @@
+#!interpreter [project-doozy]
+# -*- coding: utf-8 -*-
+
+"""
+gui runcher
+{License_info} 라이센스 정해야함
+"""
+
+# Built-in/Generic Imports
 import sys
+
+# Libs
 from PySide2.QtWidgets import QTreeView, QAbstractItemView, QApplication, QFileSystemModel
 from PySide2.QtCore import QFileInfo, QDir, QFile
+
 
 class Tree(QTreeView):
     def __init__(self):
