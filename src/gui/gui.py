@@ -11,19 +11,20 @@ import os
 
 # Libs
 import PySide2
-from PySide2.QtWidgets import (QWidget, QDockWidget,QVBoxLayout, QTabWidget, QTextBrowser, QFileDialog \
-    , QMainWindow, QAction, QLabel, QMessageBox,QTextEdit)
-from PySide2.QtGui import QTextCursor, QIcon
 from PySide2.QtCore import QEventLoop, QSettings
 from PySide2.QtCore import Qt
+from PySide2.QtGui import QTextCursor, QIcon
+from PySide2.QtWidgets import (QWidget, QDockWidget, QVBoxLayout, QTabWidget, QTextBrowser, QFileDialog \
+    , QMainWindow, QAction, QLabel, QMessageBox, QTextEdit)
 
+from src.gui.download import DlIndependentDialog
+from src.gui.filetreeview import Tree
+from src.gui.markingwidget import MarkingWidget
+from src.gui.modelingoption import ModelingOption
+from src.gui.orderexcute import OrderRunWidget
+from src.gui.orderwidget import CreateOrderWidget
 # Own modules
 from src.gui.output import StdoutRedirect
-from src.gui.modelingoption import ModelingOption
-from src.gui.markingwidget import MarkingWidget
-from src.gui.filetreeview import Tree
-from src.gui.orderexcute import OrderRunWidget
-from src.gui.download import DlIndependentDialog
 
 __author__ = 'loftmain'
 __copyright__ = 'Copyright 2020, doozy'
@@ -45,7 +46,7 @@ class MainWindow(QMainWindow):
         widget = QWidget()
         layout = QVBoxLayout(widget)
         layout.addWidget(QTextEdit())
-        self.path_to_file = ""
+        self.path_to_file = os.curdir
         self.treeview_widget = Tree()
 
         self.dockTree = QDockWidget("TreeView", self)
@@ -115,7 +116,7 @@ class MainWindow(QMainWindow):
 
         self.logViewAction = QAction("&System log view",self, checkable=True)
         #self.rectangleAction.setShortcut("Ctrl+R")
-        self.logViewAction.setStatusTip("toggle System log view");
+        self.logViewAction.setStatusTip("toggle System log view")
         self.logViewAction.setChecked(True)
         self.logViewAction.triggered.connect(self.toggleLogView)
 
@@ -141,7 +142,7 @@ class MainWindow(QMainWindow):
 
         self.orderCreateAction = QAction("&order create", self)
         self.orderCreateAction.setStatusTip("order create")
-        self.orderCreateAction.triggered.connect(self.close)
+        self.orderCreateAction.triggered.connect(self.createOrderTab)
 
         self.loginXingAction = QAction("&XingApi Login", self)
         self.loginXingAction.setStatusTip("XingApi Login")
@@ -190,9 +191,9 @@ class MainWindow(QMainWindow):
         fileMenu.addAction(self.exitAction)
 
         viewMenu = self.menuBar().addMenu("&View")
-        viewMenu.addAction(self.fileViewAction);
-        viewMenu.addAction(self.logViewAction);
-        viewMenu.addAction(self.settingViewAction);
+        viewMenu.addAction(self.fileViewAction)
+        viewMenu.addAction(self.logViewAction)
+        viewMenu.addAction(self.settingViewAction)
 
         labelMenu = self.menuBar().addMenu("&Label")
         labelMenu.addAction(self.labelCreateAction)
@@ -278,13 +279,13 @@ class MainWindow(QMainWindow):
             self.shapeWidget.blue()
 
     def createLabelTab(self):
-        widget = MarkingWidget()
+        widget = MarkingWidget(self.path_to_file)
         widget.destroyed.connect(
             lambda obj: print(
                 "deleted {}, count: {}".format(obj, self.tabWidget.count())
             )
         )
-        self.tabWidget.addTab(widget, "marking")
+        self.tabWidget.addTab(widget, "labeling")
 
     def createModelOptionTab(self):
         widget = ModelingOption(self.path_to_file)
@@ -294,6 +295,15 @@ class MainWindow(QMainWindow):
             )
         )
         self.tabWidget.addTab(widget, "modeling option setting")
+
+    def createOrderTab(self):
+        widget = CreateOrderWidget()
+        widget.destroyed.connect(
+            lambda obj: print(
+                "deleted {}, count: {}".format(obj, self.tabWidget.count())
+            )
+        )
+        self.tabWidget.addTab(widget, "order create")
 
     def createOrderExecuteTab(self):
         widget = OrderRunWidget()
@@ -338,7 +348,7 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
 
     mainWindow = MainWindow()
-    mainWindow.resize(1200, 800)
+    mainWindow.resize(1600, 1200)
     mainWindow.show()
 
     app.exec_()

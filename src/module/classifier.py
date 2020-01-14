@@ -1,20 +1,23 @@
-from src.module.SA import SA
+import datetime
+import os
+import warnings
+from itertools import combinations
+
 import numpy as np
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LinearRegression
+import pandas as pd
+import statsmodels.formula.api as sm
 from sklearn import neighbors
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import precision_score
 from sklearn.metrics import recall_score
-import os
-import statsmodels.formula.api as sm
+from sklearn.preprocessing import StandardScaler
 from xgboost import XGBClassifier
-from itertools import combinations
-import warnings
-import datetime
-import pandas as pd
+
+from src.module.SA import SA
+
 warnings.filterwarnings('ignore')
+
 
 def check_column_option(setting):
     if 'column_list' in setting["column_option_list"]:
@@ -462,13 +465,18 @@ def run_modeling(start_setting, path):
     if not os.path.exists(os.path.join(path, 'save')):
         os.mkdir(os.path.join(path, 'save'))
     save_path = os.path.join(path, 'save')
+    if not os.path.exists(os.path.join(save_path, 'modeling')):
+        os.mkdir(os.path.join(save_path, 'modeling'))
+    save_path = os.path.join(save_path, 'modeling')
+    print('savepath: ' + save_path)
     log_data = pd.DataFrame(columns=['classifier', 'condition', 'columns', 'accuracy',
                                      'precision', 'recall', 'option'])
+
     for setting in start_setting['setting']:
         check_setting_file(setting)
         check_classifier(setting, log_data)
         print('-----------------------------------------------------------------')
-    log_data.to_excel(save_path + 'log_' + datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S') + '.xlsx')
+    log_data.to_excel(save_path + '\\log_' + datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S') + '.xlsx')
 
 if __name__ == '__main__':
     opt0 = 'KNN'
@@ -476,7 +484,7 @@ if __name__ == '__main__':
     opt2 = 'subset'
     opt3 = [['BAArate', 'HOUSTrate', 'DGORDERrate']]
     opt4 = ['HM3UP']
-    opt5 = 'dependent/^DJI.xlsx'
+    opt5 = 'dependent/DJI.xlsx'
     opt6 = 'independent'
     opt7 = 'save'
     opt8 = [2015, 1, 1]

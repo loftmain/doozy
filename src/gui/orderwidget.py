@@ -9,22 +9,22 @@ gui runcher
 # Built-in/Generic Imports
 import sys
 
+from PySide2.QtCore import Slot, Qt
 # Libs
 from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
-                                QVBoxLayout, QGroupBox, QLabel,
-                               QFormLayout,QRadioButton, QSpinBox, QHBoxLayout)
-from PySide2.QtCore import Slot, Qt
+                               QVBoxLayout, QGroupBox, QLabel,
+                               QFormLayout, QRadioButton, QSpinBox, QHBoxLayout)
+
 from src.gui.markingwidget import LineEdit
 
-class OrderRunWidget(QWidget):
-    def __init__(self,parent=None):
-        QWidget.__init__(self,parent)
-        self.setWindowTitle('orderexcute')
 
+class CreateOrderWidget(QWidget):
+    def __init__(self, parent=None):
+        QWidget.__init__(self, parent)
+        self.setWindowTitle('orderexcute')
 
         self.run_button = QPushButton("run", self)
         self.run_button.clicked.connect(self.slot_clicked_run_button)
-
 
         gb_1 = QGroupBox("create order", self)
         formLayout = QFormLayout(gb_1)
@@ -89,6 +89,6 @@ class OrderRunWidget(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    form = OrderRunWidget()
+    form = CreateOrderWidget()
     form.show()
     app.exec_()

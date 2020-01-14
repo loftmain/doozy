@@ -7,17 +7,20 @@ gui runcher
 """
 
 # Built-in/Generic Imports
-import sys, os
+import os
+import sys
 
+from PySide2.QtCore import QDate
+from PySide2.QtCore import Slot
 # Libs
 from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
                                QRadioButton, QVBoxLayout, QLineEdit,
                                QHBoxLayout, QGroupBox, QGridLayout,
                                QLabel, QComboBox, QFormLayout, QDateEdit)
-from PySide2.QtCore import QDate
+
 from src.gui.markingwidget import LineEdit
-from PySide2.QtCore import Slot
 from src.module.classifier import run_modeling
+
 
 class ModelingOption(QWidget):
     def __init__(self, path):
@@ -284,8 +287,8 @@ class ModelingOption(QWidget):
                                 'column_option_list': \
                                     {'option': 'subset', 'column_list': [column_list]},
                                 'condition_list': self.condition_list.text().split(','),
-                                'dependent_file_path': self.dependent_file_path.text(),
-                                'independent_path': self.independent_file_path.text(),
+                                'dependent_file_path': dependent_file_path,
+                                'independent_path': independent_file_path,
                                 'save_path': save_path,
                                 'start_date': self.de_train_start.text(),
                                 'seperate_date': self.de_train_end.text(),
@@ -303,15 +306,15 @@ class ModelingOption(QWidget):
                                 {
                                     'classifier': 'RF',
                                     'type_option_list': {'n_estimators': int(self.cb_estimators.currentText()),
-                                                     'max_depth': int(self.cb_max_depth.currentText()),
-                                                     'random_state': 0,
-                                                     'max_features': self.le_max_features.text(),
-                                                     'bootstrap': bool(self.cb_bootstrap.currentText())},
+                                                         'max_depth': int(self.cb_max_depth.currentText()),
+                                                         'random_state': 0,
+                                                         'max_features': self.le_max_features.text(),
+                                                         'bootstrap': bool(self.cb_bootstrap.currentText())},
                                     'column_option_list': \
                                         {'option': 'all', 'range_of_column_no': range_of_column_no},
                                     'condition_list': self.condition_list.text().split(','),
-                                    'dependent_file_path': self.dependent_file_path.text(),
-                                    'independent_path': self.independent_file_path.text(),
+                                    'dependent_file_path': dependent_file_path,
+                                    'independent_path': independent_file_path,
                                     'save_path': save_path,
                                     'start_date': self.de_train_start.text(),
                                     'seperate_date': self.de_train_end.text(),

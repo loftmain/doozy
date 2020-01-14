@@ -1,10 +1,8 @@
-import pandas_datareader.data as web
-import datetime
 import matplotlib.pyplot as plt
-from zipline.api import order_percent, record, symbol, order, order_target_percent, order_value, set_benchmark
-from zipline.algorithm import TradingAlgorithm
 import pandas as pd
-from zipline.utils.factory import create_simulation_parameters
+from zipline.algorithm import TradingAlgorithm
+from zipline.api import order_percent, record, symbol
+
 """start = datetime.datetime(2010, 1, 1)
 end = datetime.datetime(2016, 3, 29)
 data = web.DataReader("AAPL", "yahoo", start, end)
@@ -25,7 +23,7 @@ def initialize(context):
 def handle_data(context, data):
     buy = False
     sell = False
-
+    print(data)
     pred_buy = data.current(context.sym1, 'price')
     pred_sell = data.current(context.sym2, 'price')
 
