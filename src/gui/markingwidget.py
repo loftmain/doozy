@@ -48,11 +48,11 @@ class MarkingWidget(QWidget):
         self.okButton = QPushButton("ok", self)
         self.okButton.clicked.connect(self.slot_clicked_ok_button)
 
-        gb_0 = QGroupBox("label 이름지정", self)
+        gb_0 = QGroupBox("marking 이름지정", self)
         self.te_label_name = QLineEdit()
         self.te_label_name.setPlaceholderText("ex) HM%UP, LM%DN")
         gb_layout_0 = QHBoxLayout(gb_0)
-        gb_layout_0.addWidget(QLabel("label name: "))
+        gb_layout_0.addWidget(QLabel("marking name: "))
         gb_layout_0.addWidget(self.te_label_name)
 
         self.bt_0 = QRadioButton("한달간")
@@ -60,7 +60,7 @@ class MarkingWidget(QWidget):
         self.bt_1 = QRadioButton("월간")
         self.bt_1.toggled.connect(self.several_monthly_clicked)
 
-        self.gb_1 = QGroupBox("label 범위", self)
+        self.gb_1 = QGroupBox("marking 범위", self)
         gb_layout_1 = QHBoxLayout()
         gb_layout_1.addWidget(self.bt_0)
         gb_layout_1.addWidget(self.bt_1)

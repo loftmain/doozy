@@ -484,10 +484,10 @@ if __name__ == '__main__':
     opt2 = 'subset'
     opt3 = [['BAArate', 'HOUSTrate', 'DGORDERrate']]
     opt4 = ['HM3UP']
-    opt5 = 'dependent/DJI.xlsx'
+    opt5 = 'dependent/DJI.csv'
     opt6 = 'independent'
     opt7 = 'save'
-    opt8 = [2015, 1, 1]
+    opt8 = [2016, 1, 1]
     opt9 = [2018, 1, 1]
     opt10 = [2019, 4, 1]
     # =============================================================================

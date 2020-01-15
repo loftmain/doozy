@@ -6,20 +6,20 @@ gui runcher
 {License_info} 라이센스 정해야함
 """
 
+import os
 # Built-in/Generic Imports
 import sys
-import os
+from datetime import datetime
 
 # Libs
 import pandas as pd
-from fredapi import Fred
-from datetime import datetime
+from PySide2.QtWidgets import QDialog, QLabel, QProgressBar, QPushButton, QVBoxLayout \
+    , QApplication
 from dateutil.relativedelta import relativedelta
-from PySide2.QtWidgets import QDialog, QLabel, QProgressBar, QPushButton, QVBoxLayout\
-                        , QApplication
-
+from fredapi import Fred
 
 fred = Fred(api_key='3b2795f81c94f1a105d1e4fc3661a45e')
+
 
 class DlIndependentDialog(QDialog):
     def __init__(self, path):
@@ -79,20 +79,20 @@ class DlIndependentDialog(QDialog):
             df.drop_duplicates(["date"], keep="last", inplace=True)
 
             # Change column name
-            df['DATE'] = df['date'].dt.date
+            df['Date'] = df['date'].dt.date
             df.rename(columns={'value': index}, inplace=True)
 
             # Column sort
-            df = df[['DATE', index]]
+            df = df[['Date', index]]
 
             # Drop column(realtime_start column)
-            df.drop(df[df.DATE < time_point].index, inplace=True)
+            df.drop(df[df.Date < time_point].index, inplace=True)
             df.index = pd.RangeIndex(len(df.index))
 
             # Add empty row, Because we use shifted data and use it Machine-Learning
-            df.loc[len(df), 'DATE'] = df['DATE'][len(df) - 1] + relativedelta(months=1)
-            df.loc[len(df), 'DATE'] = df['DATE'][len(df) - 2] + relativedelta(months=2)
-            df.loc[len(df), 'DATE'] = df['DATE'][len(df) - 3] + relativedelta(months=3)
+            df.loc[len(df), 'Date'] = df['Date'][len(df) - 1] + relativedelta(months=1)
+            df.loc[len(df), 'Date'] = df['Date'][len(df) - 2] + relativedelta(months=2)
+            df.loc[len(df), 'Date'] = df['Date'][len(df) - 3] + relativedelta(months=3)
 
             # Check for bad data
             try:
@@ -103,7 +103,7 @@ class DlIndependentDialog(QDialog):
                 continue
 
             # Write to excel file
-            df.to_excel(os.path.join(folderpath, index) + '.xlsx', sheet_name='Sheet1', index=False)
+            df.to_csv(os.path.join(folderpath, index) + '.csv', index=False)
             # df_info.to_excel(writer, sheet_name='Sheet2', index=False)
             self.completed += 1
             self.progress.setValue(self.completed)
@@ -111,6 +111,6 @@ class DlIndependentDialog(QDialog):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = DlIndependentDialog()
+    window = DlIndependentDialog(os.curdir)
     window.show()
     app.exec_()

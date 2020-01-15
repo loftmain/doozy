@@ -1,12 +1,17 @@
-import pandas as pd
-import numpy as np
 import glob
+
+import numpy as np
+import pandas as pd
+
 pd.set_option('display.max_columns', None)
-#pd.set_option('display.max_rows', None)
+
+
+# pd.set_option('display.max_rows', None)
 
 class PeriodError(Exception):
     def __init__(self, msg):
         super().__init__(msg)
+
 
 class MissingValueError(Exception):
     def __init__(self, msg):
@@ -22,20 +27,21 @@ class SA(object):
                  seperate_date,
                  end_date,
                  column_list=None):
-        self.dataframe=pd.read_excel(dependent_path, encoding='CP949')
-        self.column_list=column_list
-        self.condition_list=condition_list
-        self.dependent_path=dependent_path
-        self.independent_path=independent_path
-        self.saved_path=saved_path
-        self.start_date=start_date
-        self.seperate_date=seperate_date
-        self.end_date=end_date
+        self.dataframe = pd.read_csv(dependent_path, encoding='CP949')
+
+        self.column_list = column_list
+        self.condition_list = condition_list
+        self.dependent_path = dependent_path
+        self.independent_path = independent_path
+        self.saved_path = saved_path
+        self.start_date = start_date
+        self.seperate_date = seperate_date
+        self.end_date = end_date
         self.y_prediction = None
-        if 'Date' in self.dataframe:
-            self.dataframe.rename(columns={'Date': 'DATE'}, inplace=True)
-        self.dependent_columns=list(self.dataframe)
-        self.dependent_columns.remove("DATE")
+        # if 'Date' in self.dataframe:
+        #    self.dataframe.rename(columns={'Date': 'DATE'}, inplace=True)
+        self.dependent_columns = list(self.dataframe)
+        self.dependent_columns.remove("Date")
 
     def check_error(self, dataframe):
         """
@@ -56,7 +62,6 @@ class SA(object):
     def check_independent_data_period(self):
         date_index_list = list(self.dataframe.index.strftime("%Y-%m-%d"))
         #print(self.merged_independent.loc[self.start_date:self.end_date, :])
-        print(str(self.start_date))
         if str(self.start_date) not in date_index_list:
             #error 발생
             #데이터 양 부족
@@ -76,20 +81,20 @@ class SA(object):
                                   files in the independent_path.
         """
 
-        all_xlsx_files = glob.glob(self.independent_path + '/*.xlsx')
-        for index_, xlsx_file  in enumerate(all_xlsx_files):
-            print("read " + xlsx_file)
-            new_df = pd.read_excel(xlsx_file, encoding='CP949')
+        all_csv_files = glob.glob(self.independent_path + '/*.csv')
+        for index_, csv_file in enumerate(all_csv_files):
+            print("read " + csv_file)
+            new_df = pd.read_csv(csv_file, encoding='CP949')
             new_df.iloc[:, 1:] = new_df.iloc[:, 1:].shift(+3)
-            new_df = new_df.drop(index=[0,1,2,3])
+            new_df = new_df.drop(index=[0, 1, 2, 3])
             # shifting 3-month
             self.check_error(new_df)
 
-            #if index_ is not 0:
-            self.dataframe = pd.merge(self.dataframe, new_df, on='DATE')
+            # if index_ is not 0:
+            self.dataframe = pd.merge(self.dataframe, new_df, on='Date')
 
-
-        self.dataframe.set_index('DATE', inplace=True)
+        self.dataframe.set_index('Date', inplace=True)
+        self.dataframe = self.dataframe.set_index(pd.to_datetime(self.dataframe.index))
         self.check_independent_data_period()
         # data period check (start_date ~ end_date)
 
@@ -98,6 +103,7 @@ class SA(object):
 
 
     def seperate_data(self, columns, condition):
+        print(type(self.dataframe.index))
         X_train = self.dataframe.loc[self.start_date:self.seperate_date, :]\
                                 [columns]
         y_train = self.dataframe.loc[self.start_date:self.seperate_date, :] \

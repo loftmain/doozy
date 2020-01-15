@@ -87,11 +87,16 @@ class MainWindow(QMainWindow):
     def createActions(self):
 
         # create actions
-        self.importAction = QAction("&import", self)
-        #self.exitAction.setIcon(QIcon(":/images/exit.png"))
-        self.importAction.setShortcut("Ctrl+I")
-        self.importAction.setStatusTip("import files")
-        self.importAction.triggered.connect(self.load_folder)
+        self.newProject = QAction("&New Project", self)
+        self.newProject.setShortcut("Ctrl+N")
+        self.newProject.setStatusTip("create a new project")
+        self.newProject.triggered.connect(self.load_folder)
+
+        self.openProject = QAction("&Open Project", self)
+        # self.exitAction.setIcon(QIcon(":/images/exit.png"))
+        self.openProject.setShortcut("Ctrl+O")
+        self.openProject.setStatusTip("Open a project in treeview")
+        self.openProject.triggered.connect(self.load_folder)
 
         self.saveDataAction = QAction("&지표 데이터 파일저장", self)
         self.saveDataAction.setStatusTip("import files")
@@ -101,7 +106,7 @@ class MainWindow(QMainWindow):
         self.errorCheckDataAction.setStatusTip("import files")
         self.errorCheckDataAction.triggered.connect(self.close)
 
-        self.exitAction = QAction("&Exit",self)
+        self.exitAction = QAction("&Exit", self)
         self.exitAction.setIcon(QIcon(":/images/exit.png"))
         self.exitAction.setShortcut("Ctrl+Q")
         self.exitAction.setStatusTip("Exit the application")
@@ -114,22 +119,23 @@ class MainWindow(QMainWindow):
         self.fileViewAction.setChecked(True)
         self.fileViewAction.triggered.connect(self.toggleFileView)
 
+
         self.logViewAction = QAction("&System log view",self, checkable=True)
         #self.rectangleAction.setShortcut("Ctrl+R")
         self.logViewAction.setStatusTip("toggle System log view")
         self.logViewAction.setChecked(True)
         self.logViewAction.triggered.connect(self.toggleLogView)
 
-        self.settingViewAction = QAction("&Option setting view",self, checkable=True)
-        #self.circleAction.setShortcut("Ctrl+C")
+        self.settingViewAction = QAction("&Option setting view", self, checkable=True)
+        # self.circleAction.setShortcut("Ctrl+C")
         self.settingViewAction.setStatusTip("toggle Option setting view")
         self.settingViewAction.triggered.connect(self.close)
 
         # signal menu
-        self.labelCreateAction = QAction("&Create", self)
+        self.MarkingCreateAction = QAction("&Create", self)
         # self.circleAction.setShortcut("Ctrl+C")
-        self.labelCreateAction.setStatusTip("create signal")
-        self.labelCreateAction.triggered.connect(self.createLabelTab)
+        self.MarkingCreateAction.setStatusTip("create Mark")
+        self.MarkingCreateAction.triggered.connect(self.createLabelTab)
 
         # modeling menu
         self.modelCreateAction = QAction("&Create", self)
@@ -184,19 +190,23 @@ class MainWindow(QMainWindow):
         """
 
     def createMenus(self):
+
+        projectMenu = self.menuBar().addMenu("&Project")
+        projectMenu.addAction(self.newProject)
+        projectMenu.addAction(self.openProject)
+        projectMenu.addAction(self.exitAction)
+
         fileMenu = self.menuBar().addMenu("&File")
-        fileMenu.addAction(self.importAction)
         fileMenu.addAction(self.saveDataAction)
         fileMenu.addAction(self.errorCheckDataAction)
-        fileMenu.addAction(self.exitAction)
 
         viewMenu = self.menuBar().addMenu("&View")
-        viewMenu.addAction(self.fileViewAction)
-        viewMenu.addAction(self.logViewAction)
+        viewMenu.addAction(self.dockTree.toggleViewAction())
+        viewMenu.addAction(self.logDock.toggleViewAction())
         viewMenu.addAction(self.settingViewAction)
 
-        labelMenu = self.menuBar().addMenu("&Label")
-        labelMenu.addAction(self.labelCreateAction)
+        MarkingMenu = self.menuBar().addMenu("&Marking")
+        MarkingMenu.addAction(self.MarkingCreateAction)
 
         modelingMenu = self.menuBar().addMenu("&Modeling")
         modelingMenu.addAction(self.modelCreateAction)
@@ -285,7 +295,7 @@ class MainWindow(QMainWindow):
                 "deleted {}, count: {}".format(obj, self.tabWidget.count())
             )
         )
-        self.tabWidget.addTab(widget, "labeling")
+        self.tabWidget.addTab(widget, "Marking")
 
     def createModelOptionTab(self):
         widget = ModelingOption(self.path_to_file)
@@ -297,7 +307,7 @@ class MainWindow(QMainWindow):
         self.tabWidget.addTab(widget, "modeling option setting")
 
     def createOrderTab(self):
-        widget = CreateOrderWidget()
+        widget = CreateOrderWidget(self.path_to_file)
         widget.destroyed.connect(
             lambda obj: print(
                 "deleted {}, count: {}".format(obj, self.tabWidget.count())
@@ -333,13 +343,10 @@ class MainWindow(QMainWindow):
         widget.deleteLater()
 
     def about(self):
-        QMessageBox.about(self, "About Shape",
-                "<h2>Shape 1.0</h2>"
-                "<p>Copyright &copy; 2014 Q5Programming Inc."
-                "<p>Shape is a small application that "
-                "demonstrates QAction, QMainWindow, QMenuBar, "
-                "QStatusBar, QToolBar, and many other "
-                "Qt classes.")
+        QMessageBox.about(self, "About doozy",
+                          "<h2>Shape 1.0</h2>"
+                          "<p>Copyright doozy;"
+                          "<p>")
 
 import sys
 from PySide2.QtWidgets import QApplication

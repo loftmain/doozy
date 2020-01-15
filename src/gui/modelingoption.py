@@ -56,9 +56,9 @@ class ModelingOption(QWidget):
         self.knnButton.toggled.connect(self.knnClicked)
 
         gb_independent_opt = QGroupBox("독립변수 설정", self)
-        self.bt_all = QRadioButton("all", gb_independent_opt)
+        self.bt_all = QRadioButton("독립변수 조합을 이용", gb_independent_opt)
         self.bt_all.toggled.connect(self.clicked_all)
-        self.bt_subset = QRadioButton("subset", gb_independent_opt)
+        self.bt_subset = QRadioButton("지정 독립변수 사용", gb_independent_opt)
         self.bt_subset.toggled.connect(self.clicked_subset)
         self.gb_layout3 = QVBoxLayout(gb_independent_opt)
         gb_Hlayout3 = QHBoxLayout()
@@ -120,12 +120,16 @@ class ModelingOption(QWidget):
         self.mainlayout.addWidget(predBox)
         self.mainlayout.addWidget(algorithmBox)
         self.mainlayout.addWidget(self.gb)
+
+        self.mainlayout.addSpacing(15)
         self.mainlayout.addWidget(gb_independent_opt)
         # self.mainlayout.addWidget(numberOfCombinationBox)
         self.mainlayout.addWidget(gb_3)
         self.mainlayout.addLayout(hb_2)
+
         self.mainlayout.addLayout(hb_3)
         self.mainlayout.addStretch()
+        self.mainlayout.setMargin(30)
         self.mainlayout.addWidget(self.okButton)
 
         self.setLayout(self.mainlayout)
@@ -187,7 +191,7 @@ class ModelingOption(QWidget):
             self.endNum.insertItems(0, [str(x) for x in range(10)])
             self.groupBoxLayout3 = QHBoxLayout()
             self.groupBoxLayout3.addWidget(self.startNum)
-            self.groupBoxLayout3.addWidget(QLabel(self.tr("~")))
+            self.groupBoxLayout3.addWidget(QLabel(self.tr("            ~")))
             self.groupBoxLayout3.addWidget(self.endNum)
             self.gb_layout3.addLayout(self.groupBoxLayout3)
         else:
