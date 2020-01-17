@@ -1,10 +1,22 @@
+#!interpreter [project-doozy]
+# -*- coding: utf-8 -*-
+
+"""
+gui runcher
+{License_info} 라이센스 정해야함
+"""
+
+# Built-in/Generic Imports
 import sys
 
-from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
-                                QVBoxLayout, QGroupBox, QLabel,
-                               QFormLayout)
 from PySide2.QtCore import Slot, Qt
+# Libs
+from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
+                               QVBoxLayout, QGroupBox, QLabel,
+                               QFormLayout)
+
 from src.gui.markingwidget import LineEdit
+
 
 class OrderRunWidget(QWidget):
     def __init__(self,parent=None):

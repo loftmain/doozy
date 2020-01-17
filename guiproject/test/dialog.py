@@ -1,6 +1,8 @@
 import sys
+
 from PySide2.QtWidgets import (QLineEdit, QPushButton, QApplication,
-    QVBoxLayout, QDialog)
+                               QVBoxLayout, QDialog)
+
 
 class Form(QDialog):
 

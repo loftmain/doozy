@@ -1,7 +1,9 @@
 import sys
-from PySide2 import QtGui, QtCore
-from PySide2.QtWidgets import QMainWindow, QApplication, QAction,\
-                    QPushButton, QProgressBar, QCheckBox, QMessageBox
+
+from PySide2 import QtCore
+from PySide2.QtWidgets import QMainWindow, QApplication, QAction, \
+    QPushButton, QProgressBar, QCheckBox, QMessageBox
+
 
 class Window(QMainWindow):
 

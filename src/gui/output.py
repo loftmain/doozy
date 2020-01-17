@@ -1,6 +1,17 @@
+#!interpreter [project-doozy]
+# -*- coding: utf-8 -*-
+
+"""
+gui runcher
+{License_info} 라이센스 정해야함
+"""
+
+# Built-in/Generic Imports
 import sys
-from PySide2.QtWidgets import QWidget
-from PySide2.QtCore  import QObject, Signal
+
+# Libs
+from PySide2.QtCore import QObject, Signal
+
 
 class StdoutRedirect(QObject):
     printOccur = Signal(str, str, name="print")

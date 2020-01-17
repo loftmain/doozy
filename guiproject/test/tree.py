@@ -1,8 +1,7 @@
-import os, sys
-from PySide2.QtWidgets import QWidget, QTreeView, QFileSystemModel, QGridLayout, QDockWidget\
-    ,QVBoxLayout, QTabWidget, QListWidget, QTextBrowser, QAbstractItemView, QApplication
-from PySide2.QtGui import QPalette, QPainter, QTextCursor
-from PySide2.QtCore import Signal,Qt, QRect, QPointF, QEventLoop, QFileInfo, QDir, QFile
+import sys
+
+from PySide2.QtCore import QFileInfo, QDir, QFile
+from PySide2.QtWidgets import QTreeView, QFileSystemModel, QAbstractItemView, QApplication
 
 
 class Tree(QTreeView):

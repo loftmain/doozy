@@ -1,10 +1,8 @@
 ## ShapeWidget
-import os
 import sys
-from PySide2.QtWidgets import QWidget, QTreeView, QFileSystemModel, QGridLayout, QDockWidget\
-    ,QVBoxLayout, QTabWidget, QAction, QMenuBar, QPushButton, QApplication
-from PySide2.QtGui import QPalette, QPainter
-from PySide2.QtCore import Signal,Qt, QRect, QPointF
+
+from PySide2.QtWidgets import QWidget, QVBoxLayout, QTabWidget, QAction, QMenuBar, QPushButton, QApplication
+
 
 class MainWindow(QWidget):
     def __init__(self):

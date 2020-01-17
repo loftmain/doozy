@@ -1,7 +1,7 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QVBoxLayout, QPushButton, QLabel, QHBoxLayout, QLineEdit ,QWidget
-from PySide2.QtQuick import QQuickView
-from PySide2.QtCore import QUrl
+
+from PyQt5.QtWidgets import QApplication, QVBoxLayout, QLabel, QHBoxLayout, QLineEdit, QWidget
+
 
 class Screen(QWidget):
     def __init__(self):
@@ -43,7 +43,7 @@ class Screen(QWidget):
 
 if __name__ == "__main__":
     from PyQt5.QtWidgets import QPushButton
-    from PyQt5.QtWidgets import QTextEdit
+
     app = QApplication(sys.argv)
     excepthook = sys.excepthook
     sys.excepthook = lambda t, val, tb: excepthook(t, val, tb)
