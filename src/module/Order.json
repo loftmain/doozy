@@ -1,0 +1,92 @@
+[  
+	{
+		"order_datetime": "2018-03-03",
+		"order_type": "buy",
+		"itemcode": "000660",
+		"item": "SK하이닉스",
+		"price": "76000",
+		"type": "scount",
+		"value": "100"
+	},
+	{
+		"order_datetime": "2018-04-27",
+		"order_type": "buy",
+		"itemcode": "032640",
+		"item": "LG유플러스",
+		"price": "12300",
+		"type": "scount",
+		"value": "100"
+	},
+	{
+		"order_datetime": "2018-05-08",
+		"order_type": "buy",
+		"itemcode": "000660",
+		"item": "SK하이닉스",
+		"price": "84000",
+		"type": "scount",
+		"value": "100"
+	},
+	{
+		"order_datetime": "2018-07-16",
+		"order_type": "buy",
+		"itemcode": "036570",
+		"item": "엔씨소프트",
+		"price": "390000",
+		"type": "scount",
+		"value": "100"
+	},
+	{
+		"order_datetime": "2018-07-19",
+		"order_type": "sell",
+		"itemcode": "000660",
+		"item": "SK하이닉스",
+		"price": "91000",
+		"type": "scount",
+		"value": "300"
+	},
+	{
+		"order_datetime": "2018-11-12",
+		"order_type": "sell",
+		"itemcode": "036570",
+		"item": "엔씨소프트",
+		"price": "445000",
+		"type": "scount",
+		"value": "50"
+	},
+	{
+		"order_datetime": "2018-12-24",
+		"order_type": "buy",
+		"itemcode": "005490",
+		"item": "POSCO",
+		"price": "245000",
+		"type": "scount",
+		"value": "100"
+	},
+	{
+		"order_datetime": "2019-01-21",
+		"order_type": "buy",
+		"itemcode": "090430",
+		"item": "아모레퍼시픽",
+		"price": "173000",
+		"type": "scount",
+		"value": "100"
+	},
+	{
+		"order_datetime": "2019-01-23",
+		"order_type": "sell",
+		"itemcode": "032640",
+		"item": "LG유플러스",
+		"price": "17000",
+		"type": "scount",
+		"value": "50"
+	},
+	{
+		"order_datetime": "2021-01-28",
+		"order_type": "buy",
+		"itemcode": "068270",
+		"item": "셀트리온",
+		"price": "210000",
+		"type": "scount",
+		"value": "100"
+	}
+]

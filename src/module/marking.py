@@ -58,7 +58,7 @@ class Marking:
         return self._df
 
 if __name__ == '__main__':
-    df = pd.read_csv('^DJI.csv')
+    df = pd.read_csv('dependent/^DJI.csv')
     t = Marking()
     t.set_option(df, ['0', '0',  '0.04'], ['High', 'Open', 'HM4UP'], 'up')
     result = t.create_label()
