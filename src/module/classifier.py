@@ -1,20 +1,140 @@
-from SA import SA
+import datetime
+import os
+import warnings
+from itertools import combinations
+
 import numpy as np
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LinearRegression
+import pandas as pd
+import statsmodels.formula.api as sm
 from sklearn import neighbors
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import precision_score
 from sklearn.metrics import recall_score
-
-import statsmodels.formula.api as sm
+from sklearn.preprocessing import StandardScaler
 from xgboost import XGBClassifier
-from itertools import combinations
-import warnings
+
+from src.module.SA import SA
 
 warnings.filterwarnings('ignore')
 
+
+def check_column_option(setting):
+    if 'column_list' in setting["column_option_list"]:
+        column_list = setting["column_option_list"]['column_list']
+    else:
+        column_list = None
+    return column_list
+
+def check_setting_file(setting):
+    if not os.path.exists(setting["independent_path"]):
+        raise FileNotFoundError(setting["independent_path"])
+    if not os.path.exists(setting["dependent_file_path"]):
+        raise FileNotFoundError(setting["dependent_file_path"])
+    if not os.path.exists(setting["save_path"]):
+        raise FileNotFoundError(setting["save_path"])
+
+
+def check_classifier(setting, log_data):
+    column_list = check_column_option(setting)
+
+    if setting["classifier"] == "RF":
+        # check option : HM4UP 과 같은 옵션 구별
+        # coulums check : 컬럼설정한것 구별할 함수 있어야함
+        # independent path 만 주고서 dataframe 파라미터를 빼도 될거 같음
+        # type에 kospi 와 같은 것 넣는 이유 = save 시에 이름에 넣기 위해서
+        #
+        rf = SA_Randomforest(
+            column_list=column_list,
+            condition_list=setting["condition_list"],
+            dependent_path=setting["dependent_file_path"],
+            independent_path=setting["independent_path"],
+            saved_path=setting["save_path"],
+            start_date=setting["start_date"],
+            seperate_date=setting["seperate_date"],
+            end_date=setting["end_date"])
+
+        if setting["column_option_list"]['option'] == "subset":
+            rf.analyze(log=log_data,
+                       n_estimators=setting["type_option_list"]["n_estimators"],
+                       max_depth=setting["type_option_list"]["max_depth"],
+                       random_state=setting["type_option_list"]["random_state"],
+                       max_features=setting["type_option_list"]['max_features'],
+                       bootstrap=setting["type_option_list"]['bootstrap'])
+
+        elif setting["column_option_list"]['option'] == "all":
+            rf.analyze_auto(log=log_data,
+                            range_of_column_no=setting["column_option_list"]["range_of_column_no"],
+                            n_estimators=setting["type_option_list"]["n_estimators"],
+                            max_depth=setting["type_option_list"]["max_depth"],
+                            random_state=setting["type_option_list"]["random_state"],
+                            max_features=setting["type_option_list"]['max_features'],
+                            bootstrap=setting["type_option_list"]['bootstrap'])
+        else:
+            print("columns list option ERROR!!!")
+
+    elif setting["classifier"] == "KNN":
+        knn = SA_Knn(
+            column_list=column_list,
+            condition_list=setting["condition_list"],
+            dependent_path=setting["dependent_file_path"],
+            independent_path=setting["independent_path"],
+            saved_path=setting["save_path"],
+            start_date=setting["start_date"],
+            seperate_date=setting["seperate_date"],
+            end_date=setting["end_date"])
+
+        if setting["column_option_list"]['option'] == "subset":
+            knn.analyze(n_neighbors_list=setting["type_option_list"]["n_neighbors_list"],
+                        log=log_data)
+
+        elif setting["column_option_list"]['option'] == "all":
+            knn.analyze_auto(log=log_data,
+                             n_neighbors_list=setting["type_option_list"]["n_neighbors_list"],
+                             range_of_column_no=setting["column_option_list"]["range_of_column_no"])
+        else:
+            print("columns list option ERROR!!!")
+
+    elif setting["classifier"] == "LR":
+        print("LR")
+        lr = SA_LinearRegression(
+            column_list=column_list,
+            condition_list=setting["condition_list"],
+            dependent_path=setting["dependent_file_path"],
+            independent_path=setting["independent_path"],
+            saved_path=setting["save_path"],
+            start_date=setting["start_date"],
+            seperate_date=setting["seperate_date"],
+            end_date=setting["end_date"])
+
+        if setting["column_option_list"]['option'] == "subset":
+            lr.analyze(log=log_data)
+        elif setting["column_option_list"]['option'] == "all":
+            print("구현예정")
+
+    elif setting["classifier"] == "xgboost":
+        print("XGBoost")
+        xgb = SA_xgboost(
+            column_list=column_list,
+            condition_list=setting["condition_list"],
+            dependent_path=setting["dependent_file_path"],
+            independent_path=setting["independent_path"],
+            saved_path=setting["save_path"],
+            start_date=setting["start_date"],
+            seperate_date=setting["seperate_date"],
+            end_date=setting["end_date"])
+
+        if setting["column_option_list"]['option'] == "subset":
+            xgb.analyze(log=log_data, n_estimators=100, min_child_weight=1, max_depth=8, gamma=0)
+
+        elif setting["column_option_list"]['option'] == "all":
+            xgb.analyze_auto(log=log_data,
+                             range_of_column_no=setting["column_option_list"]["range_of_column_no"],
+                             n_estimators=100, min_child_weight=1, max_depth=8, gamma=0)
+        else:
+            print("columns list option ERROR!!!")
+    else:
+        print("not right type!!")
 
 class SA_Randomforest(SA):
     def __init__(self,
@@ -36,7 +156,7 @@ class SA_Randomforest(SA):
             end_date,
             column_list)
 
-    def analyze(self, log, n_estimators=100, max_depth=8, random_state=0):
+    def analyze(self, log, n_estimators, max_depth, random_state, max_features, bootstrap):
         super().read_excel_files()
         for columns in self.column_list:
             for condition in self.condition_list:
@@ -44,7 +164,8 @@ class SA_Randomforest(SA):
 
                 random_clf = RandomForestClassifier(n_estimators=n_estimators,
                                                     n_jobs=-1, max_depth=max_depth,
-                                                    random_state=random_state)
+                                                    random_state=random_state,
+                                                    max_features=max_features)
 
                 random_clf.fit(X_train, np.ravel(y_train))
                 self.y_prediction = random_clf.predict(X_test)
@@ -52,17 +173,18 @@ class SA_Randomforest(SA):
                 precision = precision_score(y_test, self.y_prediction)
                 recall = recall_score(y_test, self.y_prediction)
 
-                copy_dataframe, margin, close_increase_rate = self.calculate_margin(condition)
-                result_data = f'accuracy: {accuracy: .2%} precision: {precision:.2%}  recall:{recall:.2%} ' \
-                              f' margin:{margin: .2%}  close_increase_rate:{close_increase_rate: .2%}\n' \
-                              f' {condition}  "RF" {columns}\n'
+                copy_dataframe = self.dataframe.loc[self.seperate_date:, :]
+                copy_dataframe = copy_dataframe.drop(copy_dataframe.index[0])
+                copy_dataframe[condition + '_predict'] = self.y_prediction
+                result_data = 'accuracy: {} precision: {}  recall:{}\n {}  "RF" {}\n' \
+                    .format(round(accuracy, 2), round(precision, 2), round(recall,2), condition, columns)
                 print(result_data)
-                log.loc[len(log)] = ["RF", condition, columns, accuracy, precision, recall, margin,
-                                     close_increase_rate, f'n_estimators={n_estimators} max_depth='
-                                                          f'{max_depth} random_state={random_state}']
+                log.loc[len(log)] = \
+                    ["RF", condition, columns, accuracy, precision, recall,
+                    'n_estimators={} max_depth={} random_state={}'.format(n_estimators, max_depth, random_state)]
                 self.save_excel_file(copy_dataframe, "RF", condition, columns)
 
-    def analyze_auto(self, log, range_of_column_no, n_estimators=100, max_depth=None, random_state=0):
+    def analyze_auto(self, log, range_of_column_no, n_estimators=100, max_depth=None, random_state=0, max_features='auto', bootstrap=True):
         super().read_excel_files()
         number_of_case_columns = self.get_independent_columns()
         X_train, y_train, X_test, y_test = super().seperate_data(number_of_case_columns, self.condition_list)
@@ -76,21 +198,25 @@ class SA_Randomforest(SA):
                 for columns in column_list_index:
                     random_clf = RandomForestClassifier(n_estimators=n_estimators,
                                                         n_jobs=-1, max_depth=max_depth,
-                                                        random_state=random_state)
+                                                        random_state=random_state,
+                                                        max_features=max_features,
+                                                        bootstrap=bootstrap)
+
                     random_clf.fit(X_train[list(columns)], y_train[condition])
                     self.y_prediction = random_clf.predict(X_test[list(columns)])
                     accuracy = accuracy_score(y_test[condition], self.y_prediction)
                     precision = precision_score(y_test[condition], self.y_prediction)
                     recall = recall_score(y_test[condition], self.y_prediction)
 
-                    copy_dataframe, margin, close_increase_rate = self.calculate_margin(condition)
-                    result_data = f'accuracy: {accuracy: .2%} precision: {precision:.2%}  recall:{recall:.2%} ' \
-                                  f' margin:{margin: .2%}  close_increase_rate:{close_increase_rate: .2%}\n' \
-                                  f' {condition}  "RF" {columns}\n'
+                    copy_dataframe = self.dataframe.loc[self.seperate_date:, :]
+                    copy_dataframe = copy_dataframe.drop(copy_dataframe.index[0])
+                    copy_dataframe[condition + '_predict'] = self.y_prediction
+                    result_data = 'accuracy: {} precision: {}  recall:{}\n {}  "RF" {}\n' \
+                        .format(round(accuracy, 2), round(precision, 2), round(recall, 2), condition, columns)
                     print(result_data)
-                    log.loc[len(log)] = ["RF", condition, columns, accuracy, precision, recall, margin,
-                                         close_increase_rate, f'n_estimators={n_estimators} max_depth='
-                                                              f'{max_depth} random_state={random_state}']
+                    log.loc[len(log)] = \
+                        ["RF", condition, columns, accuracy, precision, recall,
+                        'n_estimators={} max_depth={} random_state={}'.format(n_estimators, max_depth, random_state)]
 
                     # self.save_excel_file(copy_dataframe, "RF", condition, columns)
 
@@ -141,13 +267,16 @@ class SA_Knn(SA):
                     precision = precision_score(y_test, self.y_prediction)
                     recall = recall_score(y_test, self.y_prediction)
 
-                    pre_dataframe, margin, close_increase_rate = self.calculate_margin(condition)
-                    result_data = f'accuracy: {accuracy: .2%} precision: {precision:.2%}  recall:{recall:.2%} ' \
-                                  f' margin:{margin: .2%}  close_increase_rate:{close_increase_rate: .2%}\n' \
-                                  f' {condition}  "n_neighbors" {self.n_neighbors}  "KNN" {columns}\n'
+                    pre_dataframe = self.dataframe.loc[self.seperate_date:, :]
+                    pre_dataframe = pre_dataframe.drop(pre_dataframe.index[0])
+                    pre_dataframe[condition + '_predict'] = self.y_prediction
+                    result_data = \
+                        'accuracy: {} precision: {}  recall:{}\n {}\
+                        "n_neighbors" {}  "KNN" {}\n'.format(round(accuracy, 2), round(precision, 2),
+                                                             round(recall, 2), condition, self.n_neighbors, columns)
                     print(result_data)
-                    log.loc[len(log)] = ["KNN", condition, columns, accuracy, precision, recall, margin,
-                                         close_increase_rate, f'n_neighbors={self.n_neighbors}']
+                    log.loc[len(log)] = ["KNN", condition, columns, accuracy, precision, recall,
+                                          'n_neighbors={}'.format(self.n_neighbors)]
 
                     self.save_excel_file(pre_dataframe, "KNN", condition, columns)
 
@@ -171,13 +300,16 @@ class SA_Knn(SA):
                         precision = precision_score(y_test[condition], self.y_prediction)
                         recall = recall_score(y_test[condition], self.y_prediction)
 
-                        pre_dataframe, margin, close_increase_rate = self.calculate_margin(condition)
-                        result_data = f'accuracy: {accuracy: .2%} precision: {precision:.2%}  recall:{recall:.2%} ' \
-                                      f' margin:{margin: .2%}  close_increase_rate:{close_increase_rate: .2%}\n' \
-                                      f' {condition}  "n_neighbors" {self.n_neighbors}  "KNN" {columns}\n'
+                        pre_dataframe = self.dataframe.loc[self.seperate_date:, :]
+                        pre_dataframe = pre_dataframe.drop(pre_dataframe.index[0])
+                        pre_dataframe[condition + '_predict'] = self.y_prediction
+                        result_data = \
+                            'accuracy: {} precision: {}  recall:{}\n {}\
+                            "n_neighbors" {}  "KNN" {}\n'.format(round(accuracy, 2), round(precision, 2),
+                                                                 round(recall, 2), condition, self.n_neighbors, columns)
                         print(result_data)
-                        log.loc[len(log)] = ["KNN", condition, columns, accuracy, precision, recall, margin,
-                                             close_increase_rate, f'n_neighbors={self.n_neighbors}']
+                        log.loc[len(log)] = ["KNN", condition, columns, accuracy, precision, recall,
+                                             'n_neighbors={}'.format(self.n_neighbors)]
 
 
 class SA_xgboost(SA):
@@ -221,15 +353,15 @@ class SA_xgboost(SA):
                 recall = recall_score(y_test, self.y_prediction)
                 precision = precision_score(y_test, self.y_prediction)
 
-                pre_dataframe, margin, close_increase_rate = self.calculate_margin(condition)
-                result_data = f'accuracy: {accuracy: .2%} precision: {precision:.2%}  recall:{recall:.2%} ' \
-                              f' margin:{margin: .2%}  close_increase_rate:{close_increase_rate: .2%}\n' \
-                              f' {condition}  "XGboost" {columns}\n'
+                pre_dataframe = self.dataframe.loc[self.seperate_date:, :]
+                pre_dataframe = pre_dataframe.drop(pre_dataframe.index[0])
+                pre_dataframe[condition + '_predict'] = self.y_prediction
+                result_data = 'accuracy: {} precision: {}  recall:{}\n {}  "XGboost" {}\n' \
+                    .format(round(accuracy, 2), round(precision, 2), round(recall, 2), condition, columns)
                 print(result_data)
-                log.loc[len(log)] = ["XGBOOST", condition, columns, accuracy, precision, recall, margin,
-                                     close_increase_rate, f'n_estimators={n_estimators} '
-                                                          f'min_child_weight={min_child_weight} '
-                                                          f'max_depth={max_depth} gamma={gamma}']
+                log.loc[len(log)] = ["XGBOOST", condition, columns, accuracy, precision, recall,
+                                      'n_estimators={} min_child_weight={} max_depth={} gamma={}'
+                                          .format(n_estimators, min_child_weight,max_depth, gamma)]
 
                 self.save_excel_file(pre_dataframe, "xgboost", condition, columns)
 
@@ -260,20 +392,17 @@ class SA_xgboost(SA):
                     accuracy = accuracy_score(y_test[condition], self.y_prediction)
                     recall = recall_score(y_test[condition], self.y_prediction)
                     precision = precision_score(y_test[condition], self.y_prediction)
-                    pre_dataframe, margin, close_increase_rate = self.calculate_margin(condition)
-                    result_data = f'accuracy: {accuracy: .2%} precision: {precision:.2%}  recall:{recall:.2%} ' \
-                                  f' margin:{margin: .2%}  close_increase_rate:{close_increase_rate: .2%}\n' \
-                                  f' {condition}  "XGboost" {columns}\n'
+                    pre_dataframe = self.dataframe.loc[self.seperate_date:, :]
+                    pre_dataframe = pre_dataframe.drop(pre_dataframe.index[0])
+                    pre_dataframe[condition + '_predict'] = self.y_prediction
+                    result_data = 'accuracy: {} precision: {}  recall:{}\n {}  "XGboost" {}\n' \
+                        .format(round(accuracy, 2), round(precision, 2), round(recall, 2), condition, columns)
                     print(result_data)
-                    log.loc[len(log)] = ["XGBOOST", condition, columns, accuracy, precision, recall, margin,
-                                         close_increase_rate, f'n_estimators={n_estimators} '
-                                                              f'min_child_weight={min_child_weight} '
-                                                              f'max_depth={max_depth} gamma={gamma}']
+                    log.loc[len(log)] = ["XGBOOST", condition, columns, accuracy, precision, recall,
+                                         'n_estimators={} min_child_weight={} max_depth={} gamma={}'
+                                             .format(n_estimators, min_child_weight, max_depth, gamma)]
 
                     # self.save_excel_file(pre_dataframe, "xgboost", condition, columns)
-                    """
-
-"""
 
 
 class SA_LinearRegression(SA):
@@ -316,13 +445,13 @@ class SA_LinearRegression(SA):
                 precision = precision_score(y_test, self.y_prediction)
                 recall = recall_score(y_test, self.y_prediction)
 
-                pre_dataframe, margin, close_increase_rate = self.calculate_margin(condition)
-                result_data = f'accuracy: {accuracy: .2%} precision: {precision:.2%}  recall:{recall:.2%} ' \
-                              f' margin:{margin: .2%}  close_increase_rate:{close_increase_rate: .2%}\n' \
-                              f' {condition}  "LR" {columns}\n'
+                pre_dataframe = self.dataframe.loc[self.seperate_date:, :]
+                pre_dataframe = pre_dataframe.drop(pre_dataframe.index[0])
+                pre_dataframe[condition + '_predict'] = self.y_prediction
+                result_data = 'accuracy: {} precision: {}  recall:{}\n {}  "LR" {}\n' \
+                    .format(round(accuracy, 2), round(precision, 2), round(recall, 2), condition, columns)
                 print(result_data)
-                log.loc[len(log)] = ["LR", condition, columns, accuracy, precision, recall, margin,
-                                     close_increase_rate, f'None']
+                log.loc[len(log)] = ["LR", condition, columns, accuracy, precision, recall,'None']
                 self.save_excel_file(pre_dataframe, "LR", condition, columns)
                 """
 
@@ -331,3 +460,174 @@ class SA_LinearRegression(SA):
                     log.loc[len(log)] = ["KNN", condition, columns, accuracy, precision, recall, margin, close_increase_rate]
 
                     self.save_excel_file(pre_dataframe, "KNN", condition, columns)"""
+
+def run_modeling(start_setting, path):
+    if not os.path.exists(os.path.join(path, 'save')):
+        os.mkdir(os.path.join(path, 'save'))
+    save_path = os.path.join(path, 'save')
+    if not os.path.exists(os.path.join(save_path, 'modeling')):
+        os.mkdir(os.path.join(save_path, 'modeling'))
+    save_path = os.path.join(save_path, 'modeling')
+    print('savepath: ' + save_path)
+    log_data = pd.DataFrame(columns=['classifier', 'condition', 'columns', 'accuracy',
+                                     'precision', 'recall', 'option'])
+
+    for setting in start_setting['setting']:
+        check_setting_file(setting)
+        check_classifier(setting, log_data)
+        print('-----------------------------------------------------------------')
+    log_data.to_excel(save_path + '\\log_' + datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S') + '.xlsx')
+
+if __name__ == '__main__':
+    opt0 = 'KNN'
+    opt1 = [3, 5]
+    opt2 = 'subset'
+    opt3 = [['BAArate', 'HOUSTrate', 'DGORDERrate']]
+    opt4 = ['HM3UP']
+    opt5 = 'dependent/DJI.csv'
+    opt6 = 'independent'
+    opt7 = 'save'
+    opt8 = [2016, 1, 1]
+    opt9 = [2018, 1, 1]
+    opt10 = [2019, 4, 1]
+    # =============================================================================
+    #     KNN
+    # =============================================================================
+    if opt0 == 'KNN':
+        if opt2 == 'subset':
+            start_setting = \
+                {'setting':
+                    [
+                        {
+                            'classifier': opt0,
+                            'type_option_list': {'n_neighbors_list': opt1},
+                            'column_option_list': {'option': opt2, 'column_list': opt3},
+                            'condition_list': opt4,
+                            'dependent_file_path': opt5,
+                            'independent_path': opt6,
+                            'save_path': opt7,
+                            'start_date': datetime.date(opt8[0], opt8[1], opt8[2]),
+                            'seperate_date': datetime.date(opt9[0], opt9[1], opt9[2]),
+                            'end_date': datetime.date(opt10[0], opt10[1], opt10[2])
+                        }
+                    ]
+                }
+        if opt2 == 'all':
+            start_setting = \
+                {'setting':
+                    [
+                        {
+                            'classifier': opt0,
+                            'type_option_list': {'n_neighbors_list': opt1},
+                            'column_option_list': {'option': opt2, 'range_of_column_no': opt3},
+                            'condition_list': opt4,
+                            'dependent_file_path': opt5,
+                            'independent_path': opt6,
+                            'save_path': opt7,
+                            'start_date': datetime.date(opt8[0], opt8[1], opt8[2]),
+                            'seperate_date': datetime.date(opt9[0], opt9[1], opt9[2]),
+                            'end_date': datetime.date(opt10[0], opt10[1], opt10[2])
+                        }
+                    ]
+                }
+    # =============================================================================
+    #     RANDOM FOREST
+    # =============================================================================
+    if opt0 == 'RF':
+        if opt2 == 'subset':
+            start_setting = \
+                {'setting':
+                    [
+                        {
+                            'classifier': opt0,
+                            'type_option_list': {'n_estimators': opt1[0],
+                                                 'max_depth': opt1[1],
+                                                 'random_state': 0,
+                                                 'max_features': opt1[2],
+                                                 'bootstrap':  opt1[3]
+                                                 },
+                            'column_option_list': {'option': opt2, 'column_list': opt3},
+                            'condition_list': opt4,
+                            'dependent_file_path': opt5,
+                            'independent_path': opt6,
+                            'save_path': opt7,
+                            'start_date': datetime.date(opt8[0], opt8[1], opt8[2]),
+                            'seperate_date': datetime.date(opt9[0], opt9[1], opt9[2]),
+                            'end_date': datetime.date(opt10[0], opt10[1], opt10[2])
+                        }
+                    ]
+                }
+        if opt2 == 'all':
+            start_setting = \
+                {'setting':
+                    [
+                        {
+                            'classifier': opt0,
+                            'type_option_list': {'n_estimators': opt1[0],
+                                                 'max_depth': opt1[1],
+                                                 'random_state': opt1[2]},
+                            'column_option_list': {'option': opt2, 'range_of_column_no': opt3},
+                            'condition_list': opt4,
+                            'dependent_file_path': opt5,
+                            'independent_path': opt6,
+                            'save_path': opt7,
+                            'start_date': datetime.date(opt8[0], opt8[1], opt8[2]),
+                            'seperate_date': datetime.date(opt9[0], opt9[1], opt9[2]),
+                            'end_date': datetime.date(opt10[0], opt10[1], opt10[2])
+                        }
+                    ]
+                }
+    # =============================================================================
+    #     XGBOOST
+    # =============================================================================
+    if opt0 == 'xgboost':
+        if opt2 == 'subset':
+            start_setting = \
+                {'setting':
+                    [
+                        {
+                            'classifier': opt0,
+                            'type_option_list': {'n_estimators': opt1[0],
+                                                 'min_child_weight': opt1[1],
+                                                 'max_depth': opt1[2],
+                                                 'gamma': opt1[3]},
+                            'column_option_list': {'option': opt2, 'column_list': opt3},
+                            'condition_list': opt4,
+                            'dependent_file_path': opt5,
+                            'independent_path': opt6,
+                            'save_path': opt7,
+                            'start_date': datetime.date(opt8[0], opt8[1], opt8[2]),
+                            'seperate_date': datetime.date(opt9[0], opt9[1], opt9[2]),
+                            'end_date': datetime.date(opt10[0], opt10[1], opt10[2])
+                        }
+                    ]
+                }
+        if opt2 == 'all':
+            start_setting = \
+                {'setting':
+                    [
+                        {
+                            'classifier': opt0,
+                            'type_option_list': {'n_estimators': opt1[0],
+                                                 'min_child_weight': opt1[1],
+                                                 'max_depth': opt1[2],
+                                                 'gamma': opt1[3]},
+                            'column_option_list': {'option': opt2, 'range_of_column_no': opt3},
+                            'condition_list': opt4,
+                            'dependent_file_path': opt5,
+                            'independent_path': opt6,
+                            'save_path': opt7,
+                            'start_date': datetime.date(opt8[0], opt8[1], opt8[2]),
+                            'seperate_date': datetime.date(opt9[0], opt9[1], opt9[2]),
+                            'end_date': datetime.date(opt10[0], opt10[1], opt10[2])
+                        }
+                    ]
+                }
+
+    log_data = pd.DataFrame(columns=['classifier', 'condition', 'columns', 'accuracy',
+                                     'precision', 'recall', 'option'])
+    for setting in start_setting['setting']:
+        check_setting_file(setting)
+        check_classifier(setting, log_data)
+        print('-----------------------------------------------------------------')
+    log_data.to_excel('log_' + datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S') + '.xlsx')

@@ -1,4 +1,4 @@
-from PyQt5.QtCore import pyqtSlot, pyqtSignal, QObject, QEventLoop, Qt, QDate, QTime
+from PyQt5.QtCore import pyqtSlot, QDate, QTime
 from PyQt5.QtWidgets import *
 
 

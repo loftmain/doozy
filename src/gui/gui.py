@@ -1,21 +1,43 @@
-## ShapeWidget
-import os
-from PySide2.QtWidgets import QWidget, QTreeView, QFileSystemModel, QGridLayout, QDockWidget\
-    ,QVBoxLayout, QTabWidget, QListWidget, QTextBrowser, QFileDialog
-from PySide2.QtGui import QPalette, QPainter, QTextCursor
-from PySide2.QtCore import Signal,Qt, QRect, QPointF, QEventLoop
-from guiproject.output import StdoutRedirect
-from guiproject.modelingoption import ModelingOption
-from guiproject.markingwidget import MarkingWidget
-from guiproject.filetreeview import Tree
-from PySide2.QtCore import Slot, Qt
-from guiproject.orderexcute import OrderRunWidget
-from guiproject.download import DlIndependentDialog
+#!interpreter [project-doozy]
+# -*- coding: utf-8 -*-
 
-from PySide2.QtWidgets import (QMainWindow, QAction, QActionGroup, QToolBar,
-                               QLabel,QMessageBox, QTextEdit)
-from PySide2.QtGui import QIcon
-from PySide2.QtCore import QSettings
+"""
+gui runcher
+{License_info} 라이센스 정해야함
+"""
+
+# Built-in/Generic Imports
+import os
+
+# Libs
+import PySide2
+from PySide2.QtCore import QEventLoop, QSettings
+from PySide2.QtCore import Qt
+from PySide2.QtGui import QTextCursor, QIcon
+from PySide2.QtWidgets import (QWidget, QDockWidget, QVBoxLayout, QTabWidget, QTextBrowser, QFileDialog \
+    , QMainWindow, QAction, QLabel, QMessageBox, QTextEdit)
+
+from src.gui.download import DlIndependentDialog
+from src.gui.filetreeview import Tree
+from src.gui.markingwidget import MarkingWidget
+from src.gui.modelingoption import ModelingOption
+from src.gui.orderexcute import OrderRunWidget
+from src.gui.orderwidget import CreateOrderWidget
+# Own modules
+from src.gui.output import StdoutRedirect
+
+__author__ = 'loftmain'
+__copyright__ = 'Copyright 2020, doozy'
+__credits__ = ['loftmain']
+__license__ = '{license}'
+__version__ = '0.0.1'
+__maintainer__ = 'loftmain'
+__email__ = 'leejinjae7@gmail.com'
+__status__ = 'Dev'
+
+dirname = os.path.dirname(PySide2.__file__)
+plugin_path = os.path.join(dirname, 'plugins', 'platforms')
+os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = plugin_path
 
 class MainWindow(QMainWindow):
     def __init__(self,parent=None):
@@ -24,7 +46,7 @@ class MainWindow(QMainWindow):
         widget = QWidget()
         layout = QVBoxLayout(widget)
         layout.addWidget(QTextEdit())
-        self.path_to_file = ""
+        self.path_to_file = os.curdir
         self.treeview_widget = Tree()
 
         self.dockTree = QDockWidget("TreeView", self)
@@ -65,11 +87,16 @@ class MainWindow(QMainWindow):
     def createActions(self):
 
         # create actions
-        self.importAction = QAction("&import", self)
-        #self.exitAction.setIcon(QIcon(":/images/exit.png"))
-        self.importAction.setShortcut("Ctrl+I")
-        self.importAction.setStatusTip("import files")
-        self.importAction.triggered.connect(self.load_folder)
+        self.newProject = QAction("&New Project", self)
+        self.newProject.setShortcut("Ctrl+N")
+        self.newProject.setStatusTip("create a new project")
+        self.newProject.triggered.connect(self.load_folder)
+
+        self.openProject = QAction("&Open Project", self)
+        # self.exitAction.setIcon(QIcon(":/images/exit.png"))
+        self.openProject.setShortcut("Ctrl+O")
+        self.openProject.setStatusTip("Open a project in treeview")
+        self.openProject.triggered.connect(self.load_folder)
 
         self.saveDataAction = QAction("&지표 데이터 파일저장", self)
         self.saveDataAction.setStatusTip("import files")
@@ -79,7 +106,7 @@ class MainWindow(QMainWindow):
         self.errorCheckDataAction.setStatusTip("import files")
         self.errorCheckDataAction.triggered.connect(self.close)
 
-        self.exitAction = QAction("&Exit",self)
+        self.exitAction = QAction("&Exit", self)
         self.exitAction.setIcon(QIcon(":/images/exit.png"))
         self.exitAction.setShortcut("Ctrl+Q")
         self.exitAction.setStatusTip("Exit the application")
@@ -92,22 +119,23 @@ class MainWindow(QMainWindow):
         self.fileViewAction.setChecked(True)
         self.fileViewAction.triggered.connect(self.toggleFileView)
 
+
         self.logViewAction = QAction("&System log view",self, checkable=True)
         #self.rectangleAction.setShortcut("Ctrl+R")
-        self.logViewAction.setStatusTip("toggle System log view");
+        self.logViewAction.setStatusTip("toggle System log view")
         self.logViewAction.setChecked(True)
         self.logViewAction.triggered.connect(self.toggleLogView)
 
-        self.settingViewAction = QAction("&Option setting view",self, checkable=True)
-        #self.circleAction.setShortcut("Ctrl+C")
+        self.settingViewAction = QAction("&Option setting view", self, checkable=True)
+        # self.circleAction.setShortcut("Ctrl+C")
         self.settingViewAction.setStatusTip("toggle Option setting view")
         self.settingViewAction.triggered.connect(self.close)
 
         # signal menu
-        self.labelCreateAction = QAction("&Create", self)
+        self.MarkingCreateAction = QAction("&Create", self)
         # self.circleAction.setShortcut("Ctrl+C")
-        self.labelCreateAction.setStatusTip("create signal")
-        self.labelCreateAction.triggered.connect(self.createLabelTab)
+        self.MarkingCreateAction.setStatusTip("create Mark")
+        self.MarkingCreateAction.triggered.connect(self.createLabelTab)
 
         # modeling menu
         self.modelCreateAction = QAction("&Create", self)
@@ -120,7 +148,7 @@ class MainWindow(QMainWindow):
 
         self.orderCreateAction = QAction("&order create", self)
         self.orderCreateAction.setStatusTip("order create")
-        self.orderCreateAction.triggered.connect(self.close)
+        self.orderCreateAction.triggered.connect(self.createOrderTab)
 
         self.loginXingAction = QAction("&XingApi Login", self)
         self.loginXingAction.setStatusTip("XingApi Login")
@@ -162,19 +190,23 @@ class MainWindow(QMainWindow):
         """
 
     def createMenus(self):
+
+        projectMenu = self.menuBar().addMenu("&Project")
+        projectMenu.addAction(self.newProject)
+        projectMenu.addAction(self.openProject)
+        projectMenu.addAction(self.exitAction)
+
         fileMenu = self.menuBar().addMenu("&File")
-        fileMenu.addAction(self.importAction)
         fileMenu.addAction(self.saveDataAction)
         fileMenu.addAction(self.errorCheckDataAction)
-        fileMenu.addAction(self.exitAction)
 
         viewMenu = self.menuBar().addMenu("&View")
-        viewMenu.addAction(self.fileViewAction);
-        viewMenu.addAction(self.logViewAction);
-        viewMenu.addAction(self.settingViewAction);
+        viewMenu.addAction(self.dockTree.toggleViewAction())
+        viewMenu.addAction(self.logDock.toggleViewAction())
+        viewMenu.addAction(self.settingViewAction)
 
-        labelMenu = self.menuBar().addMenu("&Label")
-        labelMenu.addAction(self.labelCreateAction)
+        MarkingMenu = self.menuBar().addMenu("&Marking")
+        MarkingMenu.addAction(self.MarkingCreateAction)
 
         modelingMenu = self.menuBar().addMenu("&Modeling")
         modelingMenu.addAction(self.modelCreateAction)
@@ -257,22 +289,31 @@ class MainWindow(QMainWindow):
             self.shapeWidget.blue()
 
     def createLabelTab(self):
-        widget = MarkingWidget()
+        widget = MarkingWidget(self.path_to_file)
         widget.destroyed.connect(
             lambda obj: print(
                 "deleted {}, count: {}".format(obj, self.tabWidget.count())
             )
         )
-        self.tabWidget.addTab(widget, "marking")
+        self.tabWidget.addTab(widget, "Marking")
 
     def createModelOptionTab(self):
-        widget = ModelingOption()
+        widget = ModelingOption(self.path_to_file)
         widget.destroyed.connect(
             lambda obj: print(
                 "deleted {}, count: {}".format(obj, self.tabWidget.count())
             )
         )
         self.tabWidget.addTab(widget, "modeling option setting")
+
+    def createOrderTab(self):
+        widget = CreateOrderWidget(self.path_to_file)
+        widget.destroyed.connect(
+            lambda obj: print(
+                "deleted {}, count: {}".format(obj, self.tabWidget.count())
+            )
+        )
+        self.tabWidget.addTab(widget, "order create")
 
     def createOrderExecuteTab(self):
         widget = OrderRunWidget()
@@ -302,13 +343,10 @@ class MainWindow(QMainWindow):
         widget.deleteLater()
 
     def about(self):
-        QMessageBox.about(self, "About Shape",
-                "<h2>Shape 1.0</h2>"
-                "<p>Copyright &copy; 2014 Q5Programming Inc."
-                "<p>Shape is a small application that "
-                "demonstrates QAction, QMainWindow, QMenuBar, "
-                "QStatusBar, QToolBar, and many other "
-                "Qt classes.")
+        QMessageBox.about(self, "About doozy",
+                          "<h2>Shape 1.0</h2>"
+                          "<p>Copyright doozy;"
+                          "<p>")
 
 import sys
 from PySide2.QtWidgets import QApplication
@@ -317,7 +355,7 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
 
     mainWindow = MainWindow()
-    mainWindow.resize(1200, 800)
+    mainWindow.resize(1600, 1200)
     mainWindow.show()
 
     app.exec_()
