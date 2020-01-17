@@ -1,8 +1,7 @@
-import pandas_datareader.data as web
 import matplotlib.pyplot as plt
-from zipline.api import order_target, record, symbol, order, order_percent
-from zipline.algorithm import TradingAlgorithm
 import pandas as pd
+from zipline.algorithm import TradingAlgorithm
+from zipline.api import record, symbol, order_percent
 
 df = pd.read_excel("input_simulate.xlsx")
 df["Date"] = pd.to_datetime(df["Date"])
@@ -11,6 +10,7 @@ newdata = df[['Adj Close', "buy", 'sell']]
 newdata.columns = ['DJI', "buy", 'sell']
 
 newdata = newdata.tz_localize('UTC')
+
 
 def initialize(context):
     context.dji = symbol('DJI')

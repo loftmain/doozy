@@ -5,8 +5,9 @@ Created on Mon Dec 30 14:52:29 2019
 @author: giho9
 """
 
-import pandas as pd
 import numpy as np
+import pandas as pd
+
 
 class Marking:
     def set_option(self, df, x_opt, y_opt, z_opt):
@@ -14,7 +15,7 @@ class Marking:
         self._x_opt = x_opt
         self._y_opt = y_opt
         self._z_opt = z_opt
-        
+
     def _is_string(ele):
         try:
             str(ele)

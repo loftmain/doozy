@@ -23,7 +23,6 @@ def initialize(context):
 def handle_data(context, data):
     buy = False
     sell = False
-    print(data)
     pred_buy = data.current(context.sym1, 'price')
     pred_sell = data.current(context.sym2, 'price')
 
@@ -40,13 +39,13 @@ def handle_data(context, data):
 
 def backtesting(file):
     df = pd.read_excel(file)
-    df["DATE"] = pd.to_datetime(df["DATE"])
-    df = df.set_index("DATE")
+    df["Date"] = pd.to_datetime(df["Date"])
+    df = df.set_index("Date")
     newdata = df[['Adj Close', "buy", 'sell']]
     newdata.columns = ['DJI', "buy", 'sell']
 
     newdata = newdata.tz_localize('UTC')
-    algo = TradingAlgorithm(initialize = initialize, handle_data = handle_data)
+    algo = TradingAlgorithm(initialize=initialize, handle_data=handle_data)
     result = algo.run(newdata)
     result.to_csv("resultBacktesting.csv")
     return result

@@ -8,6 +8,7 @@ import sys  # To find out the script name (in argv[0])
 # Import the backtrader platform
 import backtrader as bt
 
+
 # Create a Stratey
 class TestStrategy(bt.Strategy):
 

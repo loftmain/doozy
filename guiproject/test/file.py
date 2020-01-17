@@ -1,8 +1,9 @@
 import sys
-from PySide2 import QtCore, QtGui, QtWidgets
+
+from PySide2 import QtCore, QtWidgets
 from PySide2.QtCore import QObject, QRectF, Qt
-from PySide2.QtWidgets import QMainWindow, QFileDialog, QWidget, QVBoxLayout, QGraphicsScene, QGraphicsView
 from PySide2.QtGui import QPixmap
+from PySide2.QtWidgets import QMainWindow, QFileDialog, QWidget, QVBoxLayout, QGraphicsScene, QGraphicsView
 
 
 class Ui_MainWindow(object):

@@ -1,14 +1,15 @@
 ## ShapeWidget
-from PySide2.QtWidgets import QWidget
+from PySide2.QtCore import Signal, Qt, QRect, QPointF
 from PySide2.QtGui import QPalette, QPainter
-from PySide2.QtCore import Signal,Qt, QRect, QPointF
+from PySide2.QtWidgets import QWidget
+
 
 class ShapeWidget(QWidget):
     mousePositionChanged = Signal(str)  # mousePositionChanged(pos)
     NONE, RECTANGLE, TRIANGLE, CIRCLE = 0, 1, 2, 3  # constants
 
-    def __init__(self,parent=None):
-        QWidget.__init__(self,parent)
+    def __init__(self, parent=None):
+        QWidget.__init__(self, parent)
 
         self.setBackgroundRole(QPalette.Light)
         self.setAutoFillBackground(True)
@@ -56,22 +57,22 @@ class ShapeWidget(QWidget):
         if self.shape == ShapeWidget.RECTANGLE:
             painter.drawRect(r)
         elif self.shape == ShapeWidget.TRIANGLE:
-            points = [ QPointF(r.left()+r.width()/2,r.top()),
+            points = [QPointF(r.left() + r.width() / 2, r.top()),
                       r.bottomLeft(), r.bottomRight()]
             painter.drawPolygon(points)
 
         elif self.shape == ShapeWidget.CIRCLE:
             painter.drawEllipse(r)
 
-from PySide2.QtWidgets import (QMainWindow, QAction, QActionGroup, QToolBar,
-                               QLabel,QMessageBox)
+
+from PySide2.QtWidgets import (QMainWindow, QAction, QActionGroup, QLabel, QMessageBox)
 from PySide2.QtGui import QIcon
 from PySide2.QtCore import QSettings
 
 
 class MainWindow(QMainWindow):
-    def __init__(self,parent=None):
-        QMainWindow.__init__(self,parent)
+    def __init__(self, parent=None):
+        QMainWindow.__init__(self, parent)
         self.setWindowTitle('Shape')
         self.setWindowIcon(QIcon(":/images/qt.png"))
 

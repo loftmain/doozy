@@ -1,13 +1,10 @@
 ## ShapeWidget
-import os
-from PySide2.QtWidgets import QWidget, QTreeView, QFileSystemModel, QGridLayout, QDockWidget\
-    ,QVBoxLayout, QTabWidget
-from PySide2.QtGui import QPalette, QPainter
-from PySide2.QtCore import Signal,Qt, QRect, QPointF
+from PySide2.QtCore import Qt
+from PySide2.QtWidgets import QTreeView, QDockWidget
 
 
 def createDcokWindows(self):
-    #table View
+    # table View
     dock = QDockWidget("Information", self)
     dock.setAllowedAreas(Qt.LeftDockWidgetArea | Qt.RightDockWidgetArea)
     self.fileInfoTable = QTableWiew(dock)

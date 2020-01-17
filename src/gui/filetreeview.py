@@ -9,9 +9,9 @@ gui runcher
 # Built-in/Generic Imports
 import sys
 
+from PySide2.QtCore import QFileInfo, QDir, QFile
 # Libs
 from PySide2.QtWidgets import QTreeView, QAbstractItemView, QApplication, QFileSystemModel
-from PySide2.QtCore import QFileInfo, QDir, QFile
 
 
 class Tree(QTreeView):

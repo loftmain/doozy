@@ -2,15 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3071db6a-b4b2-4271-baa6-af635d20f4ac" name="Default Changelist" comment="gui 변경&#10;&#10;class에 path가 재대로 전달되지 않는 문제&#10; - 아직 완전히 잡지 못함&#10;create order gui 메뉴바에 연동&#10;&#10;markingwidget.py&#10; - 이전 bottom up 형식으로 되어있어 직관적으로 이해하기 힘들었던 부분을 일부 수정&#10; - 수정을 하였지만 논의를 해서 보완을 좀 더 해야함&#10; - path문제 있음&#10; &#10;modelingoption.py&#10; - 잘못된 부분 수정&#10;&#10;orderwidget.py&#10; - class name 변경&#10;   OrdrRunWidget -&gt; CreateOrderWidget&#10;&#10;classifier.py&#10; - output file 경로 수정">
+      <change beforePath="$PROJECT_DIR$/.idea/doozy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/doozy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conda_requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/conda_requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/^DJI.csv" beforeDir="false" afterPath="$PROJECT_DIR$/guiproject/test/^DJI.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/calander.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiproject/test/calander.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/console.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiproject/test/console.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiproject/test/dialog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/dock2.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiproject/test/dock2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/dockview.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiproject/test/dockview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/drag.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiproject/test/drag.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/file.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiproject/test/file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiproject/test/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/progress.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiproject/test/progress.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/shape.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiproject/test/shape.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/strach.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiproject/test/strach.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiproject/test/tab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/tabbar.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiproject/test/tabbar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiproject/test/tree.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/download.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/download.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/filetreeview.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/filetreeview.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/gui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/markingwidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/markingwidget.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/modelingoption.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/modelingoption.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/orderexcute.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/orderexcute.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/orderwidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/orderwidget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/output.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/output.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/module/SA.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/SA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/backtester.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/backtester.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/backtesting.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/backtesting.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/module/classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module/create_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/createorder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/createorder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/createorder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/module/independent/AMBNS.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/module/independent/BAA.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/module/independent/CPIAUCSL.xlsx" beforeDir="false" />
@@ -41,6 +65,9 @@
       <change beforePath="$PROJECT_DIR$/src/module/independent/USSLIND.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/module/independent/XTEXVA01CNM667S.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/module/independent/XTIMVA01KRM667S.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/marking.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/marking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/simulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/simulator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/yamlread.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/yamlread.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +126,28 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.gui">
+    <configuration name="backtesting" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="doozy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/module" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/module/backtesting.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="createorder" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="doozy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -187,35 +236,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="xlsxEvent" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="doozy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/guiproject/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/guiproject/test/xlsxEvent.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.gui" />
+        <item itemvalue="Python.backtesting" />
         <item itemvalue="Python.orderwidget" />
         <item itemvalue="Python.modelingoption" />
         <item itemvalue="Python.createorder" />
-        <item itemvalue="Python.xlsxEvent" />
       </list>
     </recent_temporary>
   </component>
@@ -252,7 +279,11 @@
       <workItem from="1578964730990" duration="1283000" />
       <workItem from="1578969958679" duration="767000" />
       <workItem from="1578971970792" duration="18477000" />
-      <workItem from="1579002179319" duration="17349000" />
+      <workItem from="1579002179319" duration="17744000" />
+      <workItem from="1579084631200" duration="856000" />
+      <workItem from="1579101078756" duration="110000" />
+      <workItem from="1579228291142" duration="633000" />
+      <workItem from="1579246310936" duration="901000" />
     </task>
     <task id="LOCAL-00001" summary="window conda 3.5 버전 테스트&#10;&#10;zipline 문제점 &#10; - benchmark.py 내부 변경해야함&#10; - loader.py 내부 변경해야함 그래야지 실행가능&#10; &#10;conda 환경과 virtualenv환경이 requirements.txt파일로 단순하게&#10;pip install -r requirements.txt로 되지 않는듯">
       <created>1578906752541</created>
@@ -268,7 +299,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578910148855</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="input, output file .csv로 수정, createorder GUI에 연동&#10;&#10;download.py&#10; - 경제지표 .csv로 다운받는 것으로 변경&#10; &#10;gui.py&#10; - project 메뉴 생성&#10; &#10;modelingoption.py&#10; - all, subset 변경&#10;&#10;orderwidget.py&#10; - 파일 이름변경&#10; - gui 수정&#10; - createorder.py 연동&#10;&#10;create_order.py -&gt; createorder.py rename&#10; - DATE -&gt; Date로 변경&#10; - xlsx -&gt; csv 변경&#10; &#10;SA.py&#10; - xlsx -&gt; csv 변경">
+      <created>1579077459119</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1579077459119</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,11 +315,24 @@
   <component name="UpdateCopyrightCheckinHandler">
     <option name="UPDATE_COPYRIGHT" value="true" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="window conda 3.5 버전 테스트&#10;&#10;zipline 문제점 &#10; - benchmark.py 내부 변경해야함&#10; - loader.py 내부 변경해야함 그래야지 실행가능&#10; &#10;conda 환경과 virtualenv환경이 requirements.txt파일로 단순하게&#10;pip install -r requirements.txt로 되지 않는듯" />
     <MESSAGE value="script header 추가 및 시뮤레이션 구현중" />
+    <MESSAGE value="input, output file .csv로 수정, createorder GUI에 연동&#10;&#10;download.py&#10; - 경제지표 .csv로 다운받는 것으로 변경&#10; &#10;gui.py&#10; - project 메뉴 생성&#10; &#10;modelingoption.py&#10; - all, subset 변경&#10;&#10;orderwidget.py&#10; - 파일 이름변경&#10; - gui 수정&#10; - createorder.py 연동&#10;&#10;create_order.py -&gt; createorder.py rename&#10; - DATE -&gt; Date로 변경&#10; - xlsx -&gt; csv 변경&#10; &#10;SA.py&#10; - xlsx -&gt; csv 변경" />
     <MESSAGE value="gui 변경&#10;&#10;class에 path가 재대로 전달되지 않는 문제&#10; - 아직 완전히 잡지 못함&#10;create order gui 메뉴바에 연동&#10;&#10;markingwidget.py&#10; - 이전 bottom up 형식으로 되어있어 직관적으로 이해하기 힘들었던 부분을 일부 수정&#10; - 수정을 하였지만 논의를 해서 보완을 좀 더 해야함&#10; - path문제 있음&#10; &#10;modelingoption.py&#10; - 잘못된 부분 수정&#10;&#10;orderwidget.py&#10; - class name 변경&#10;   OrdrRunWidget -&gt; CreateOrderWidget&#10;&#10;classifier.py&#10; - output file 경로 수정" />
     <option name="LAST_COMMIT_MESSAGE" value="gui 변경&#10;&#10;class에 path가 재대로 전달되지 않는 문제&#10; - 아직 완전히 잡지 못함&#10;create order gui 메뉴바에 연동&#10;&#10;markingwidget.py&#10; - 이전 bottom up 형식으로 되어있어 직관적으로 이해하기 힘들었던 부분을 일부 수정&#10; - 수정을 하였지만 논의를 해서 보완을 좀 더 해야함&#10; - path문제 있음&#10; &#10;modelingoption.py&#10; - 잘못된 부분 수정&#10;&#10;orderwidget.py&#10; - class name 변경&#10;   OrdrRunWidget -&gt; CreateOrderWidget&#10;&#10;classifier.py&#10; - output file 경로 수정" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
@@ -293,15 +344,15 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1052" y="352" key="#Inspections/0.0.2560.1400@0.0.2560.1400" timestamp="1578906903287" />
-    <state x="1011" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1578995088495">
+    <state x="1011" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579077542503">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1011" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1578995088495" />
-    <state x="748" y="143" width="1472" height="1029" key="CommitChangelistDialog2" timestamp="1579001809403">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="1011" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1579077542503" />
+    <state x="367" y="133" width="1472" height="1029" key="CommitChangelistDialog2" timestamp="1579247214642">
+      <screen x="0" y="26" width="1920" height="1054" />
     </state>
-    <state x="748" y="143" width="1472" height="1029" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1579001809403" />
-    <state x="367" y="133" width="772" height="815" key="CommitChangelistDialog2/0.26.1920.1054@0.26.1920.1054" timestamp="1578832275481" />
+    <state x="748" y="143" width="1472" height="1029" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1579077458103" />
+    <state x="367" y="133" width="772" height="815" key="CommitChangelistDialog2/0.26.1920.1054@0.26.1920.1054" timestamp="1579247214642" />
     <state x="564" y="108" width="1790" height="1169" key="DiffContextDialog" timestamp="1579001300908">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -311,26 +362,26 @@
     </state>
     <state x="973" y="383" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1579060009009" />
     <state x="730" y="314" width="429" height="487" key="FileChooserDialogImpl/0.26.1920.1054@0.26.1920.1054" timestamp="1578830500314" />
-    <state width="2517" height="404" key="GridCell.Tab.0.bottom" timestamp="1579077089182">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1870" height="214" key="GridCell.Tab.0.bottom" timestamp="1579101192383">
+      <screen x="0" y="26" width="1920" height="1054" />
     </state>
-    <state width="2517" height="404" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1579077089182" />
-    <state width="1870" height="178" key="GridCell.Tab.0.bottom/0.26.1920.1054@0.26.1920.1054" timestamp="1578910876541" />
-    <state width="2517" height="404" key="GridCell.Tab.0.center" timestamp="1579077089182">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2517" height="404" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1579077462066" />
+    <state width="1870" height="214" key="GridCell.Tab.0.bottom/0.26.1920.1054@0.26.1920.1054" timestamp="1579101192383" />
+    <state width="1870" height="214" key="GridCell.Tab.0.center" timestamp="1579101192381">
+      <screen x="0" y="26" width="1920" height="1054" />
     </state>
-    <state width="2517" height="404" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1579077089182" />
-    <state width="1870" height="178" key="GridCell.Tab.0.center/0.26.1920.1054@0.26.1920.1054" timestamp="1578910876536" />
-    <state width="2517" height="404" key="GridCell.Tab.0.left" timestamp="1579077089182">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2517" height="404" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1579077462066" />
+    <state width="1870" height="214" key="GridCell.Tab.0.center/0.26.1920.1054@0.26.1920.1054" timestamp="1579101192381" />
+    <state width="1870" height="214" key="GridCell.Tab.0.left" timestamp="1579101192380">
+      <screen x="0" y="26" width="1920" height="1054" />
     </state>
-    <state width="2517" height="404" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1579077089182" />
-    <state width="1870" height="178" key="GridCell.Tab.0.left/0.26.1920.1054@0.26.1920.1054" timestamp="1578910876535" />
-    <state width="2517" height="404" key="GridCell.Tab.0.right" timestamp="1579077089182">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2517" height="404" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1579077462066" />
+    <state width="1870" height="214" key="GridCell.Tab.0.left/0.26.1920.1054@0.26.1920.1054" timestamp="1579101192380" />
+    <state width="1870" height="214" key="GridCell.Tab.0.right" timestamp="1579101192382">
+      <screen x="0" y="26" width="1920" height="1054" />
     </state>
-    <state width="2517" height="404" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1579077089182" />
-    <state width="1870" height="178" key="GridCell.Tab.0.right/0.26.1920.1054@0.26.1920.1054" timestamp="1578910876538" />
+    <state width="2517" height="404" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1579077462066" />
+    <state width="1870" height="214" key="GridCell.Tab.0.right/0.26.1920.1054@0.26.1920.1054" timestamp="1579101192382" />
     <state width="2517" height="491" key="GridCell.Tab.1.bottom" timestamp="1579076585617">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -357,15 +408,15 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="729" y="90" width="1790" height="1169" key="ShowDiffWithBranchDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1578907089013" />
-    <state x="1090" y="434" key="Vcs.Push.Dialog.v2" timestamp="1578910155816">
+    <state x="1090" y="434" key="Vcs.Push.Dialog.v2" timestamp="1579077481623">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1090" y="434" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1578910155816" />
-    <state x="641" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1578929080144">
+    <state x="1090" y="434" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1579077481623" />
+    <state x="641" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1579246311704">
       <screen x="0" y="26" width="1920" height="1054" />
     </state>
     <state x="855" y="470" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1578903395159" />
-    <state x="641" y="380" key="com.intellij.ide.util.TipDialog/0.26.1920.1054@0.26.1920.1054" timestamp="1578929080144" />
+    <state x="641" y="380" key="com.intellij.ide.util.TipDialog/0.26.1920.1054@0.26.1920.1054" timestamp="1579246311704" />
     <state x="839" y="325" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1579071877931">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -383,18 +434,18 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/doozy$backtesting.coverage" NAME="backtesting Coverage Results" MODIFIED="1579084820111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
+    <SUITE FILE_PATH="coverage/doozy$gui.coverage" NAME="gui Coverage Results" MODIFIED="1579246334442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
+    <SUITE FILE_PATH="coverage/doozy$download.coverage" NAME="download Coverage Results" MODIFIED="1579067415160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
+    <SUITE FILE_PATH="coverage/doozy$modelingoption.coverage" NAME="modelingoption Coverage Results" MODIFIED="1579076482726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
+    <SUITE FILE_PATH="coverage/doozy$classifier.coverage" NAME="classifier Coverage Results" MODIFIED="1579069298356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
+    <SUITE FILE_PATH="coverage/doozy$markingwidget.coverage" NAME="markingwidget Coverage Results" MODIFIED="1578993742111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
+    <SUITE FILE_PATH="coverage/doozy$xlsxEvent.coverage" NAME="xlsxEvent Coverage Results" MODIFIED="1579071856228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/guiproject/test" />
+    <SUITE FILE_PATH="coverage/doozy$xlsxEvent__1_.coverage" NAME="xlsxEvent (1) Coverage Results" MODIFIED="1579062719128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/guiproject/test" />
+    <SUITE FILE_PATH="coverage/doozy$create_order.coverage" NAME="create_order Coverage Results" MODIFIED="1578908614082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
+    <SUITE FILE_PATH="coverage/doozy$SA.coverage" NAME="SA Coverage Results" MODIFIED="1579067719366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
     <SUITE FILE_PATH="coverage/doozy$dock2.coverage" NAME="dock2 Coverage Results" MODIFIED="1579002666051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/guiproject/test" />
-    <SUITE FILE_PATH="coverage/doozy$gui.coverage" NAME="gui Coverage Results" MODIFIED="1579077089174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
     <SUITE FILE_PATH="coverage/doozy$createorder.coverage" NAME="createorder Coverage Results" MODIFIED="1579076058074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
     <SUITE FILE_PATH="coverage/doozy$orderwidget.coverage" NAME="orderwidget Coverage Results" MODIFIED="1579076856256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
-    <SUITE FILE_PATH="coverage/doozy$modelingoption.coverage" NAME="modelingoption Coverage Results" MODIFIED="1579076482726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
-    <SUITE FILE_PATH="coverage/doozy$SA.coverage" NAME="SA Coverage Results" MODIFIED="1579067719366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
-    <SUITE FILE_PATH="coverage/doozy$xlsxEvent__1_.coverage" NAME="xlsxEvent (1) Coverage Results" MODIFIED="1579062719128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/guiproject/test" />
-    <SUITE FILE_PATH="coverage/doozy$download.coverage" NAME="download Coverage Results" MODIFIED="1579067415160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
-    <SUITE FILE_PATH="coverage/doozy$xlsxEvent.coverage" NAME="xlsxEvent Coverage Results" MODIFIED="1579071856228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/guiproject/test" />
-    <SUITE FILE_PATH="coverage/doozy$create_order.coverage" NAME="create_order Coverage Results" MODIFIED="1578908614082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
-    <SUITE FILE_PATH="coverage/doozy$markingwidget.coverage" NAME="markingwidget Coverage Results" MODIFIED="1578993742111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
-    <SUITE FILE_PATH="coverage/doozy$classifier.coverage" NAME="classifier Coverage Results" MODIFIED="1579069298356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
-    <SUITE FILE_PATH="coverage/doozy$backtesting.coverage" NAME="backtesting Coverage Results" MODIFIED="1578910859636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
   </component>
 </project>

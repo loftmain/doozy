@@ -9,12 +9,14 @@ gui runcher
 # Built-in/Generic Imports
 import sys
 
+from PySide2.QtCore import Slot, Qt
 # Libs
 from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
-                                QVBoxLayout, QGroupBox, QLabel,
+                               QVBoxLayout, QGroupBox, QLabel,
                                QFormLayout)
-from PySide2.QtCore import Slot, Qt
+
 from src.gui.markingwidget import LineEdit
+
 
 class OrderRunWidget(QWidget):
     def __init__(self,parent=None):

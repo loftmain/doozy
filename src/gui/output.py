@@ -10,7 +10,8 @@ gui runcher
 import sys
 
 # Libs
-from PySide2.QtCore  import QObject, Signal
+from PySide2.QtCore import QObject, Signal
+
 
 class StdoutRedirect(QObject):
     printOccur = Signal(str, str, name="print")
