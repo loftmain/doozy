@@ -100,27 +100,36 @@ def get_price(row):
     '''
     start = \
     datetime.datetime.strptime(row.order_datetime, '%Y-%m-%d').date()
+    try:
+        df = \
+        web.DataReader(row.itemcode+'.KS', 'yahoo', start, start+timedelta(days=1))
+        df = df.reset_index()
+    except(KeyError):
+        return False
     
-    df = web.DataReader(row.itemcode+'.KS', 'yahoo', start, start+timedelta(days=1))
-    df = df.reset_index()
-    
-    return df['Adj Close'][0]
-    
+    pass
 if __name__ == "__main__":
     capital = 10000000 # form에서 입력받음
     path = 'Order.json' # form에서 입력받
     order_sheet = load_json(path)
-    
-    column = ['order_datetime', 'item_code', 'item_name', 'order_type',
+
+    return int(df['Adj Close'][0])
+
+def trade_buy(row):
+    pass
+def trade_sell(row):ime', 'item_code', 'item_name', 'order_type',
               'vol_money', 'vol_colunt', 'price', 'avg_price', 'cash']
+    s_column = ['item', 'item_code', 'item_count', 'avg_price']
     
-    trading_log = create_dataframe(column)
+    trading_log = create_dataframe(t_column)
+    status_log = create_dataframe(s_column)
     
     for index, row in order_sheet.iterrows():
-        item, item_code, order_datetime, order_type, price, type_opt, value = \
-        row.values
-        
+
         price = get_price(row)
-        print(price)
+        
+        if not price: 
+            # fail log 작성
+            continue
         
     
