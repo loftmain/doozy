@@ -14,8 +14,8 @@ import PySide2
 from PySide2.QtCore import QEventLoop, QSettings
 from PySide2.QtCore import Qt
 from PySide2.QtGui import QTextCursor, QIcon
-from PySide2.QtWidgets import (QWidget, QDockWidget, QVBoxLayout, QTabWidget, QTextBrowser, QFileDialog \
-    , QMainWindow, QAction, QLabel, QMessageBox, QTextEdit)
+from PySide2.QtWidgets import (QDockWidget, QTabWidget, QTextBrowser, QFileDialog \
+    , QMainWindow, QAction, QLabel, QMessageBox)
 
 from src.gui.download import DlIndependentDialog
 from src.gui.filetreeview import Tree
@@ -25,6 +25,7 @@ from src.gui.orderexcute import OrderRunWidget
 from src.gui.orderwidget import CreateOrderWidget
 # Own modules
 from src.gui.output import StdoutRedirect
+from src.gui.visual import PlotWidget
 
 __author__ = 'loftmain'
 __copyright__ = 'Copyright 2020, doozy'
@@ -39,16 +40,22 @@ dirname = os.path.dirname(PySide2.__file__)
 plugin_path = os.path.join(dirname, 'plugins', 'platforms')
 os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = plugin_path
 
-class MainWindow(QMainWindow):
-    def __init__(self,parent=None):
-        QMainWindow.__init__(self,parent)
-        self.setWindowTitle('stock')
-        widget = QWidget()
-        layout = QVBoxLayout(widget)
-        layout.addWidget(QTextEdit())
-        self.path_to_file = os.curdir
-        self.treeview_widget = Tree()
 
+class MainWindow(QMainWindow):
+    """
+          main window
+
+    """
+
+    def __init__(self, parent=None):
+        QMainWindow.__init__(self, parent)
+        self.setWindowTitle('doozy stock')
+
+        # current directory
+        self.path_to_file = os.curdir
+
+        # tree system file view dock widget
+        self.treeview_widget = Tree()
         self.dockTree = QDockWidget("TreeView", self)
         self.addDockWidget(Qt.LeftDockWidgetArea, self.dockTree)
         self.dockTree.setWidget(self.treeview_widget)
@@ -68,7 +75,7 @@ class MainWindow(QMainWindow):
         self.logDock.setWidget(self.logInfo)
         self.addDockWidget(Qt.BottomDockWidgetArea, self.logDock)
 
-        # tab widget
+        # tab widget setting
         self.tabWidget = QTabWidget(tabsClosable=True)
         self.tabWidget.tabCloseRequested.connect(self.onTabCloseRequested)
         self.setCentralWidget(self.tabWidget)
@@ -77,8 +84,8 @@ class MainWindow(QMainWindow):
         self.createActions()
         self.createMenus()
 
-        self.createStatusBar();
-        self.readSettings();
+        self.createStatusBar()
+        self.readSettings()
         """
         self.createContextMenu()
         self.createToolBar()
@@ -93,7 +100,6 @@ class MainWindow(QMainWindow):
         self.newProject.triggered.connect(self.load_folder)
 
         self.openProject = QAction("&Open Project", self)
-        # self.exitAction.setIcon(QIcon(":/images/exit.png"))
         self.openProject.setShortcut("Ctrl+O")
         self.openProject.setStatusTip("Open a project in treeview")
         self.openProject.triggered.connect(self.load_folder)
@@ -161,33 +167,8 @@ class MainWindow(QMainWindow):
         # visualization menu
         self.chartAction = QAction("&단일 그래프 chart", self)
         self.chartAction.setStatusTip("단일 그래프 chart")
-        self.chartAction.triggered.connect(self.close)
+        self.chartAction.triggered.connect(self.createPlotTab)
 
-        """
-        # actions for colors
-        self.redAction = QAction("&Red",self)
-        self.redAction.setStatusTip("Set red color")
-        self.redAction.setCheckable(True)
-        self.redAction.triggered.connect(self.shapeWidget.red)
-
-        self.greenAction = QAction("&Green",self)
-        self.greenAction.setStatusTip("Set green color")
-        self.greenAction.setCheckable(True);
-        self.greenAction.triggered.connect(self.shapeWidget.green)
-
-        self.blueAction = QAction("&Blue",self)
-        self.blueAction.setStatusTip("Set blue color")
-        self.blueAction.setCheckable(True)
-        self.blueAction.triggered.connect(self.shapeWidget.blue)
-
-        self.colorActionGroup = QActionGroup(self)
-        self.colorActionGroup.addAction(self.redAction);
-        self.colorActionGroup.addAction(self.greenAction);
-        self.colorActionGroup.addAction(self.blueAction);
-        self.redAction.setChecked(True);
-        self.colorActionGroup.triggered.connect(self.setColor)
-        # (triggered(QAction*)),this,SLOT(setColor(QAction*)));
-        """
 
     def createMenus(self):
 
@@ -246,13 +227,13 @@ class MainWindow(QMainWindow):
         self.statusBar().addWidget(locationLabel)
 
     def readSettings(self):
-        settings = QSettings("Qt5Programming Inc.", "Shape")
+        settings = QSettings("doozy Inc.", "Shape")
 
         self.restoreGeometry(settings.value("geometry"))
         self.restoreState(settings.value("state"))
 
     def writeSettings(self):
-        settings = QSettings("Qt5Programming Inc.", "Shape")
+        settings = QSettings("doozy Inc.", "Shape")
 
         self.saveGeometry()
         settings.setValue("geometry", self.saveGeometry())
@@ -323,6 +304,15 @@ class MainWindow(QMainWindow):
             )
         )
         self.tabWidget.addTab(widget, "order execute")
+
+    def createPlotTab(self):
+        widget = PlotWidget()
+        widget.destroyed.connect(
+            lambda obj: print(
+                "deleted {}, count: {}".format(obj, self.tabWidget.count())
+            )
+        )
+        self.tabWidget.addTab(widget, "Plot")
 
     def toggleFileView(self, state):
         if state:
