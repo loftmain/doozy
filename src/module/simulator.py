@@ -107,18 +107,20 @@ def get_price(row):
     except(KeyError):
         return False
     
-    pass
-if __name__ == "__main__":
-    capital = 10000000 # form에서 입력받음
-    path = 'Order.json' # form에서 입력받
-    order_sheet = load_json(path)
-
     return int(df['Adj Close'][0])
 
 def trade_buy(row):
     pass
-def trade_sell(row):ime', 'item_code', 'item_name', 'order_type',
-              'vol_money', 'vol_colunt', 'price', 'avg_price', 'cash']
+def trade_sell(row):
+    pass
+
+if __name__ == '__main__':
+    capital = 10000000 # form에서 입력받음
+    path = 'Order.json' # form에서 입력받음
+    
+    order_sheet = load_json(path)
+    t_column = ['order_datetime', 'item_code', 'item_name', 'order_type',
+                'vol_money', 'vol_colunt', 'price', 'avg_price', 'cash']
     s_column = ['item', 'item_code', 'item_count', 'avg_price']
     
     trading_log = create_dataframe(t_column)
