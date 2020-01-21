@@ -226,7 +226,7 @@
       <workItem from="1579101078756" duration="110000" />
       <workItem from="1579228291142" duration="633000" />
       <workItem from="1579246310936" duration="901000" />
-      <workItem from="1579247879569" duration="525000" />
+      <workItem from="1579247879569" duration="1081000" />
     </task>
     <task id="LOCAL-00001" summary="window conda 3.5 버전 테스트&#10;&#10;zipline 문제점 &#10; - benchmark.py 내부 변경해야함&#10; - loader.py 내부 변경해야함 그래야지 실행가능&#10; &#10;conda 환경과 virtualenv환경이 requirements.txt파일로 단순하게&#10;pip install -r requirements.txt로 되지 않는듯">
       <created>1578906752541</created>
@@ -309,28 +309,28 @@
     </state>
     <state x="973" y="383" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1579060009009" />
     <state x="730" y="314" width="429" height="487" key="FileChooserDialogImpl/0.26.1920.1054@0.26.1920.1054" timestamp="1578830500314" />
-    <state width="1685" height="305" key="GridCell.Tab.0.bottom" timestamp="1579248503793">
+    <state width="1685" height="305" key="GridCell.Tab.0.bottom" timestamp="1579248967316">
       <screen x="0" y="0" width="1728" height="1112" />
     </state>
-    <state width="1685" height="305" key="GridCell.Tab.0.bottom/0.0.1728.1112@0.0.1728.1112" timestamp="1579248503793" />
+    <state width="1685" height="305" key="GridCell.Tab.0.bottom/0.0.1728.1112@0.0.1728.1112" timestamp="1579248967316" />
     <state width="2517" height="404" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1579077462066" />
     <state width="1870" height="214" key="GridCell.Tab.0.bottom/0.26.1920.1054@0.26.1920.1054" timestamp="1579101192383" />
-    <state width="1685" height="305" key="GridCell.Tab.0.center" timestamp="1579248503793">
+    <state width="1685" height="305" key="GridCell.Tab.0.center" timestamp="1579248967316">
       <screen x="0" y="0" width="1728" height="1112" />
     </state>
-    <state width="1685" height="305" key="GridCell.Tab.0.center/0.0.1728.1112@0.0.1728.1112" timestamp="1579248503793" />
+    <state width="1685" height="305" key="GridCell.Tab.0.center/0.0.1728.1112@0.0.1728.1112" timestamp="1579248967316" />
     <state width="2517" height="404" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1579077462066" />
     <state width="1870" height="214" key="GridCell.Tab.0.center/0.26.1920.1054@0.26.1920.1054" timestamp="1579101192381" />
-    <state width="1685" height="305" key="GridCell.Tab.0.left" timestamp="1579248503792">
+    <state width="1685" height="305" key="GridCell.Tab.0.left" timestamp="1579248967316">
       <screen x="0" y="0" width="1728" height="1112" />
     </state>
-    <state width="1685" height="305" key="GridCell.Tab.0.left/0.0.1728.1112@0.0.1728.1112" timestamp="1579248503792" />
+    <state width="1685" height="305" key="GridCell.Tab.0.left/0.0.1728.1112@0.0.1728.1112" timestamp="1579248967316" />
     <state width="2517" height="404" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1579077462066" />
     <state width="1870" height="214" key="GridCell.Tab.0.left/0.26.1920.1054@0.26.1920.1054" timestamp="1579101192380" />
-    <state width="1685" height="305" key="GridCell.Tab.0.right" timestamp="1579248503793">
+    <state width="1685" height="305" key="GridCell.Tab.0.right" timestamp="1579248967316">
       <screen x="0" y="0" width="1728" height="1112" />
     </state>
-    <state width="1685" height="305" key="GridCell.Tab.0.right/0.0.1728.1112@0.0.1728.1112" timestamp="1579248503793" />
+    <state width="1685" height="305" key="GridCell.Tab.0.right/0.0.1728.1112@0.0.1728.1112" timestamp="1579248967316" />
     <state width="2517" height="404" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1579077462066" />
     <state width="1870" height="214" key="GridCell.Tab.0.right/0.26.1920.1054@0.26.1920.1054" timestamp="1579101192382" />
     <state width="2517" height="491" key="GridCell.Tab.1.bottom" timestamp="1579076585617">
@@ -387,7 +387,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/doozy$xlsxEvent__1_.coverage" NAME="xlsxEvent (1) Coverage Results" MODIFIED="1579062719128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/guiproject/test" />
     <SUITE FILE_PATH="coverage/doozy$xlsxEvent.coverage" NAME="xlsxEvent Coverage Results" MODIFIED="1579071856228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/guiproject/test" />
-    <SUITE FILE_PATH="coverage/doozy$gui.coverage" NAME="gui Coverage Results" MODIFIED="1579248503769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
+    <SUITE FILE_PATH="coverage/doozy$gui.coverage" NAME="gui Coverage Results" MODIFIED="1579248606450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
     <SUITE FILE_PATH="coverage/doozy$classifier.coverage" NAME="classifier Coverage Results" MODIFIED="1579069298356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
     <SUITE FILE_PATH="coverage/doozy$createorder.coverage" NAME="createorder Coverage Results" MODIFIED="1579076058074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
     <SUITE FILE_PATH="coverage/doozy$orderwidget.coverage" NAME="orderwidget Coverage Results" MODIFIED="1579076856256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
