@@ -1,30 +1,49 @@
+from collections import OrderedDict
+from datetime import datetime
+
 import matplotlib.pyplot as plt
 import pandas as pd
-from zipline.algorithm import TradingAlgorithm
-from zipline.api import order_percent, record, symbol
+import pytz
+import zipline
+from trading_calendars import get_calendar
+from zipline.api import order_percent, record, symbol, set_benchmark
 
-"""start = datetime.datetime(2010, 1, 1)
-end = datetime.datetime(2016, 3, 29)
-data = web.DataReader("AAPL", "yahoo", start, end)
-
-data = data[['Adj Close']]
-data.columns = ['AAPL']
-data = data.tz_localize('UTC')"""
+path = '005930.csv'
+stock_name = 'SAMSUNG'
 
 
+def setup_panel(path, stock_name):
+    file_path = path
+    data = OrderedDict()
+    data[stock_name] = pd.read_csv(file_path, index_col=0, parse_dates=['date'])
+    data[stock_name] = data[stock_name][["open", "high", "low", "close", "volume"]]
+    data['updown'] = pd.read_csv(file_path, index_col=0, parse_dates=['date'])
+    data['updown']['null1'] = 0
+    data['updown']['null2'] = 0
+    data['updown']['null3'] = 0
+    data['updown'] = data['updown'][["null1", "null2", "null3", "buy", "sell"]]
+    data['updown'].rename(columns={"null1": "open",
+                                   "null2": "high",
+                                   "null3": "low",
+                                   "buy": "close",
+                                   "sell": "volume"}, inplace=True)
+    panel = pd.Panel(data)
+    panel.minor_axis = ["open", "high", "low", "close", "volume"]
+    panel.major_axis = panel.major_axis.tz_localize(pytz.utc)
+    return panel
 
 
 def initialize(context):
-    context.sym = symbol('DJI')
-    context.sym1 = symbol('buy')
-    context.sym2 = symbol('sell')
+    context.sym = symbol('SAMSUNG')
+    context.sym1 = symbol('updown')
+    set_benchmark(symbol("SAMSUNG"))
     context.hold = False
 
 def handle_data(context, data):
     buy = False
     sell = False
-    pred_buy = data.current(context.sym1, 'price')
-    pred_sell = data.current(context.sym2, 'price')
+    pred_buy = data.current(context.sym1, 'close')
+    pred_sell = data.current(context.sym1, 'volume')
 
     if pred_buy == 1 and context.hold == False:
         order_percent(context.sym, 0.99)
@@ -35,19 +54,20 @@ def handle_data(context, data):
         context.hold = False
         sell = True
 
-    record(DJI=data.current(context.sym, "price"), buy=buy, sell=sell)
+    record(originPrice=data.current(context.sym, "price"), buy=buy, sell=sell)
 
-def backtesting(file):
-    df = pd.read_excel(file)
-    df["Date"] = pd.to_datetime(df["Date"])
-    df = df.set_index("Date")
-    newdata = df[['Adj Close', "buy", 'sell']]
-    newdata.columns = ['DJI', "buy", 'sell']
 
-    newdata = newdata.tz_localize('UTC')
-    algo = TradingAlgorithm(initialize=initialize, handle_data=handle_data)
-    result = algo.run(newdata)
-    result.to_csv("resultBacktesting.csv")
+def backtesting(file_path, name, output_name):
+    korea_calendar = get_calendar('XKRX')
+    result = zipline.run_algorithm(start=datetime(2018, 1, 3, 0, 0, 0, 0, pytz.utc),
+                                   end=datetime(2019, 12, 30, 0, 0, 0, 0, pytz.utc),
+                                   initialize=initialize,
+                                   trading_calendar=korea_calendar,
+                                   capital_base=10000000,
+                                   handle_data=handle_data,
+                                   data=setup_panel(file_path, name))
+    result.rename(columns={'originPrice': name}, inplace=True)
+    result.to_csv(output_name)
     return result
 
 def plot_moneyflow(result):
@@ -66,5 +86,7 @@ def plot_moneyflow(result):
 
 
 if __name__ == '__main__':
-    result = backtesting("input_order.xlsx")
+    result = backtesting('005930.csv', 'SAMSUNG', 'SAMSUNG_RESULT.csv')
     plot_moneyflow(result)
+
+    # setup_panel('005930.csv', 'SAMSUNG')

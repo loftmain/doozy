@@ -104,10 +104,6 @@ class PlotWidget(QWidget):
         self.cb_option.addItem('수익률', 'per')
         self.cb_option.currentTextChanged.connect(self.change_subplot)
 
-        self.pushButton = QPushButton("자산변동흐름")
-        self.pushButton.clicked.connect(lambda: self.canvas.update_subplot(1))
-        self.pushButton1 = QPushButton("수익률")
-        self.pushButton1.clicked.connect(lambda: self.canvas.update_subplot(2))
 
         # self.fig = plt.Figure()
         # self.canvas = FigureCanvas(self.fig)
@@ -119,8 +115,6 @@ class PlotWidget(QWidget):
         # Right Layout
         rightLayout = QVBoxLayout()
         rightLayout.addWidget(self.cb_option)
-        rightLayout.addWidget(self.pushButton)
-        rightLayout.addWidget(self.pushButton1)
         rightLayout.addStretch(1)
 
         layout = QHBoxLayout()
