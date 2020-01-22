@@ -10,6 +10,8 @@ import os
 import pandas as pd
 import pandas_datareader.data as web
 
+from src.module.io import set_save_folder
+
 # pip install pandas_datareader
 # pip install xlrd
 
@@ -113,12 +115,7 @@ def run_create_order(setting):
     elif strategy == 'LMBNS':
         result = _lmbs(df, yahoo, option)  # form에서 입력받음[컬럼이름과, 비율]
 
-    if not os.path.exists(os.path.join(setting['path'], 'save')):
-        os.mkdir(os.path.join(setting['path'], 'save'))
-    save_path = os.path.join(setting['path'], 'save')
-    if not os.path.exists(os.path.join(save_path, 'order')):
-        os.mkdir(os.path.join(save_path, 'order'))
-    save_path = os.path.join(save_path, 'order')
+    save_path = set_save_folder(os.curdir, 'order')
     result.to_csv(save_path + '\\' + setting['save_name'], header=True, index=False)
 
 

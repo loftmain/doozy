@@ -20,12 +20,12 @@ from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
 
 from src.gui.markingwidget import LineEdit
 from src.module.classifier import run_modeling
+from src.module.io import set_save_folder
 
 
 class ModelingOption(QWidget):
-    def __init__(self, path):
+    def __init__(self):
         QWidget.__init__(self)
-        self.path = path
         self.setWindowTitle('Button Demo')
 
         predBox = QGroupBox("예측", self)
@@ -217,11 +217,9 @@ class ModelingOption(QWidget):
     @Slot(name="clickedOkButton")
     def slot_clicked_ok_button(self):
         sig = True
-        if not os.path.exists(os.path.join(self.path, 'save')):
-            os.mkdir(os.path.join(self.path, 'save'))
-        save_path = os.path.join(self.path, 'save')
-        dependent_file_path = self.dependent_file_path.text().split('file:///')[1]
-        independent_file_path = self.independent_file_path.text().split('file:///')[1]
+        save_path = set_save_folder(os.curdir, 'modeling')
+        dependent_file_path = self.dependent_file_path.text().split('file://')[1]
+        independent_file_path = self.independent_file_path.text().split('file://')[1]
         # =============================================================================
         #     KNN
         # =============================================================================
@@ -331,11 +329,11 @@ class ModelingOption(QWidget):
                 print("미구현\n")
                 sig = False
         if sig == True:
-            run_modeling(start_setting, self.path)
+            run_modeling(start_setting)
 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    form = ModelingOption("")
+    form = ModelingOption()
     form.show()
     app.exec_()

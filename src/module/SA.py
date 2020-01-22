@@ -60,6 +60,7 @@ class SA(object):
         # https://cleancode-ws.tistory.com/63 참고 - 결측치 처리
 
     def check_independent_data_period(self):
+        # TODO: linux에서 날짜 xx. x. x로 받아와서 오류 발생 (수정해야함)
         date_index_list = list(self.dataframe.index.strftime("%Y-%m-%d"))
         #print(self.merged_independent.loc[self.start_date:self.end_date, :])
         if str(self.start_date) not in date_index_list:

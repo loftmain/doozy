@@ -18,5 +18,12 @@ def set_save_folder(path, opt):
         if not os.path.exists(os.path.join(save_path, 'backtesting')):
             os.mkdir(os.path.join(save_path, 'backtesting'))
         save_path = os.path.join(save_path, 'backtesting')
-
+    elif opt == 'modeling':
+        if not os.path.exists(os.path.join(save_path, 'modeling')):
+            os.mkdir(os.path.join(save_path, 'modeling'))
+        save_path = os.path.join(save_path, 'modeling')
+    elif opt == 'order':
+        if not os.path.exists(os.path.join(save_path, 'order')):
+            os.mkdir(os.path.join(save_path, 'order'))
+        save_path = os.path.join(save_path, 'order')
     return save_path

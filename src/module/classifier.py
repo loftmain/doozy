@@ -461,22 +461,15 @@ class SA_LinearRegression(SA):
 
                     self.save_excel_file(pre_dataframe, "KNN", condition, columns)"""
 
-def run_modeling(start_setting, path):
-    if not os.path.exists(os.path.join(path, 'save')):
-        os.mkdir(os.path.join(path, 'save'))
-    save_path = os.path.join(path, 'save')
-    if not os.path.exists(os.path.join(save_path, 'modeling')):
-        os.mkdir(os.path.join(save_path, 'modeling'))
-    save_path = os.path.join(save_path, 'modeling')
-    print('savepath: ' + save_path)
+def run_modeling(setting):
     log_data = pd.DataFrame(columns=['classifier', 'condition', 'columns', 'accuracy',
                                      'precision', 'recall', 'option'])
 
-    for setting in start_setting['setting']:
-        check_setting_file(setting)
-        check_classifier(setting, log_data)
+    for set in setting['setting']:
+        check_setting_file(set)
+        check_classifier(set, log_data)
         print('-----------------------------------------------------------------')
-    log_data.to_excel(save_path + '\\log_' + datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S') + '.xlsx')
+    log_data.to_excel(setting['save_path'] + '/log_' + datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S') + '.xlsx')
 
 if __name__ == '__main__':
     opt0 = 'KNN'

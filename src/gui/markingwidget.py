@@ -18,6 +18,7 @@ from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
                                QGridLayout, QLabel, QComboBox, QSpinBox,
                                QLineEdit, QFormLayout, QRadioButton)
 
+from src.module.io import set_save_folder
 from src.module.marking import Marking
 
 
@@ -40,9 +41,8 @@ class LineEdit(QLineEdit):
 
 
 class MarkingWidget(QWidget):
-    def __init__(self, path):
+    def __init__(self):
         QWidget.__init__(self)
-        self.path = path
         self.setWindowTitle('create Label')
 
         self.okButton = QPushButton("ok", self)
@@ -180,21 +180,16 @@ class MarkingWidget(QWidget):
                 child.widget().deleteLater()
 
     def run_markiing(self, dic):
-        if not os.path.exists(os.path.join(self.path, 'save')):
-            os.mkdir(os.path.join(self.path, 'save'))
-        save_path = os.path.join(self.path, 'save')
-        if not os.path.exists(os.path.join(save_path, 'marking')):
-            os.mkdir(os.path.join(save_path, 'marking'))
-        save_path = os.path.join(save_path, 'marking')
+        save_path = set_save_folder(os.curdir, 'marking')
         df = pd.read_csv(dic["file_root"])
         mark = Marking()
         mark.set_option(df, [dic["compare_index"], dic["base_index"], dic["per"]],
                         [dic["compare_column"], dic['base_column'], dic["name"]], dic["updown"])
         result = mark.create_label()
-        result.to_csv(save_path + '\\' + dic["save_name"], header=True, index=False, encoding='ms949')
+        result.to_csv(save_path + '/' + dic["save_name"], header=True, index=False, encoding='ms949')
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    form = MarkingWidget(os.path.curdir)
+    form = MarkingWidget()
     form.show()
     app.exec_()

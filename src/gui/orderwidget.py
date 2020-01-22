@@ -6,7 +6,6 @@ gui runcher
 {License_info} 라이센스 정해야함
 """
 
-import os
 # Built-in/Generic Imports
 import sys
 
@@ -21,9 +20,8 @@ from src.module.createorder import run_create_order
 
 
 class CreateOrderWidget(QWidget):
-    def __init__(self, path):
+    def __init__(self):
         QWidget.__init__(self)
-        self.path = path
         self.setWindowTitle('orderexcute')
 
         self.run_button = QPushButton("run", self)
@@ -98,8 +96,7 @@ class CreateOrderWidget(QWidget):
             "yahoo_code": self.yahoo_index.text(),
             "strategy": self.rb_clicked(),
             "per": 0.01 * int(self.sb_per.text()),
-            "save_name": self.save_file_name.text(),
-            "path": self.path
+            "save_name": self.save_file_name.text()
         }
         run_create_order(setting_info)
         print('order create OK!')
@@ -108,6 +105,6 @@ class CreateOrderWidget(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    form = CreateOrderWidget(os.curdir)
+    form = CreateOrderWidget()
     form.show()
     app.exec_()

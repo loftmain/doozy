@@ -252,7 +252,7 @@ class MainWindow(QMainWindow):
         os.chdir(self.path_to_file)
 
     def dl_independents(self):
-        dlg = DlIndependentDialog(self.path_to_file)
+        dlg = DlIndependentDialog(os.curdir)
         dlg.exec_()
 
 
@@ -271,48 +271,30 @@ class MainWindow(QMainWindow):
             self.shapeWidget.blue()
 
     def createLabelTab(self):
-        widget = MarkingWidget(self.path_to_file)
+        widget = MarkingWidget()
+        """
         widget.destroyed.connect(
             lambda obj: print(
                 "deleted {}, count: {}".format(obj, self.tabWidget.count())
             )
         )
+        """
         self.tabWidget.addTab(widget, "Marking")
 
     def createModelOptionTab(self):
-        widget = ModelingOption(self.path_to_file)
-        widget.destroyed.connect(
-            lambda obj: print(
-                "deleted {}, count: {}".format(obj, self.tabWidget.count())
-            )
-        )
+        widget = ModelingOption()
         self.tabWidget.addTab(widget, "modeling option setting")
 
     def createOrderTab(self):
-        widget = CreateOrderWidget(self.path_to_file)
-        widget.destroyed.connect(
-            lambda obj: print(
-                "deleted {}, count: {}".format(obj, self.tabWidget.count())
-            )
-        )
+        widget = CreateOrderWidget()
         self.tabWidget.addTab(widget, "order create")
 
     def createOrderExecuteTab(self):
-        widget = OrderRunWidget(self.path_to_file)
-        widget.destroyed.connect(
-            lambda obj: print(
-                "deleted {}, count: {}".format(obj, self.tabWidget.count())
-            )
-        )
+        widget = OrderRunWidget()
         self.tabWidget.addTab(widget, "order execute")
 
     def createPlotTab(self):
         widget = PlotWidget()
-        widget.destroyed.connect(
-            lambda obj: print(
-                "deleted {}, count: {}".format(obj, self.tabWidget.count())
-            )
-        )
         self.tabWidget.addTab(widget, "Plot")
 
     def toggleFileView(self, state):

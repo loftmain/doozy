@@ -21,9 +21,8 @@ from src.module.io import get_refined_path
 
 
 class OrderRunWidget(QWidget):
-    def __init__(self, path):
+    def __init__(self):
         QWidget.__init__(self)
-        self.path = path
         self.setWindowTitle('orderexcute')
 
         self.run_button = QPushButton("run", self)
