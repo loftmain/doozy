@@ -52,7 +52,7 @@ class MainWindow(QMainWindow):
         self.setWindowTitle('doozy stock')
 
         # current directory
-        self.path_to_file = os.curdir
+        self.path_to_file = os.getcwd()
 
         # tree system file view dock widget
         self.treeview_widget = Tree()
@@ -249,6 +249,7 @@ class MainWindow(QMainWindow):
                                              | QFileDialog.DontResolveSymlinks)
         print(self.path_to_file)
         self.treeview_widget.change_root_index(self.path_to_file)
+        os.chdir(self.path_to_file)
 
     def dl_independents(self):
         dlg = DlIndependentDialog(self.path_to_file)
@@ -297,7 +298,7 @@ class MainWindow(QMainWindow):
         self.tabWidget.addTab(widget, "order create")
 
     def createOrderExecuteTab(self):
-        widget = OrderRunWidget()
+        widget = OrderRunWidget(self.path_to_file)
         widget.destroyed.connect(
             lambda obj: print(
                 "deleted {}, count: {}".format(obj, self.tabWidget.count())
