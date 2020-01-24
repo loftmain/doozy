@@ -15,7 +15,6 @@ import pandas_datareader.data as web
 
 pd.options.mode.chained_assignment = None
 
-
 def _hmbs(df, data, opt):
     status = False
 

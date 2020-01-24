@@ -75,7 +75,7 @@ def Gathering_independent(key, start):
     for index in index_list:
         
         # Get data from fred
-        df = Fred.get_series_all_releases(index)
+        df = key.get_series_all_releases(index)
         #df_info = fred.search(index)
         
         # Drop column(realtime_start column)
@@ -139,8 +139,8 @@ if __name__ == '__main__':
 # =============================================================================
 
 # 종속변수=====================================================================
-#     key = Fred(api_key='3b2795f81c94f1a105d1e4fc3661a45e') # form에서 입력받음
-#     start = '2010-01-01' # form에서 입력받음
-#     Gathering_independent(key, start)
+     key = Fred(api_key='3b2795f81c94f1a105d1e4fc3661a45e') # form에서 입력받음
+     start = '2000-01-01' # form에서 입력받음
+     Gathering_independent(key, start)
 # =============================================================================
     
