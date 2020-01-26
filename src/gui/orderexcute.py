@@ -12,7 +12,7 @@ import sys
 from PySide2.QtCore import Slot, Qt
 # Libs
 from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
-                               QVBoxLayout, QGroupBox, QLabel,
+                               QVBoxLayout, QGroupBox, QLabel, QComboBox,
                                QFormLayout, QLineEdit, QGridLayout)
 
 from src.gui.markingwidget import LineEdit
@@ -33,6 +33,8 @@ class OrderRunWidget(QWidget):
 
         self.stock_name = QLineEdit()
         self.start_value = QLineEdit()
+        self.calendar = QComboBox(self)
+        self.calendar.addItems(["US", "KR"])  # 다수 아이템 추가시
 
         gb1_layout.addWidget(QLabel('종목명: '), 0, 0, Qt.AlignRight)
         gb1_layout.addWidget(self.stock_name, 0, 1, Qt.AlignLeft)
@@ -40,6 +42,8 @@ class OrderRunWidget(QWidget):
         gb1_layout.addWidget(QLabel('초기금액: '), 0, 2, Qt.AlignRight)
         gb1_layout.addWidget(self.start_value, 0, 3, Qt.AlignCenter)
         gb1_layout.addWidget(QLabel("만원"), 0, 4, Qt.AlignLeft)
+        gb1_layout.addWidget(QLabel('백테스팅 캘린더 지정:'), 1, 0, Qt.AlignRight)
+        gb1_layout.addWidget(self.calendar, 1, 1, Qt.AlignLeft)
 
         gb_2 = QGroupBox("경로 지정", self)
         formLayout = QFormLayout(gb_2)
@@ -65,7 +69,8 @@ class OrderRunWidget(QWidget):
             "order_file_path": get_refined_path(self.input_file_path.text()),
             "save_file_name": self.save_file_name.text(),
             'stock_name': self.stock_name.text(),
-            'start_value': int(self.start_value.text()) * 10000
+            'start_value': int(self.start_value.text()) * 10000,
+            'calendar': self.calendar.currentText()
         }
         print(serial_info)
         backtesting(serial_info)

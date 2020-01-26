@@ -60,7 +60,7 @@ class SA(object):
         # https://cleancode-ws.tistory.com/63 참고 - 결측치 처리
 
     def check_independent_data_period(self):
-        # TODO: linux에서 날짜 xx. x. x로 받아와서 오류 발생 (수정해야함)
+        # TODO: linux에서 날짜 xx. x. x로 받아와서 오류 발생 (수정완료)
         date_index_list = list(self.dataframe.index.strftime("%Y-%m-%d"))
         #print(self.merged_independent.loc[self.start_date:self.end_date, :])
         if str(self.start_date) not in date_index_list:
@@ -144,17 +144,25 @@ class SA(object):
         pre_dataframe.loc[pre_dataframe.index[-1] + pd.Timedelta(seconds=1), condition + '_margin'] = Margin
         return pre_dataframe, Margin, closeIncreaseRate
 
-    def save_excel_file(self, dataframe, Classifier, condition, columns):
+    def save_csv_file(self, dataframe, Classifier, condition, columns):
         dependent_name = self.dependent_path.split("/")
+        dataframe.index = pd.to_datetime(dataframe.index.strftime("%Y-%m-%d %H:%M:%S"))
+        # dataframe.index = dataframe.index.dt.strftime("%Y-%m-%d %H:%M:%S")
+        dataframe.index.name = 'Date'
         if Classifier == "KNN":
 
-            dataframe.to_excel(
-            self.saved_path + '/' + str(self.n_neighbors) + Classifier + '_'+ dependent_name[-1] + "_" + str(condition) + str(
-                columns) + str(self.start_date) + "_" + str(self.seperate_date) + '.xlsx')
+            dataframe.to_csv(
+                self.saved_path + '/' + str(self.n_neighbors) + Classifier + '_' + dependent_name[-1] + "_" + str(
+                    condition) + str(
+                    columns) + str(self.start_date) + "_" + str(self.seperate_date) + '.csv',
+                date_format='%Y-%m-%d %H:%M:%S',
+                index=True)
         else:
-            dataframe.to_excel(
-            self.saved_path + '/' + Classifier + '_' + dependent_name[-1] + "_" + str(condition) + str(
-                columns) + str(self.start_date) + "_" + str(self.seperate_date) + '.xlsx')
+            dataframe.to_csv(
+                self.saved_path + '/' + Classifier + '_' + dependent_name[-1] + "_" + str(condition) + str(
+                    columns) + str(self.start_date) + "_" + str(self.seperate_date) + '.csv',
+                date_format='%Y-%m-%d %H:%M:%S',
+                index=True)
 
     def get_independent_columns(self):
         independent_columns = list(self.dataframe)

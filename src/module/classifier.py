@@ -182,7 +182,7 @@ class SA_Randomforest(SA):
                 log.loc[len(log)] = \
                     ["RF", condition, columns, accuracy, precision, recall,
                     'n_estimators={} max_depth={} random_state={}'.format(n_estimators, max_depth, random_state)]
-                self.save_excel_file(copy_dataframe, "RF", condition, columns)
+                self.save_csv_file(copy_dataframe, "RF", condition, columns)
 
     def analyze_auto(self, log, range_of_column_no, n_estimators=100, max_depth=None, random_state=0, max_features='auto', bootstrap=True):
         super().read_excel_files()
@@ -218,7 +218,7 @@ class SA_Randomforest(SA):
                         ["RF", condition, columns, accuracy, precision, recall,
                         'n_estimators={} max_depth={} random_state={}'.format(n_estimators, max_depth, random_state)]
 
-                    # self.save_excel_file(copy_dataframe, "RF", condition, columns)
+                    # self.save_csv_file(copy_dataframe, "RF", condition, columns)
 
 
 """
@@ -278,7 +278,7 @@ class SA_Knn(SA):
                     log.loc[len(log)] = ["KNN", condition, columns, accuracy, precision, recall,
                                           'n_neighbors={}'.format(self.n_neighbors)]
 
-                    self.save_excel_file(pre_dataframe, "KNN", condition, columns)
+                    self.save_csv_file(pre_dataframe, "KNN", condition, columns)
 
     def analyze_auto(self, log, range_of_column_no, n_neighbors_list):
         super().read_excel_files()
@@ -363,7 +363,7 @@ class SA_xgboost(SA):
                                       'n_estimators={} min_child_weight={} max_depth={} gamma={}'
                                           .format(n_estimators, min_child_weight,max_depth, gamma)]
 
-                self.save_excel_file(pre_dataframe, "xgboost", condition, columns)
+                self.save_csv_file(pre_dataframe, "xgboost", condition, columns)
 
     def analyze_auto(self, log, range_of_column_no, n_estimators=100, min_child_weight=1, max_depth=8, gamma=0):
         super().read_excel_files()
@@ -402,7 +402,7 @@ class SA_xgboost(SA):
                                          'n_estimators={} min_child_weight={} max_depth={} gamma={}'
                                              .format(n_estimators, min_child_weight, max_depth, gamma)]
 
-                    # self.save_excel_file(pre_dataframe, "xgboost", condition, columns)
+                    # self.save_csv_file(pre_dataframe, "xgboost", condition, columns)
 
 
 class SA_LinearRegression(SA):
@@ -452,14 +452,14 @@ class SA_LinearRegression(SA):
                     .format(round(accuracy, 2), round(precision, 2), round(recall, 2), condition, columns)
                 print(result_data)
                 log.loc[len(log)] = ["LR", condition, columns, accuracy, precision, recall,'None']
-                self.save_excel_file(pre_dataframe, "LR", condition, columns)
+                self.save_csv_file(pre_dataframe, "LR", condition, columns)
                 """
 
 
                     print(result_data)
                     log.loc[len(log)] = ["KNN", condition, columns, accuracy, precision, recall, margin, close_increase_rate]
 
-                    self.save_excel_file(pre_dataframe, "KNN", condition, columns)"""
+                    self.save_csv_file(pre_dataframe, "KNN", condition, columns)"""
 
 def run_modeling(setting):
     log_data = pd.DataFrame(columns=['classifier', 'condition', 'columns', 'accuracy',
@@ -469,7 +469,7 @@ def run_modeling(setting):
         check_setting_file(set)
         check_classifier(set, log_data)
         print('-----------------------------------------------------------------')
-    log_data.to_excel(setting['save_path'] + '/log_' + datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S') + '.xlsx')
+    log_data.to_csv(set['save_path'] + '/log_' + datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S') + '.csv')
 
 if __name__ == '__main__':
     opt0 = 'KNN'
@@ -478,8 +478,8 @@ if __name__ == '__main__':
 
     opt3 = [['BAArate', 'HOUSTrate', 'DGORDERrate']]
     opt4 = ['HM3UP']
-    opt5 = 'dependent/DJI.csv'
-    opt6 = 'independent'
+    opt5 = '/home/jerry/Dropbox/doozy/guiproject/save/marking/dowjones.csv'
+    opt6 = '/home/jerry/Dropbox/doozy/guiproject/independent'
     opt7 = 'save'
     opt8 = [2016, 1, 1]
     opt9 = [2018, 1, 1]

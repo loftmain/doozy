@@ -310,7 +310,6 @@ class MainWindow(QMainWindow):
             self.logDock.hide()
 
 
-
     def onTabCloseRequested(self, index):
         widget = self.tabWidget.widget(index)
         widget.deleteLater()

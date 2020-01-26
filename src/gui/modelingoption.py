@@ -86,23 +86,27 @@ class ModelingOption(QWidget):
 
         self.lb_train = QLabel("training date: ", self)
         self.de_train_start = QDateEdit(self)
-        # self.dateed_start.setDate(QDate(2017, 1, 3))
-        self.de_train_start.setDate(QDate.currentDate())
+        self.de_train_start.setDate(QDate(1999, 1, 3))
+        self.de_train_start.setDisplayFormat('yyyy-MM-dd')
+        # self.de_train_start.setDate(QDate.currentDate())
         self.de_train_start.setCalendarPopup(True)
 
         self.de_train_end = QDateEdit(self)
         # self.de_train_end.setDate(QDate(2017, 1, 3))
+        self.de_train_end.setDisplayFormat('yyyy-MM-dd')
         self.de_train_end.setDate(QDate.currentDate())
         self.de_train_end.setCalendarPopup(True)
 
         self.lb_test = QLabel("test date: ", self)
         self.de_test_start = QDateEdit(self)
         # self.de_test_start.setDate(QDate(2017, 1, 3))
+        self.de_test_start.setDisplayFormat('yyyy-MM-dd')
         self.de_test_start.setDate(QDate.currentDate())
         self.de_test_start.setCalendarPopup(True)
 
         self.de_test_end = QDateEdit(self)
         # self.de_test_end.setDate(QDate(2017, 1, 3))
+        self.de_test_end.setDisplayFormat('yyyy-MM-dd')
         self.de_test_end.setDate(QDate.currentDate())
         self.de_test_end.setCalendarPopup(True)
 

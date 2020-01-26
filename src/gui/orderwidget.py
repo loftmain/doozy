@@ -77,19 +77,19 @@ class CreateOrderWidget(QWidget):
 
     def rb_clicked(self):
         if self.rb_1.isChecked():
-            return self.rb_1.text()
+            return self.rb_1.text().split(':')[0]
         elif self.rb_2.isChecked():
-            return self.rb_2.text()
+            return self.rb_2.text().split(':')[0]
         elif self.rb_3.isChecked():
-            return self.rb_3.text()
+            return self.rb_3.text().split(':')[0]
         elif self.rb_4.isChecked():
-            return self.rb_4.text()
+            return self.rb_4.text().split(':')[0]
         else:
             print("ERROR: radio button is unchecked")
 
     @Slot(name="clickedRunButton")
     def slot_clicked_run_button(self):
-        dependent_file_path = self.dependent_file_path.text().split('file:///')[1]
+        dependent_file_path = self.dependent_file_path.text().split('file://')[1]
         setting_info = {
             "order_file_path": dependent_file_path,
             "column_name": self.column_name.text(),
@@ -98,6 +98,7 @@ class CreateOrderWidget(QWidget):
             "per": 0.01 * int(self.sb_per.text()),
             "save_name": self.save_file_name.text()
         }
+        print(setting_info)
         run_create_order(setting_info)
         print('order create OK!')
         # .currentText()
