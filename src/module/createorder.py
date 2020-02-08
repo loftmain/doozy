@@ -21,7 +21,9 @@ def _hmbs(df, data, opt):
 
     for _, row in df.iterrows():
         if row[opt[0]] == 1: # column opt
-            year, month, day = row['DATE'].year, row['DATE'].month, row['DATE'].day
+            datetime_obj = datetime.datetime.strptime(row['Date'], '%Y-%m-%d %H:%M')
+            
+            year, month, day = row['Date'].year, row['Date'].month, row['Date'].day
 
             temp = data[data['year'] == year]
             temp = temp[temp['month'] == month]
@@ -124,7 +126,7 @@ def run_create_order(setting):
 
 if __name__ == '__main__':
 
-    path = 'save/input_order.csv'  # form에서 입력받음 [파일경로]
+    path = 'save/modeling output.csv'  # form에서 입력받음 [파일경로]
     option = ['predicted_K3', -0.04]  # [컬럼이름과, 비율]
     # HMBLS, LMBLS는 option[1]에 math.inf를 삽입하면됨
 
@@ -134,7 +136,7 @@ if __name__ == '__main__':
     index = '^DJI' # form에서 입력받음
     print(start, end)
     yahoo = read_df_from_yahoo(index, start, end)
-    strategy = 'LMBS' # form에서 입력받음 [전략]
+    strategy = 'HMBS' # form에서 입력받음 [전략]
 
     # 전략종류
     # HMBS : hmup이 1일 때, 월초 매수하여 월중 n%상승 등장일에 매도
@@ -151,4 +153,4 @@ if __name__ == '__main__':
     elif strategy == 'LMBNS':
         result = _lmbs(df, yahoo, option) # form에서 입력받음[컬럼이름과, 비율]
 
-    result.to_excel('input_order.xlsx', header=True, index=False)
+    #result.to_excel('input_order.xlsx', header=True, index=False)
