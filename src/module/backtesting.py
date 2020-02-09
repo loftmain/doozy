@@ -107,7 +107,7 @@ def plot_moneyflow(result):
 
 if __name__ == '__main__':
     serial_info = {
-        "order_file_path": '/home/jerry/Dropbox/doozy/guiproject/save/order/hm3up.csv',
+        "order_file_path": 'C:\\Users\\USER\\Dropbox\\doozy\\src\\module\\hm3up.csv',
         "save_file_name": 'test.csv',
         'stock_name': 'DJI',
         'start_value': int(1000) * 10000,

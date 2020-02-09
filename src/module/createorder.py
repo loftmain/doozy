@@ -28,6 +28,11 @@ def _hmbs(df, data, opt):
             year, month, day = datetime_obj.year, datetime_obj.month, datetime_obj.day
             temp = data[data['year'] == year]
             temp = temp[temp['month'] == month]
+            #temp = temp.reset_index()
+            print(year, month, row)
+            # 현재 기준 마지막달 까지 할 경우 오류남
+            if (year == 2020) and (month == 1):
+                break
             comp_v = temp['Adj Close'][temp.index[0]]
 
             for y, _ in temp.iterrows():
@@ -41,6 +46,7 @@ def _hmbs(df, data, opt):
             if status == False:
                 data['buy'][temp.index[0]] = 1
                 data['sell'][temp.index[-1]] = 1
+
     return data
 
 def _lmbs(df, data, opt):
@@ -72,14 +78,13 @@ def _lmbs(df, data, opt):
 
 def input_df(path, column):
     df = pd.read_csv(path)
-    print(df)
     df = pd.DataFrame(df, columns=['Date', column])
     return df
 
 
 def calculate_date(df):
     start = df['Date'][0]
-    end = df['Date'][len(df) - 1]
+    end = df['Date'][len(df) - 1] # 마지막 달이 최신 월일 경우 에러 발생
     return start, end
 
 
@@ -101,7 +106,6 @@ def run_create_order(setting):
     index = setting['yahoo_code']
     yahoo = read_df_from_yahoo(index, start, end)
     strategy = setting['strategy']
-
     # 전략종류
     # HMBS : hmup이 1일 때, 월초 매수하여 월중 n%상승 등장일에 매도
     # HMBLS : hmup이 1일 때, 월초 매수하여 월말에 매도
@@ -123,17 +127,17 @@ def run_create_order(setting):
 
 if __name__ == '__main__':
 
-    path = '/home/jerry/Dropbox/doozy/guiproject/save/modeling/5KNN.csv'  # form에서 입력받음 [파일경로]
-    option = ['HM3UP_predict', 0.02]  # [컬럼이름과, 비율]
+    path = 'D:\\modeling\\save\\modeling\\a.csv'  # form에서 입력받음 [파일경로]
+    option = ['HM2UP_predict', 0.02]  # [컬럼이름과, 비율]
     # HMBLS, LMBLS는 option[1]에 math.inf를 삽입하면됨
 
     df = input_df(path, option[0])
-    print(df)
     start, end = calculate_date(df)
-    index = '^DJI'  # form에서 입력받음
+    index = '^GSPC'  # form에서 입력받음
     print(start, end)
     yahoo = read_df_from_yahoo(index, start, end)
     strategy = 'HMBS'  # form에서 입력받음 [전략]
+    print(yahoo)
 
     # 전략종류
     # HMBS : hmup이 1일 때, 월초 매수하여 월중 n%상승 등장일에 매도
@@ -150,4 +154,4 @@ if __name__ == '__main__':
     elif strategy == 'LMBNS':
         result = _lmbs(df, yahoo, option) # form에서 입력받음[컬럼이름과, 비율]
 
-    result.to_excel('createorder.xlsx', header=True, index=False)
+    result.to_excel('D:\\modeling\\save\\a.xlsx', header=True, index=False)

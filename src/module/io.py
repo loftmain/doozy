@@ -1,8 +1,11 @@
 import os
-
+import platform
 
 def get_refined_path(path):
-    refined_path = path.split('file://')[1]
+    if platform.system() == 'Windows':
+        refined_path = path.split('file:///')[1]
+    elif platform.system() == 'Linux':
+        refined_path = path.split('file://')[1]
     return refined_path
 
 

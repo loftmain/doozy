@@ -480,7 +480,7 @@ if __name__ == '__main__':
     opt4 = ['HM3UP']
     opt5 = '/home/jerry/Dropbox/doozy/guiproject/save/marking/dowjones.csv'
     opt6 = '/home/jerry/Dropbox/doozy/guiproject/independent'
-    opt7 = 'save'
+    opt7 = '/home/jerry/Dropbox/doozy/guiproject/save'
     opt8 = [2016, 1, 1]
     opt9 = [2018, 1, 1]
     opt10 = [2019, 4, 1]
