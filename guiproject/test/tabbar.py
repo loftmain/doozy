@@ -1,9 +1,9 @@
-from PySide2 import QtCore, QtGui, QtWidgets
+from PySide2 import QtWidgets
 from PySide2.QtWidgets import QAction
-from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
-                               QCheckBox, QRadioButton, QVBoxLayout,
+from PySide2.QtWidgets import (QWidget, QPushButton,
+                               QRadioButton, QVBoxLayout,
                                QHBoxLayout, QGroupBox, QGridLayout,
-                               QLabel, QComboBox, QBoxLayout)
+                               QLabel, QComboBox)
 
 class MyForm(QWidget):
     def __init__(self,parent=None):

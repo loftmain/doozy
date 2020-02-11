@@ -1,2 +1,4 @@
 # doozy 
-현재 GUI 구현중
+
+Stock predict & backtesting simulator
+
