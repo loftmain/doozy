@@ -5,11 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/doozy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/doozy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/download.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/download.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conda_requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/visual.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/visual.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/module/backtesting.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/backtesting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module/classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module/createorder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/createorder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module/io.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/io.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +55,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -68,7 +67,7 @@
       <recent name="C:\Users\USER\Dropbox\doozy\src\module" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.backtesting">
+  <component name="RunManager" selected="Python.gui">
     <configuration name="backtesting" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="doozy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -105,28 +104,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/module/createorder.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="download" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="doozy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/gui" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/gui/download.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -179,13 +156,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="zip" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="doozy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/guiproject" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/guiproject/zip.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.gui" />
+        <item itemvalue="Python.zip" />
         <item itemvalue="Python.backtesting" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.gui" />
         <item itemvalue="Python.createorder" />
-        <item itemvalue="Python.download" />
       </list>
     </recent_temporary>
   </component>
@@ -423,11 +421,13 @@
     <state x="973" y="383" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1581047369748" />
     <state x="730" y="314" width="429" height="487" key="FileChooserDialogImpl/0.26.1920.1054@0.26.1920.1054" timestamp="1578830500314" />
     <state x="2310" y="280" key="FileChooserDialogImpl/0.26.3840.1054@0.26.3840.1054" timestamp="1579448023782" />
-    <state width="2259" height="300" key="GridCell.Tab.0.bottom" timestamp="1581243956547">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1364" height="252" key="GridCell.Tab.0.bottom" timestamp="1581851110252">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state width="1257" height="202" key="GridCell.Tab.0.bottom/0.0.1300.860@0.0.1300.860" timestamp="1580782212711" />
     <state width="1757" height="76" key="GridCell.Tab.0.bottom/0.0.1800.920@0.0.1800.920" timestamp="1580467075709" />
+    <state width="1370" height="260" key="GridCell.Tab.0.bottom/0.0.1920.1047@0.0.1920.1047" timestamp="1581841461660" />
+    <state width="1364" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1053@0.0.1920.1053" timestamp="1581851110252" />
     <state width="2057" height="202" key="GridCell.Tab.0.bottom/0.0.2100.1360@0.0.2100.1360" timestamp="1580810588491" />
     <state width="2457" height="500" key="GridCell.Tab.0.bottom/0.0.2500.1360@0.0.2500.1360" timestamp="1580469728710" />
     <state width="2259" height="300" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1581243956547" />
@@ -437,11 +437,13 @@
     <state width="1870" height="178" key="GridCell.Tab.0.bottom/0.26.3840.1054@0.26.3840.1054" timestamp="1579504569877" />
     <state width="1870" height="298" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.26.1920.1054@1920.0.1920.1080" timestamp="1579515963438" />
     <state width="1385" height="96" key="GridCell.Tab.0.bottom/357.1440.1920.1080/0.23.1920.1057@0.23.1920.1057" timestamp="1580974016770" />
-    <state width="2259" height="300" key="GridCell.Tab.0.center" timestamp="1581243956546">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1364" height="252" key="GridCell.Tab.0.center" timestamp="1581851110251">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state width="1257" height="202" key="GridCell.Tab.0.center/0.0.1300.860@0.0.1300.860" timestamp="1580782212710" />
     <state width="1757" height="76" key="GridCell.Tab.0.center/0.0.1800.920@0.0.1800.920" timestamp="1580467075708" />
+    <state width="1370" height="260" key="GridCell.Tab.0.center/0.0.1920.1047@0.0.1920.1047" timestamp="1581841461660" />
+    <state width="1364" height="252" key="GridCell.Tab.0.center/0.0.1920.1053@0.0.1920.1053" timestamp="1581851110251" />
     <state width="2057" height="202" key="GridCell.Tab.0.center/0.0.2100.1360@0.0.2100.1360" timestamp="1580810588490" />
     <state width="2457" height="500" key="GridCell.Tab.0.center/0.0.2500.1360@0.0.2500.1360" timestamp="1580469728710" />
     <state width="2259" height="300" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1581243956546" />
@@ -451,11 +453,13 @@
     <state width="1870" height="178" key="GridCell.Tab.0.center/0.26.3840.1054@0.26.3840.1054" timestamp="1579504569875" />
     <state width="1870" height="298" key="GridCell.Tab.0.center/1920.0.1920.1080/0.26.1920.1054@1920.0.1920.1080" timestamp="1579515963438" />
     <state width="1385" height="96" key="GridCell.Tab.0.center/357.1440.1920.1080/0.23.1920.1057@0.23.1920.1057" timestamp="1580974016769" />
-    <state width="2259" height="300" key="GridCell.Tab.0.left" timestamp="1581243956546">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1364" height="252" key="GridCell.Tab.0.left" timestamp="1581851110251">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state width="1257" height="202" key="GridCell.Tab.0.left/0.0.1300.860@0.0.1300.860" timestamp="1580782212710" />
     <state width="1757" height="76" key="GridCell.Tab.0.left/0.0.1800.920@0.0.1800.920" timestamp="1580467075708" />
+    <state width="1370" height="260" key="GridCell.Tab.0.left/0.0.1920.1047@0.0.1920.1047" timestamp="1581841461659" />
+    <state width="1364" height="252" key="GridCell.Tab.0.left/0.0.1920.1053@0.0.1920.1053" timestamp="1581851110251" />
     <state width="2057" height="202" key="GridCell.Tab.0.left/0.0.2100.1360@0.0.2100.1360" timestamp="1580810588490" />
     <state width="2457" height="500" key="GridCell.Tab.0.left/0.0.2500.1360@0.0.2500.1360" timestamp="1580469728710" />
     <state width="2259" height="300" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1581243956546" />
@@ -465,11 +469,13 @@
     <state width="1870" height="178" key="GridCell.Tab.0.left/0.26.3840.1054@0.26.3840.1054" timestamp="1579504569874" />
     <state width="1870" height="298" key="GridCell.Tab.0.left/1920.0.1920.1080/0.26.1920.1054@1920.0.1920.1080" timestamp="1579515963437" />
     <state width="1385" height="96" key="GridCell.Tab.0.left/357.1440.1920.1080/0.23.1920.1057@0.23.1920.1057" timestamp="1580974016769" />
-    <state width="2259" height="300" key="GridCell.Tab.0.right" timestamp="1581243956546">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1364" height="252" key="GridCell.Tab.0.right" timestamp="1581851110252">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state width="1257" height="202" key="GridCell.Tab.0.right/0.0.1300.860@0.0.1300.860" timestamp="1580782212711" />
     <state width="1757" height="76" key="GridCell.Tab.0.right/0.0.1800.920@0.0.1800.920" timestamp="1580467075708" />
+    <state width="1370" height="260" key="GridCell.Tab.0.right/0.0.1920.1047@0.0.1920.1047" timestamp="1581841461660" />
+    <state width="1364" height="252" key="GridCell.Tab.0.right/0.0.1920.1053@0.0.1920.1053" timestamp="1581851110252" />
     <state width="2057" height="202" key="GridCell.Tab.0.right/0.0.2100.1360@0.0.2100.1360" timestamp="1580810588491" />
     <state width="2457" height="500" key="GridCell.Tab.0.right/0.0.2500.1360@0.0.2500.1360" timestamp="1580469728710" />
     <state width="2259" height="300" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1581243956546" />
@@ -499,9 +505,10 @@
     </state>
     <state width="2517" height="491" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1579076585617" />
     <state width="1870" height="315" key="GridCell.Tab.1.right/0.23.1920.1057@0.23.1920.1057" timestamp="1579777944754" />
-    <state x="486" y="182" width="902" height="732" key="SettingsEditor" timestamp="1579761072700">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state x="486" y="157" width="906" height="727" key="SettingsEditor" timestamp="1581836698456">
+      <screen x="0" y="0" width="1920" height="1047" />
     </state>
+    <state x="486" y="157" width="906" height="727" key="SettingsEditor/0.0.1920.1047@0.0.1920.1047" timestamp="1581836698456" />
     <state x="785" y="286" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1579060747701" />
     <state x="486" y="182" width="902" height="732" key="SettingsEditor/0.23.1920.1057@0.23.1920.1057" timestamp="1579761072700" />
     <state x="589" y="241" width="902" height="732" key="SettingsEditor/0.26.1920.1054/1920.0.3840.2160@0.26.1920.1054" timestamp="1578970116794" />
@@ -526,12 +533,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1036" y="545" key="cloudConfig.SelfSettingsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1579754138295" />
-    <state x="856" y="484" key="com.intellij.ide.util.TipDialog" timestamp="1580891942354">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="642" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1581850358615">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="435" y="289" key="com.intellij.ide.util.TipDialog/0.0.1300.860@0.0.1300.860" timestamp="1580782172939" />
     <state x="448" y="309" key="com.intellij.ide.util.TipDialog/0.0.1340.920@0.0.1340.920" timestamp="1580369108143" />
     <state x="602" y="309" key="com.intellij.ide.util.TipDialog/0.0.1800.920@0.0.1800.920" timestamp="1580371769599" />
+    <state x="642" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1047@0.0.1920.1047" timestamp="1581829362641" />
+    <state x="642" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1581850358615" />
     <state x="855" y="470" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1580280555210" />
     <state x="642" y="378" key="com.intellij.ide.util.TipDialog/0.23.1920.1057/1920.0.1024.768@0.23.1920.1057" timestamp="1580435511396" />
     <state x="641" y="378" key="com.intellij.ide.util.TipDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1580363009920" />
@@ -544,9 +553,10 @@
     </state>
     <state x="839" y="325" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1579071877931" />
     <state x="629" y="268" width="772" height="774" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1579703802647" />
-    <state x="1098" y="1893" width="437" height="174" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580740057903">
-      <screen x="357" y="1440" width="1920" height="1080" />
+    <state x="741" y="442" width="437" height="174" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581851373378">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
+    <state x="741" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1053@0.0.1920.1053" timestamp="1581851373378" />
     <state x="741" y="466" width="437" height="174" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1057@0.23.1920.1057" timestamp="1580035172861" />
     <state x="1098" y="1893" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/357.1440.1920.1080/0.0.2560.1440@357.1440.1920.1080" timestamp="1580740057903" />
     <state x="548" y="42" width="823" height="1020" key="find.popup" timestamp="1580035274911">
@@ -561,27 +571,5 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2543" y="258" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.26.1920.1054@1920.0.1920.1080" timestamp="1579506659821" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/doozy$filetreeview.coverage" NAME="filetreeview Coverage Results" MODIFIED="1579446959329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
-    <SUITE FILE_PATH="coverage/doozy$dynamicplot2.coverage" NAME="dynamicplot2 Coverage Results" MODIFIED="1579503265316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/guiproject/test" />
-    <SUITE FILE_PATH="coverage/doozy$dock2.coverage" NAME="dock2 Coverage Results" MODIFIED="1579002666051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/guiproject/test" />
-    <SUITE FILE_PATH="coverage/doozy$gui.coverage" NAME="gui Coverage Results" MODIFIED="1580810588479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
-    <SUITE FILE_PATH="coverage/doozy$orderwidget.coverage" NAME="orderwidget Coverage Results" MODIFIED="1579763457402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
-    <SUITE FILE_PATH="coverage/doozy$createorder.coverage" NAME="createorder Coverage Results" MODIFIED="1580782190902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
-    <SUITE FILE_PATH="coverage/doozy$modelingoption.coverage" NAME="modelingoption Coverage Results" MODIFIED="1579761092578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
-    <SUITE FILE_PATH="coverage/doozy$test.coverage" NAME="test Coverage Results" MODIFIED="1581243721328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
-    <SUITE FILE_PATH="coverage/doozy$technicalanalysis.coverage" NAME="technicalanalysis Coverage Results" MODIFIED="1579515265581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
-    <SUITE FILE_PATH="coverage/doozy$SA.coverage" NAME="SA Coverage Results" MODIFIED="1579766168310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
-    <SUITE FILE_PATH="coverage/doozy$download.coverage" NAME="download Coverage Results" MODIFIED="1580453437710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
-    <SUITE FILE_PATH="coverage/doozy$xlsxEvent__1_.coverage" NAME="xlsxEvent (1) Coverage Results" MODIFIED="1579062719128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/guiproject/test" />
-    <SUITE FILE_PATH="coverage/doozy$orderexcute.coverage" NAME="orderexcute Coverage Results" MODIFIED="1580035357387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
-    <SUITE FILE_PATH="coverage/doozy$xlsxEvent.coverage" NAME="xlsxEvent Coverage Results" MODIFIED="1579071856228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/guiproject/test" />
-    <SUITE FILE_PATH="coverage/doozy$classifier.coverage" NAME="classifier Coverage Results" MODIFIED="1580368464554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
-    <SUITE FILE_PATH="coverage/doozy$markingwidget.coverage" NAME="markingwidget Coverage Results" MODIFIED="1579504948356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
-    <SUITE FILE_PATH="coverage/doozy$dynamicplot.coverage" NAME="dynamicplot Coverage Results" MODIFIED="1579503300933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/guiproject/test" />
-    <SUITE FILE_PATH="coverage/doozy$create_order.coverage" NAME="create_order Coverage Results" MODIFIED="1578908614082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
-    <SUITE FILE_PATH="coverage/doozy$backtesting.coverage" NAME="backtesting Coverage Results" MODIFIED="1581243956534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
-    <SUITE FILE_PATH="coverage/doozy$visual.coverage" NAME="visual Coverage Results" MODIFIED="1579515897388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
   </component>
 </project>

@@ -1,0 +1,27 @@
+Inspired by this comment in #1951, here is the workaround for people who does NOT need benchmarks at all:
+
+By default, zipline downloads benchmark data by making an http request in get_benchmark_returns() in zipline/data/benchmarks.py. It returns a pd.Series which will be saved to a csv file by ensure_benchmark_data() in zipline/data/loaders.py. So we can create a dummy benchmark file by setting all data entries to zero.
+
+First, replace benchmarks.py with:
+
+import pandas as pd
+from trading_calendars import get_calendar
+
+def get_benchmark_returns(symbol, first_date, last_date):
+    cal = get_calendar('NYSE')
+    
+    dates = cal.sessions_in_range(first_date, last_date)
+
+    data = pd.DataFrame(0.0, index=dates, columns=['close'])
+    data = data['close']
+
+    return data.sort_index().iloc[1:]
+
+Then in loaders.py, replace
+data = get_benchmark_returns(symbol)
+with
+data = get_benchmark_returns(symbol, first_date, last_date)
+
+In this example NYSE is used, but it also works when I use AlwaysOpenCalendar in my backtest, so I did not try to change it to some other calendar.
+
+This is only a hack. In the long run I would suggest to change the benchmark downloading method to request other API in case you would like to use benchmarks in the future.
