@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3071db6a-b4b2-4271-baa6-af635d20f4ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/doozy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/doozy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conda_requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/visual.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/visual.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module/backtesting.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/backtesting.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,12 +40,16 @@
     <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="ProjectId" id="1WIFio1Rw4tecnapO89ST7eVHV4" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -330,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580038729123</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="docker 설정 파일 추가">
+      <created>1581851446876</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1581851446876</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,6 +369,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="window conda 3.5 버전 테스트&#10;&#10;zipline 문제점 &#10; - benchmark.py 내부 변경해야함&#10; - loader.py 내부 변경해야함 그래야지 실행가능&#10; &#10;conda 환경과 virtualenv환경이 requirements.txt파일로 단순하게&#10;pip install -r requirements.txt로 되지 않는듯" />
     <MESSAGE value="script header 추가 및 시뮤레이션 구현중" />
     <MESSAGE value="input, output file .csv로 수정, createorder GUI에 연동&#10;&#10;download.py&#10; - 경제지표 .csv로 다운받는 것으로 변경&#10; &#10;gui.py&#10; - project 메뉴 생성&#10; &#10;modelingoption.py&#10; - all, subset 변경&#10;&#10;orderwidget.py&#10; - 파일 이름변경&#10; - gui 수정&#10; - createorder.py 연동&#10;&#10;create_order.py -&gt; createorder.py rename&#10; - DATE -&gt; Date로 변경&#10; - xlsx -&gt; csv 변경&#10; &#10;SA.py&#10; - xlsx -&gt; csv 변경" />
@@ -374,7 +380,8 @@
     <MESSAGE value="backtesting.py 복구 완료&#10;&#10;orderexcute.py &#10;초기자본 추가&#10;세팅 추가" />
     <MESSAGE value="프로젝트간 경로 설정하는 것 문제 수정&#10;&#10;모델링 날짜 받아오는 것 리눅스와 윈도우가 다른 것 같음 수정해야함" />
     <MESSAGE value="기본 디버깅 완료&#10;&#10;추가적으로 버그 나올시 알려주기 바람" />
-    <option name="LAST_COMMIT_MESSAGE" value="기본 디버깅 완료&#10;&#10;추가적으로 버그 나올시 알려주기 바람" />
+    <MESSAGE value="docker 설정 파일 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="docker 설정 파일 추가" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -404,9 +411,10 @@
     </state>
     <state x="999" y="314" key="#gui/0.0.2560.1400@0.0.2560.1400" timestamp="1580176539086" />
     <state x="749" y="244" width="613" height="836" key="#gui/0.23.1920.1057/1920.0.1024.768@0.23.1920.1057" timestamp="1580435665332" />
-    <state x="178" y="45" width="1396" height="981" key="CommitChangelistDialog2" timestamp="1580038728537">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state x="178" y="22" width="1396" height="981" key="CommitChangelistDialog2" timestamp="1581851446362">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
+    <state x="178" y="22" key="CommitChangelistDialog2/0.0.1920.1053@0.0.1920.1053" timestamp="1581851446362" />
     <state x="748" y="143" width="1472" height="1029" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1579077458103" />
     <state x="178" y="45" width="1396" height="981" key="CommitChangelistDialog2/0.23.1920.1057@0.23.1920.1057" timestamp="1580038728537" />
     <state x="367" y="133" width="772" height="815" key="CommitChangelistDialog2/0.26.1920.1054@0.26.1920.1054" timestamp="1579439709044" />
@@ -522,9 +530,10 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="857" height="448" key="SwitcherDM/0.23.1920.1057@0.23.1920.1057" timestamp="1580035182748" />
-    <state x="818" y="351" width="802" height="530" key="Vcs.Push.Dialog.v2" timestamp="1580038736002">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state x="818" y="327" width="802" height="530" key="Vcs.Push.Dialog.v2" timestamp="1581851455078">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
+    <state x="818" y="327" key="Vcs.Push.Dialog.v2/0.0.1920.1053@0.0.1920.1053" timestamp="1581851455078" />
     <state x="1090" y="434" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1579077481623" />
     <state x="818" y="351" width="802" height="530" key="Vcs.Push.Dialog.v2/0.23.1920.1057@0.23.1920.1057" timestamp="1580038736002" />
     <state x="818" y="353" width="802" height="530" key="Vcs.Push.Dialog.v2/0.26.1920.1054@0.26.1920.1054" timestamp="1579439714667" />
@@ -533,14 +542,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1036" y="545" key="cloudConfig.SelfSettingsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1579754138295" />
-    <state x="642" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1581850358615">
+    <state x="642" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1581855831730">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="435" y="289" key="com.intellij.ide.util.TipDialog/0.0.1300.860@0.0.1300.860" timestamp="1580782172939" />
     <state x="448" y="309" key="com.intellij.ide.util.TipDialog/0.0.1340.920@0.0.1340.920" timestamp="1580369108143" />
     <state x="602" y="309" key="com.intellij.ide.util.TipDialog/0.0.1800.920@0.0.1800.920" timestamp="1580371769599" />
     <state x="642" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1047@0.0.1920.1047" timestamp="1581829362641" />
-    <state x="642" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1581850358615" />
+    <state x="642" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1581855831730" />
     <state x="855" y="470" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1580280555210" />
     <state x="642" y="378" key="com.intellij.ide.util.TipDialog/0.23.1920.1057/1920.0.1024.768@0.23.1920.1057" timestamp="1580435511396" />
     <state x="641" y="378" key="com.intellij.ide.util.TipDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1580363009920" />
