@@ -2,19 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3071db6a-b4b2-4271-baa6-af635d20f4ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/doozy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/doozy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/download.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/download.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/filetreeview.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/filetreeview.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/gui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/markingwidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/markingwidget.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/modelingoption.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/modelingoption.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/orderexcute.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/orderexcute.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/orderwidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/orderwidget.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/output.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/output.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/^DJI.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/buttonstudy.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/calander.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/console.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/dialog.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/dock2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/dockview.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/drag.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/dynamicplot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/dynamicplot2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/file.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/login.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/progress.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/serial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/shape.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/strach.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/study1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/tab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/tabbar.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/tree.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiproject/test/view.qml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/setup/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/visual.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/visual.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +72,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
@@ -278,6 +293,7 @@
       <workItem from="1581694471234" duration="1968000" />
       <workItem from="1581862134549" duration="1794000" />
       <workItem from="1581905305145" duration="1050000" />
+      <workItem from="1581923253855" duration="929000" />
     </task>
     <task id="LOCAL-00001" summary="window conda 3.5 버전 테스트&#10;&#10;zipline 문제점 &#10; - benchmark.py 내부 변경해야함&#10; - loader.py 내부 변경해야함 그래야지 실행가능&#10; &#10;conda 환경과 virtualenv환경이 requirements.txt파일로 단순하게&#10;pip install -r requirements.txt로 되지 않는듯">
       <created>1578906752541</created>
@@ -547,13 +563,13 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1036" y="545" key="cloudConfig.SelfSettingsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1579754138295" />
-    <state x="642" y="350" key="com.intellij.ide.util.TipDialog" timestamp="1581905327243">
+    <state x="642" y="350" key="com.intellij.ide.util.TipDialog" timestamp="1581923253584">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="435" y="289" key="com.intellij.ide.util.TipDialog/0.0.1300.860@0.0.1300.860" timestamp="1580782172939" />
     <state x="448" y="309" key="com.intellij.ide.util.TipDialog/0.0.1340.920@0.0.1340.920" timestamp="1580369108143" />
     <state x="602" y="309" key="com.intellij.ide.util.TipDialog/0.0.1800.920@0.0.1800.920" timestamp="1580371769599" />
-    <state x="642" y="350" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-300.-1440.2560.1400@0.0.1920.1040" timestamp="1581905327243" />
+    <state x="642" y="350" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-300.-1440.2560.1400@0.0.1920.1040" timestamp="1581923253584" />
     <state x="642" y="350" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581862133464" />
     <state x="855" y="470" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1580280555210" />
     <state x="642" y="378" key="com.intellij.ide.util.TipDialog/0.23.1920.1057/1920.0.1024.768@0.23.1920.1057" timestamp="1580435511396" />
@@ -584,6 +600,16 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2543" y="258" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.26.1920.1054@1920.0.1920.1080" timestamp="1579506659821" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/gui/__init__.py</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/doozy$filetreeview.coverage" NAME="filetreeview Coverage Results" MODIFIED="1579446959329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
