@@ -1,35 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3071db6a-b4b2-4271-baa6-af635d20f4ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/^DJI.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/buttonstudy.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/calander.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/console.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/dialog.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/dock2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/dockview.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/drag.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/dynamicplot.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/dynamicplot2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/file.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/login.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/progress.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/serial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/shape.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/strach.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/study1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/tab.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/tabbar.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/tree.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiproject/test/view.qml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/setup/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/visual.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/visual.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" />
-    </list>
+    <list default="true" id="3071db6a-b4b2-4271-baa6-af635d20f4ac" name="Default Changelist" comment="기본 디버깅 완료&#10;&#10;추가적으로 버그 나올시 알려주기 바람" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -432,16 +404,18 @@
     </state>
     <state x="999" y="314" key="#gui/0.0.2560.1400@0.0.2560.1400" timestamp="1580176539086" />
     <state x="749" y="244" width="613" height="836" key="#gui/0.23.1920.1057/1920.0.1024.768@0.23.1920.1057" timestamp="1580435665332" />
-    <state x="178" y="45" width="1396" height="981" key="CommitChangelistDialog2" timestamp="1580038728537">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state x="178" y="22" width="1396" height="981" key="CommitChangelistDialog2" timestamp="1581927307005">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="178" y="22" key="CommitChangelistDialog2/0.0.1920.1040/-300.-1440.2560.1400@0.0.1920.1040" timestamp="1581927307005" />
     <state x="748" y="143" width="1472" height="1029" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1579077458103" />
     <state x="178" y="45" width="1396" height="981" key="CommitChangelistDialog2/0.23.1920.1057@0.23.1920.1057" timestamp="1580038728537" />
     <state x="367" y="133" width="772" height="815" key="CommitChangelistDialog2/0.26.1920.1054@0.26.1920.1054" timestamp="1579439709044" />
     <state x="2287" y="26" width="1472" height="1054" key="CommitChangelistDialog2/1920.0.1920.1080/0.26.1920.1054@1920.0.1920.1080" timestamp="1579515570326" />
-    <state x="564" y="108" width="1790" height="1169" key="DiffContextDialog" timestamp="1579001300908">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="368" y="80" width="1790" height="1169" key="DiffContextDialog" timestamp="1581927274104">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="368" y="80" key="DiffContextDialog/0.0.1920.1040/-300.-1440.2560.1400@0.0.1920.1040" timestamp="1581927274104" />
     <state x="564" y="108" width="1790" height="1169" key="DiffContextDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1579001300908" />
     <state x="730" y="285" width="336" height="362" key="FileChooserDialogImpl" timestamp="1581906356034">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -552,9 +526,10 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="857" height="448" key="SwitcherDM/0.23.1920.1057@0.23.1920.1057" timestamp="1580035182748" />
-    <state x="818" y="351" width="802" height="530" key="Vcs.Push.Dialog.v2" timestamp="1580038736002">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state x="818" y="323" width="802" height="530" key="Vcs.Push.Dialog.v2" timestamp="1581927282875">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="818" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-300.-1440.2560.1400@0.0.1920.1040" timestamp="1581927282875" />
     <state x="1090" y="434" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1579077481623" />
     <state x="818" y="351" width="802" height="530" key="Vcs.Push.Dialog.v2/0.23.1920.1057@0.23.1920.1057" timestamp="1580038736002" />
     <state x="818" y="353" width="802" height="530" key="Vcs.Push.Dialog.v2/0.26.1920.1054@0.26.1920.1054" timestamp="1579439714667" />
