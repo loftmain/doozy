@@ -14,7 +14,7 @@ from sklearn.metrics import recall_score
 from sklearn.preprocessing import StandardScaler
 from xgboost import XGBClassifier
 
-from src.module.SA import SA
+from .SA import SA
 
 warnings.filterwarnings('ignore')
 

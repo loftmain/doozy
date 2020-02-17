@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-
+"""
 import datetime
 
 import matplotlib.pyplot as plt
@@ -24,3 +24,4 @@ ax1 = plt.plot(f.index, f.SMA_20)
 ax1 = plt.plot(f.index, f.SMA_50)
 plt.show()
 print(f)
+"""

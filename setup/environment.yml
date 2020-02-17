@@ -13,7 +13,7 @@ dependencies:
   - blosc=1.16.3=hd408876_0
   - bottleneck=1.2.1=py35h035aef0_1
   - bzip2=1.0.8=h7b6447c_0
-  - ca-certificates=2020.1.1=0
+  - ca-certificates=2019.11.28=hecc5488_0
   - certifi=2018.8.24=py35_1001
   - cffi=1.11.5=py35he75722e_1
   - chardet=3.0.4=py35_1
@@ -87,6 +87,7 @@ dependencies:
   - python=3.5.6=hc3d631a_0
   - python-dateutil=2.8.1=py_0
   - pytz=2019.3=py_0
+  - pyyaml=3.13=py35h470a237_1
   - qt=5.6.2=hd25b39d_14
   - readline=7.0=h7b6447c_5
   - requests=2.20.1=py35_0
@@ -111,6 +112,7 @@ dependencies:
   - xorg-libxau=1.0.9=h14c3975_0
   - xorg-libxdmcp=1.1.3=h516909a_0
   - xz=5.2.4=h14c3975_4
+  - yaml=0.1.7=h14c3975_1001
   - zipline=1.3.0=np114py35_0
   - zlib=1.2.11=h7b6447c_3
   - zstd=1.3.7=h0b5b093_0

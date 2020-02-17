@@ -1,8 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3071db6a-b4b2-4271-baa6-af635d20f4ac" name="Default Changelist" comment="">
+    <list default="true" id="3071db6a-b4b2-4271-baa6-af635d20f4ac" name="Default Changelist" comment="docker 설정 파일 추가">
+      <change afterPath="$PROJECT_DIR$/src/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/.idea/src.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/module/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup/environment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/setup/environment.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/doctrees/SA.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/doctrees/SA.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/doctrees/backtester.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/doctrees/backtester.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/doctrees/classifier.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/doctrees/classifier.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/doctrees/create_order.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/doctrees/create_order.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/doctrees/environment.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/doctrees/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/doctrees/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/doctrees/marking.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/doctrees/marking.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/doctrees/modules.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/doctrees/modules.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/doctrees/simulator.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/doctrees/simulator.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/doctrees/yamlread.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/doctrees/yamlread.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/.buildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/.buildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/SA.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/SA.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_sources/SA.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_sources/SA.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_sources/backtester.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_sources/backtester.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_sources/classifier.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_sources/classifier.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_sources/create_order.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_sources/create_order.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_sources/index.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_sources/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_sources/marking.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_sources/marking.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_sources/modules.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_sources/modules.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_sources/simulator.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_sources/simulator.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_sources/yamlread.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_sources/yamlread.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/alabaster.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/alabaster.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/basic.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/basic.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/css/badge_only.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/css/badge_only.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/css/theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/doctools.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/doctools.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/documentation_options.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/documentation_options.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/file.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/file.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Inconsolata-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Inconsolata-Bold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Inconsolata-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Inconsolata-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Inconsolata.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Inconsolata.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato-Bold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bold.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bold.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bold.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bold.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bold.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bold.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bolditalic.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bolditalic.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bolditalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bolditalic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bolditalic.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bolditalic.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bolditalic.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bolditalic.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-italic.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-italic.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-italic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-italic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-italic.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-italic.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-italic.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-italic.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-regular.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-regular.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab-Bold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/jquery-3.4.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/jquery-3.4.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/js/modernizr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/js/modernizr.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/js/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/js/theme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/language_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/language_data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/minus.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/minus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/plus.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/plus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/pygments.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/pygments.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/searchtools.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/searchtools.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/translations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/translations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/underscore-1.3.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/underscore-1.3.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/underscore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/underscore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/backtester.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/backtester.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/classifier.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/classifier.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/create_order.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/create_order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/genindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/marking.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/marking.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/modules.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/modules.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/objects.inv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/searchindex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/simulator.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/simulator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/build/html/yamlread.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/yamlread.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/make.bat" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/make.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/source/SA.rst" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/source/SA.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/source/backtester.rst" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/source/backtester.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/source/classifier.rst" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/source/classifier.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/source/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/source/conf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/source/create_order.rst" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/source/create_order.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/source/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/source/index.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/source/marking.rst" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/source/marking.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/source/modules.rst" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/source/modules.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/source/simulator.rst" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/source/simulator.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/source/yamlread.rst" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/source/yamlread.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/download.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/download.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/filetreeview.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/filetreeview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/gui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/markingwidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/markingwidget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/modelingoption.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/modelingoption.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/orderexcute.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/orderexcute.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/orderwidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/orderwidget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/output.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/output.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/visual.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/visual.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/SA.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/SA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/backtesting.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/backtesting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/classifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/createorder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/createorder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/io.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/io.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/marking.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/marking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/technicalanalysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/technicalanalysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/yamlread.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/yamlread.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -335,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581851446876</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="docker 설정 파일 추가">
+      <created>1581855924982</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1581855924982</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,10 +548,10 @@
     </state>
     <state x="999" y="314" key="#gui/0.0.2560.1400@0.0.2560.1400" timestamp="1580176539086" />
     <state x="749" y="244" width="613" height="836" key="#gui/0.23.1920.1057/1920.0.1024.768@0.23.1920.1057" timestamp="1580435665332" />
-    <state x="178" y="22" width="1396" height="981" key="CommitChangelistDialog2" timestamp="1581851446362">
+    <state x="178" y="22" width="736" height="850" key="CommitChangelistDialog2" timestamp="1581855944791">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
-    <state x="178" y="22" key="CommitChangelistDialog2/0.0.1920.1053@0.0.1920.1053" timestamp="1581851446362" />
+    <state x="178" y="22" width="736" height="850" key="CommitChangelistDialog2/0.0.1920.1053@0.0.1920.1053" timestamp="1581855944791" />
     <state x="748" y="143" width="1472" height="1029" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1579077458103" />
     <state x="178" y="45" width="1396" height="981" key="CommitChangelistDialog2/0.23.1920.1057@0.23.1920.1057" timestamp="1580038728537" />
     <state x="367" y="133" width="772" height="815" key="CommitChangelistDialog2/0.26.1920.1054@0.26.1920.1054" timestamp="1579439709044" />
@@ -530,10 +667,10 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="857" height="448" key="SwitcherDM/0.23.1920.1057@0.23.1920.1057" timestamp="1580035182748" />
-    <state x="818" y="327" width="802" height="530" key="Vcs.Push.Dialog.v2" timestamp="1581851455078">
+    <state x="818" y="327" width="812" height="547" key="Vcs.Push.Dialog.v2" timestamp="1581855951378">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
-    <state x="818" y="327" key="Vcs.Push.Dialog.v2/0.0.1920.1053@0.0.1920.1053" timestamp="1581851455078" />
+    <state x="818" y="327" width="812" height="547" key="Vcs.Push.Dialog.v2/0.0.1920.1053@0.0.1920.1053" timestamp="1581855951378" />
     <state x="1090" y="434" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1579077481623" />
     <state x="818" y="351" width="802" height="530" key="Vcs.Push.Dialog.v2/0.23.1920.1057@0.23.1920.1057" timestamp="1580038736002" />
     <state x="818" y="353" width="802" height="530" key="Vcs.Push.Dialog.v2/0.26.1920.1054@0.26.1920.1054" timestamp="1579439714667" />
@@ -542,14 +679,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1036" y="545" key="cloudConfig.SelfSettingsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1579754138295" />
-    <state x="642" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1581855831730">
+    <state x="-129" y="676" key="com.intellij.ide.util.TipDialog" timestamp="1581910165628">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="435" y="289" key="com.intellij.ide.util.TipDialog/0.0.1300.860@0.0.1300.860" timestamp="1580782172939" />
     <state x="448" y="309" key="com.intellij.ide.util.TipDialog/0.0.1340.920@0.0.1340.920" timestamp="1580369108143" />
     <state x="602" y="309" key="com.intellij.ide.util.TipDialog/0.0.1800.920@0.0.1800.920" timestamp="1580371769599" />
     <state x="642" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1047@0.0.1920.1047" timestamp="1581829362641" />
-    <state x="642" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1581855831730" />
+    <state x="-129" y="676" key="com.intellij.ide.util.TipDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1581910165628" />
     <state x="855" y="470" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1580280555210" />
     <state x="642" y="378" key="com.intellij.ide.util.TipDialog/0.23.1920.1057/1920.0.1024.768@0.23.1920.1057" timestamp="1580435511396" />
     <state x="641" y="378" key="com.intellij.ide.util.TipDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1580363009920" />

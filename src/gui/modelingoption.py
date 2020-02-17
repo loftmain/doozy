@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-gui runcher
+gui1 runcher
 {License_info} 라이센스 정해야함
 """
 
@@ -17,10 +17,10 @@ from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
                                QRadioButton, QVBoxLayout, QLineEdit,
                                QHBoxLayout, QGroupBox, QGridLayout,
                                QLabel, QComboBox, QFormLayout, QDateEdit)
+from module.classifier import run_modeling
+from module.io import set_save_folder
 
-from src.gui.markingwidget import LineEdit
-from src.module.classifier import run_modeling
-from src.module.io import set_save_folder
+from .markingwidget import LineEdit
 
 
 class ModelingOption(QWidget):

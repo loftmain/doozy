@@ -10,7 +10,7 @@ import os
 import pandas as pd
 import pandas_datareader.data as web
 
-from src.module.io import set_save_folder
+from .io import set_save_folder
 
 # pip install pandas_datareader
 # pip install xlrd

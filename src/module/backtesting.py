@@ -10,7 +10,7 @@ import zipline
 from trading_calendars import get_calendar
 from zipline.api import order_percent, record, symbol, set_benchmark
 
-from src.module.io import set_save_folder
+from .io import set_save_folder
 
 warnings.filterwarnings('ignore')
 

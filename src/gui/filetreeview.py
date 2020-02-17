@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-gui runcher
+gui1 runcher
 {License_info} 라이센스 정해야함
 """
 

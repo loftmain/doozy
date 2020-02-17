@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-gui runcher
+gui1 runcher
 {License_info} 라이센스 정해야함
 """
 
@@ -14,10 +14,10 @@ from PySide2.QtCore import Slot, Qt
 from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
                                QVBoxLayout, QGroupBox, QLabel, QComboBox,
                                QFormLayout, QLineEdit, QGridLayout)
+from module.backtesting import backtesting
+from module.io import get_refined_path
 
-from src.gui.markingwidget import LineEdit
-from src.module.backtesting import backtesting
-from src.module.io import get_refined_path
+from .markingwidget import LineEdit
 
 
 class OrderRunWidget(QWidget):

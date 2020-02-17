@@ -2,12 +2,15 @@
 # -*- coding: utf-8 -*-
 
 """
-gui runcher
+gui1 runcher
 {License_info} 라이센스 정해야함
 """
 
 # Built-in/Generic Imports
 import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.dirname(__file__) + "\\..\\"))
 
 # Libs
 import PySide2
@@ -17,15 +20,15 @@ from PySide2.QtGui import QTextCursor, QIcon
 from PySide2.QtWidgets import (QDockWidget, QTabWidget, QTextBrowser, QFileDialog \
     , QMainWindow, QAction, QLabel, QMessageBox)
 
-from src.gui.download import DlIndependentDialog
-from src.gui.filetreeview import Tree
-from src.gui.markingwidget import MarkingWidget
-from src.gui.modelingoption import ModelingOption
-from src.gui.orderexcute import OrderRunWidget
-from src.gui.orderwidget import CreateOrderWidget
+from .download import DlIndependentDialog
+from .filetreeview import Tree
+from .markingwidget import MarkingWidget
+from .modelingoption import ModelingOption
+from .orderexcute import OrderRunWidget
+from .orderwidget import CreateOrderWidget
 # Own modules
-from src.gui.output import StdoutRedirect
-from src.gui.visual import PlotWidget
+from .output import StdoutRedirect
+from .visual import PlotWidget
 
 __author__ = 'loftmain'
 __copyright__ = 'Copyright 2020, doozy'

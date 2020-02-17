@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-gui runcher
+gui1 runcher
 {License_info} 라이센스 정해야함
 """
 
@@ -14,9 +14,9 @@ from PySide2.QtCore import Slot, Qt
 from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
                                QVBoxLayout, QGroupBox, QLabel,
                                QFormLayout, QRadioButton, QSpinBox, QHBoxLayout)
+from module.createorder import run_create_order
 
-from src.gui.markingwidget import LineEdit
-from src.module.createorder import run_create_order
+from .markingwidget import LineEdit
 
 
 class CreateOrderWidget(QWidget):
