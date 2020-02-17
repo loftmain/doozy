@@ -39,4 +39,4 @@ RUN conda init bash
 # Activate the environment
 RUN echo "conda activate doozy_env" > ~/.bashrc
 
-CMD ["python", "/src/doozy.git/src/main.py"]
+CMD ["python", "/src/doozy.git/src/run.py"]
