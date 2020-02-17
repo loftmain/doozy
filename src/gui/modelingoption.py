@@ -17,10 +17,10 @@ from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
                                QRadioButton, QVBoxLayout, QLineEdit,
                                QHBoxLayout, QGroupBox, QGridLayout,
                                QLabel, QComboBox, QFormLayout, QDateEdit)
-from module.classifier import run_modeling
-from module.io import set_save_folder
 
 from .markingwidget import LineEdit
+from module.classifier import run_modeling
+from module.io import set_save_folder
 
 
 class ModelingOption(QWidget):

@@ -14,10 +14,10 @@ from PySide2.QtCore import Slot, Qt
 from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
                                QVBoxLayout, QGroupBox, QLabel, QComboBox,
                                QFormLayout, QLineEdit, QGridLayout)
-from module.backtesting import backtesting
-from module.io import get_refined_path
 
 from .markingwidget import LineEdit
+from module.backtesting import backtesting
+from module.io import get_refined_path
 
 
 class OrderRunWidget(QWidget):

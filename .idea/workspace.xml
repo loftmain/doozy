@@ -1,120 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3071db6a-b4b2-4271-baa6-af635d20f4ac" name="Default Changelist" comment="docker 설정 파일 추가">
-      <change afterPath="$PROJECT_DIR$/src/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/.idea/src.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/__init__.py" afterDir="false" />
+    <list default="true" id="3071db6a-b4b2-4271-baa6-af635d20f4ac" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/module/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/doozy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/doozy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup/environment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/setup/environment.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/doctrees/SA.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/doctrees/SA.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/doctrees/backtester.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/doctrees/backtester.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/doctrees/classifier.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/doctrees/classifier.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/doctrees/create_order.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/doctrees/create_order.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/doctrees/environment.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/doctrees/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/doctrees/index.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/doctrees/marking.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/doctrees/marking.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/doctrees/modules.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/doctrees/modules.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/doctrees/simulator.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/doctrees/simulator.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/doctrees/yamlread.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/doctrees/yamlread.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/.buildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/.buildinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/SA.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/SA.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_sources/SA.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_sources/SA.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_sources/backtester.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_sources/backtester.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_sources/classifier.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_sources/classifier.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_sources/create_order.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_sources/create_order.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_sources/index.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_sources/index.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_sources/marking.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_sources/marking.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_sources/modules.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_sources/modules.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_sources/simulator.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_sources/simulator.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_sources/yamlread.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_sources/yamlread.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/alabaster.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/alabaster.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/basic.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/basic.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/css/badge_only.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/css/badge_only.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/css/theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/doctools.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/doctools.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/documentation_options.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/documentation_options.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/file.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/file.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Inconsolata-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Inconsolata-Bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Inconsolata-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Inconsolata-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Inconsolata.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Inconsolata.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato-Bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bold.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bold.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bold.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bold.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bold.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bold.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bolditalic.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bolditalic.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bolditalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bolditalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bolditalic.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bolditalic.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bolditalic.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-bolditalic.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-italic.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-italic.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-italic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-italic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-italic.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-italic.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-italic.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-italic.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-regular.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-regular.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/Lato/lato-regular.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab-Bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/jquery-3.4.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/jquery-3.4.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/js/modernizr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/js/modernizr.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/js/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/js/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/language_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/language_data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/minus.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/minus.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/plus.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/plus.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/pygments.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/pygments.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/searchtools.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/searchtools.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/translations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/translations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/underscore-1.3.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/underscore-1.3.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/_static/underscore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/_static/underscore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/backtester.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/backtester.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/classifier.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/classifier.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/create_order.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/create_order.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/genindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/marking.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/marking.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/modules.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/modules.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/objects.inv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/searchindex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/simulator.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/simulator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/build/html/yamlread.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/build/html/yamlread.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/make.bat" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/make.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/source/SA.rst" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/source/SA.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/source/backtester.rst" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/source/backtester.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/source/classifier.rst" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/source/classifier.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/source/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/source/conf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/source/create_order.rst" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/source/create_order.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/source/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/source/index.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/source/marking.rst" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/source/marking.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/source/modules.rst" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/source/modules.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/source/simulator.rst" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/source/simulator.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/source/yamlread.rst" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/source/yamlread.rst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/download.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/download.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/filetreeview.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/filetreeview.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/gui.py" afterDir="false" />
@@ -123,16 +15,6 @@
       <change beforePath="$PROJECT_DIR$/src/gui/orderexcute.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/orderexcute.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/orderwidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/orderwidget.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/output.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/output.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/visual.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/visual.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module/SA.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/SA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module/backtesting.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/backtesting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module/classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module/createorder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/createorder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module/io.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/io.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module/marking.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/marking.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module/technicalanalysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/technicalanalysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module/yamlread.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/yamlread.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,29 +52,26 @@
     <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="ProjectId" id="1WIFio1Rw4tecnapO89ST7eVHV4" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\USER\Dropbox\doozy\guiproject\test" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jjlee\Documents\Project\doozy\src\gui" />
       <recent name="$PROJECT_DIR$/src/gui" />
       <recent name="C:\Users\USER\Dropbox\doozy\guiproject\test" />
       <recent name="C:\Users\USER\Dropbox\doozy\src\module" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\Dropbox\doozy\guiproject\test" />
     </key>
   </component>
   <component name="RunManager" selected="Python.gui">
@@ -232,6 +111,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/module/createorder.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="download" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="doozy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/gui" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/gui/download.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -284,34 +185,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="zip" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="doozy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/guiproject" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/guiproject/zip.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.gui" />
-        <item itemvalue="Python.zip" />
         <item itemvalue="Python.backtesting" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.createorder" />
+        <item itemvalue="Python.download" />
       </list>
     </recent_temporary>
   </component>
@@ -394,6 +274,10 @@
       <workItem from="1580899491548" duration="1814000" />
       <workItem from="1581049624835" duration="79000" />
       <workItem from="1581242762359" duration="1231000" />
+      <workItem from="1581402040260" duration="3600000" />
+      <workItem from="1581694471234" duration="1968000" />
+      <workItem from="1581862134549" duration="1794000" />
+      <workItem from="1581905305145" duration="1050000" />
     </task>
     <task id="LOCAL-00001" summary="window conda 3.5 버전 테스트&#10;&#10;zipline 문제점 &#10; - benchmark.py 내부 변경해야함&#10; - loader.py 내부 변경해야함 그래야지 실행가능&#10; &#10;conda 환경과 virtualenv환경이 requirements.txt파일로 단순하게&#10;pip install -r requirements.txt로 되지 않는듯">
       <created>1578906752541</created>
@@ -458,21 +342,7 @@
       <option name="project" value="LOCAL" />
       <updated>1580038729123</updated>
     </task>
-    <task id="LOCAL-00010" summary="docker 설정 파일 추가">
-      <created>1581851446876</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1581851446876</updated>
-    </task>
-    <task id="LOCAL-00011" summary="docker 설정 파일 추가">
-      <created>1581855924982</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1581855924982</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,7 +376,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="window conda 3.5 버전 테스트&#10;&#10;zipline 문제점 &#10; - benchmark.py 내부 변경해야함&#10; - loader.py 내부 변경해야함 그래야지 실행가능&#10; &#10;conda 환경과 virtualenv환경이 requirements.txt파일로 단순하게&#10;pip install -r requirements.txt로 되지 않는듯" />
     <MESSAGE value="script header 추가 및 시뮤레이션 구현중" />
     <MESSAGE value="input, output file .csv로 수정, createorder GUI에 연동&#10;&#10;download.py&#10; - 경제지표 .csv로 다운받는 것으로 변경&#10; &#10;gui.py&#10; - project 메뉴 생성&#10; &#10;modelingoption.py&#10; - all, subset 변경&#10;&#10;orderwidget.py&#10; - 파일 이름변경&#10; - gui 수정&#10; - createorder.py 연동&#10;&#10;create_order.py -&gt; createorder.py rename&#10; - DATE -&gt; Date로 변경&#10; - xlsx -&gt; csv 변경&#10; &#10;SA.py&#10; - xlsx -&gt; csv 변경" />
@@ -517,8 +386,7 @@
     <MESSAGE value="backtesting.py 복구 완료&#10;&#10;orderexcute.py &#10;초기자본 추가&#10;세팅 추가" />
     <MESSAGE value="프로젝트간 경로 설정하는 것 문제 수정&#10;&#10;모델링 날짜 받아오는 것 리눅스와 윈도우가 다른 것 같음 수정해야함" />
     <MESSAGE value="기본 디버깅 완료&#10;&#10;추가적으로 버그 나올시 알려주기 바람" />
-    <MESSAGE value="docker 설정 파일 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="docker 설정 파일 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="기본 디버깅 완료&#10;&#10;추가적으로 버그 나올시 알려주기 바람" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -548,10 +416,9 @@
     </state>
     <state x="999" y="314" key="#gui/0.0.2560.1400@0.0.2560.1400" timestamp="1580176539086" />
     <state x="749" y="244" width="613" height="836" key="#gui/0.23.1920.1057/1920.0.1024.768@0.23.1920.1057" timestamp="1580435665332" />
-    <state x="178" y="22" width="736" height="850" key="CommitChangelistDialog2" timestamp="1581855944791">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state x="178" y="45" width="1396" height="981" key="CommitChangelistDialog2" timestamp="1580038728537">
+      <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="178" y="22" width="736" height="850" key="CommitChangelistDialog2/0.0.1920.1053@0.0.1920.1053" timestamp="1581855944791" />
     <state x="748" y="143" width="1472" height="1029" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1579077458103" />
     <state x="178" y="45" width="1396" height="981" key="CommitChangelistDialog2/0.23.1920.1057@0.23.1920.1057" timestamp="1580038728537" />
     <state x="367" y="133" width="772" height="815" key="CommitChangelistDialog2/0.26.1920.1054@0.26.1920.1054" timestamp="1579439709044" />
@@ -560,19 +427,20 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="564" y="108" width="1790" height="1169" key="DiffContextDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1579001300908" />
-    <state x="973" y="383" width="429" height="487" key="FileChooserDialogImpl" timestamp="1581047369748">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="730" y="285" width="336" height="362" key="FileChooserDialogImpl" timestamp="1581906356034">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="730" y="285" width="336" height="362" key="FileChooserDialogImpl/0.0.1920.1040/-300.-1440.2560.1400@0.0.1920.1040" timestamp="1581906356034" />
     <state x="973" y="383" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1581047369748" />
     <state x="730" y="314" width="429" height="487" key="FileChooserDialogImpl/0.26.1920.1054@0.26.1920.1054" timestamp="1578830500314" />
     <state x="2310" y="280" key="FileChooserDialogImpl/0.26.3840.1054@0.26.3840.1054" timestamp="1579448023782" />
-    <state width="1364" height="252" key="GridCell.Tab.0.bottom" timestamp="1581851110252">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state width="457" height="281" key="GridCell.Tab.0.bottom" timestamp="1581863933840">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1257" height="202" key="GridCell.Tab.0.bottom/0.0.1300.860@0.0.1300.860" timestamp="1580782212711" />
     <state width="1757" height="76" key="GridCell.Tab.0.bottom/0.0.1800.920@0.0.1800.920" timestamp="1580467075709" />
-    <state width="1370" height="260" key="GridCell.Tab.0.bottom/0.0.1920.1047@0.0.1920.1047" timestamp="1581841461660" />
-    <state width="1364" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1053@0.0.1920.1053" timestamp="1581851110252" />
+    <state width="939" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-300.-1440.2560.1400@0.0.1920.1040" timestamp="1581696797471" />
+    <state width="457" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581863933840" />
     <state width="2057" height="202" key="GridCell.Tab.0.bottom/0.0.2100.1360@0.0.2100.1360" timestamp="1580810588491" />
     <state width="2457" height="500" key="GridCell.Tab.0.bottom/0.0.2500.1360@0.0.2500.1360" timestamp="1580469728710" />
     <state width="2259" height="300" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1581243956547" />
@@ -582,13 +450,13 @@
     <state width="1870" height="178" key="GridCell.Tab.0.bottom/0.26.3840.1054@0.26.3840.1054" timestamp="1579504569877" />
     <state width="1870" height="298" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.26.1920.1054@1920.0.1920.1080" timestamp="1579515963438" />
     <state width="1385" height="96" key="GridCell.Tab.0.bottom/357.1440.1920.1080/0.23.1920.1057@0.23.1920.1057" timestamp="1580974016770" />
-    <state width="1364" height="252" key="GridCell.Tab.0.center" timestamp="1581851110251">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state width="457" height="281" key="GridCell.Tab.0.center" timestamp="1581863933839">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1257" height="202" key="GridCell.Tab.0.center/0.0.1300.860@0.0.1300.860" timestamp="1580782212710" />
     <state width="1757" height="76" key="GridCell.Tab.0.center/0.0.1800.920@0.0.1800.920" timestamp="1580467075708" />
-    <state width="1370" height="260" key="GridCell.Tab.0.center/0.0.1920.1047@0.0.1920.1047" timestamp="1581841461660" />
-    <state width="1364" height="252" key="GridCell.Tab.0.center/0.0.1920.1053@0.0.1920.1053" timestamp="1581851110251" />
+    <state width="939" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-300.-1440.2560.1400@0.0.1920.1040" timestamp="1581696797470" />
+    <state width="457" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581863933839" />
     <state width="2057" height="202" key="GridCell.Tab.0.center/0.0.2100.1360@0.0.2100.1360" timestamp="1580810588490" />
     <state width="2457" height="500" key="GridCell.Tab.0.center/0.0.2500.1360@0.0.2500.1360" timestamp="1580469728710" />
     <state width="2259" height="300" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1581243956546" />
@@ -598,13 +466,13 @@
     <state width="1870" height="178" key="GridCell.Tab.0.center/0.26.3840.1054@0.26.3840.1054" timestamp="1579504569875" />
     <state width="1870" height="298" key="GridCell.Tab.0.center/1920.0.1920.1080/0.26.1920.1054@1920.0.1920.1080" timestamp="1579515963438" />
     <state width="1385" height="96" key="GridCell.Tab.0.center/357.1440.1920.1080/0.23.1920.1057@0.23.1920.1057" timestamp="1580974016769" />
-    <state width="1364" height="252" key="GridCell.Tab.0.left" timestamp="1581851110251">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state width="457" height="281" key="GridCell.Tab.0.left" timestamp="1581863933839">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1257" height="202" key="GridCell.Tab.0.left/0.0.1300.860@0.0.1300.860" timestamp="1580782212710" />
     <state width="1757" height="76" key="GridCell.Tab.0.left/0.0.1800.920@0.0.1800.920" timestamp="1580467075708" />
-    <state width="1370" height="260" key="GridCell.Tab.0.left/0.0.1920.1047@0.0.1920.1047" timestamp="1581841461659" />
-    <state width="1364" height="252" key="GridCell.Tab.0.left/0.0.1920.1053@0.0.1920.1053" timestamp="1581851110251" />
+    <state width="939" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-300.-1440.2560.1400@0.0.1920.1040" timestamp="1581696797470" />
+    <state width="457" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581863933839" />
     <state width="2057" height="202" key="GridCell.Tab.0.left/0.0.2100.1360@0.0.2100.1360" timestamp="1580810588490" />
     <state width="2457" height="500" key="GridCell.Tab.0.left/0.0.2500.1360@0.0.2500.1360" timestamp="1580469728710" />
     <state width="2259" height="300" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1581243956546" />
@@ -614,13 +482,13 @@
     <state width="1870" height="178" key="GridCell.Tab.0.left/0.26.3840.1054@0.26.3840.1054" timestamp="1579504569874" />
     <state width="1870" height="298" key="GridCell.Tab.0.left/1920.0.1920.1080/0.26.1920.1054@1920.0.1920.1080" timestamp="1579515963437" />
     <state width="1385" height="96" key="GridCell.Tab.0.left/357.1440.1920.1080/0.23.1920.1057@0.23.1920.1057" timestamp="1580974016769" />
-    <state width="1364" height="252" key="GridCell.Tab.0.right" timestamp="1581851110252">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state width="457" height="281" key="GridCell.Tab.0.right" timestamp="1581863933840">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1257" height="202" key="GridCell.Tab.0.right/0.0.1300.860@0.0.1300.860" timestamp="1580782212711" />
     <state width="1757" height="76" key="GridCell.Tab.0.right/0.0.1800.920@0.0.1800.920" timestamp="1580467075708" />
-    <state width="1370" height="260" key="GridCell.Tab.0.right/0.0.1920.1047@0.0.1920.1047" timestamp="1581841461660" />
-    <state width="1364" height="252" key="GridCell.Tab.0.right/0.0.1920.1053@0.0.1920.1053" timestamp="1581851110252" />
+    <state width="939" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-300.-1440.2560.1400@0.0.1920.1040" timestamp="1581696797471" />
+    <state width="457" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581863933840" />
     <state width="2057" height="202" key="GridCell.Tab.0.right/0.0.2100.1360@0.0.2100.1360" timestamp="1580810588491" />
     <state width="2457" height="500" key="GridCell.Tab.0.right/0.0.2500.1360@0.0.2500.1360" timestamp="1580469728710" />
     <state width="2259" height="300" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1581243956546" />
@@ -650,10 +518,11 @@
     </state>
     <state width="2517" height="491" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1579076585617" />
     <state width="1870" height="315" key="GridCell.Tab.1.right/0.23.1920.1057@0.23.1920.1057" timestamp="1579777944754" />
-    <state x="486" y="157" width="906" height="727" key="SettingsEditor" timestamp="1581836698456">
-      <screen x="0" y="0" width="1920" height="1047" />
+    <state x="874" y="160" width="916" height="721" key="SettingsEditor" timestamp="1581694528383">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="486" y="157" width="906" height="727" key="SettingsEditor/0.0.1920.1047@0.0.1920.1047" timestamp="1581836698456" />
+    <state x="874" y="160" key="SettingsEditor/0.0.1920.1040/-300.-1440.2560.1400@0.0.1920.1040" timestamp="1581694528383" />
+    <state x="486" y="156" width="916" height="721" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581403846439" />
     <state x="785" y="286" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1579060747701" />
     <state x="486" y="182" width="902" height="732" key="SettingsEditor/0.23.1920.1057@0.23.1920.1057" timestamp="1579761072700" />
     <state x="589" y="241" width="902" height="732" key="SettingsEditor/0.26.1920.1054/1920.0.3840.2160@0.26.1920.1054" timestamp="1578970116794" />
@@ -667,10 +536,9 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="857" height="448" key="SwitcherDM/0.23.1920.1057@0.23.1920.1057" timestamp="1580035182748" />
-    <state x="818" y="327" width="812" height="547" key="Vcs.Push.Dialog.v2" timestamp="1581855951378">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state x="818" y="351" width="802" height="530" key="Vcs.Push.Dialog.v2" timestamp="1580038736002">
+      <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="818" y="327" width="812" height="547" key="Vcs.Push.Dialog.v2/0.0.1920.1053@0.0.1920.1053" timestamp="1581855951378" />
     <state x="1090" y="434" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1579077481623" />
     <state x="818" y="351" width="802" height="530" key="Vcs.Push.Dialog.v2/0.23.1920.1057@0.23.1920.1057" timestamp="1580038736002" />
     <state x="818" y="353" width="802" height="530" key="Vcs.Push.Dialog.v2/0.26.1920.1054@0.26.1920.1054" timestamp="1579439714667" />
@@ -679,14 +547,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1036" y="545" key="cloudConfig.SelfSettingsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1579754138295" />
-    <state x="-129" y="676" key="com.intellij.ide.util.TipDialog" timestamp="1581910165628">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state x="642" y="350" key="com.intellij.ide.util.TipDialog" timestamp="1581905327243">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="435" y="289" key="com.intellij.ide.util.TipDialog/0.0.1300.860@0.0.1300.860" timestamp="1580782172939" />
     <state x="448" y="309" key="com.intellij.ide.util.TipDialog/0.0.1340.920@0.0.1340.920" timestamp="1580369108143" />
     <state x="602" y="309" key="com.intellij.ide.util.TipDialog/0.0.1800.920@0.0.1800.920" timestamp="1580371769599" />
-    <state x="642" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1047@0.0.1920.1047" timestamp="1581829362641" />
-    <state x="-129" y="676" key="com.intellij.ide.util.TipDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1581910165628" />
+    <state x="642" y="350" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-300.-1440.2560.1400@0.0.1920.1040" timestamp="1581905327243" />
+    <state x="642" y="350" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581862133464" />
     <state x="855" y="470" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1580280555210" />
     <state x="642" y="378" key="com.intellij.ide.util.TipDialog/0.23.1920.1057/1920.0.1024.768@0.23.1920.1057" timestamp="1580435511396" />
     <state x="641" y="378" key="com.intellij.ide.util.TipDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1580363009920" />
@@ -699,10 +567,9 @@
     </state>
     <state x="839" y="325" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1579071877931" />
     <state x="629" y="268" width="772" height="774" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1579703802647" />
-    <state x="741" y="442" width="437" height="174" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581851373378">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state x="1098" y="1893" width="437" height="174" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580740057903">
+      <screen x="357" y="1440" width="1920" height="1080" />
     </state>
-    <state x="741" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1053@0.0.1920.1053" timestamp="1581851373378" />
     <state x="741" y="466" width="437" height="174" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1057@0.23.1920.1057" timestamp="1580035172861" />
     <state x="1098" y="1893" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/357.1440.1920.1080/0.0.2560.1440@357.1440.1920.1080" timestamp="1580740057903" />
     <state x="548" y="42" width="823" height="1020" key="find.popup" timestamp="1580035274911">
@@ -717,5 +584,27 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2543" y="258" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.26.1920.1054@1920.0.1920.1080" timestamp="1579506659821" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/doozy$filetreeview.coverage" NAME="filetreeview Coverage Results" MODIFIED="1579446959329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
+    <SUITE FILE_PATH="coverage/doozy$gui.coverage" NAME="gui Coverage Results" MODIFIED="1581863910875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
+    <SUITE FILE_PATH="coverage/doozy$markingwidget.coverage" NAME="markingwidget Coverage Results" MODIFIED="1579504948356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
+    <SUITE FILE_PATH="coverage/doozy$dynamicplot.coverage" NAME="dynamicplot Coverage Results" MODIFIED="1579503300933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/guiproject/test" />
+    <SUITE FILE_PATH="coverage/doozy$backtesting.coverage" NAME="backtesting Coverage Results" MODIFIED="1581243956534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
+    <SUITE FILE_PATH="coverage/doozy$modelingoption.coverage" NAME="modelingoption Coverage Results" MODIFIED="1579761092578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
+    <SUITE FILE_PATH="coverage/doozy$technicalanalysis.coverage" NAME="technicalanalysis Coverage Results" MODIFIED="1579515265581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
+    <SUITE FILE_PATH="coverage/doozy$orderexcute.coverage" NAME="orderexcute Coverage Results" MODIFIED="1580035357387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
+    <SUITE FILE_PATH="coverage/doozy$xlsxEvent.coverage" NAME="xlsxEvent Coverage Results" MODIFIED="1579071856228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/guiproject/test" />
+    <SUITE FILE_PATH="coverage/doozy$visual.coverage" NAME="visual Coverage Results" MODIFIED="1579515897388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
+    <SUITE FILE_PATH="coverage/doozy$SA.coverage" NAME="SA Coverage Results" MODIFIED="1579766168310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
+    <SUITE FILE_PATH="coverage/doozy$test.coverage" NAME="test Coverage Results" MODIFIED="1581243721328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
+    <SUITE FILE_PATH="coverage/doozy$xlsxEvent__1_.coverage" NAME="xlsxEvent (1) Coverage Results" MODIFIED="1579062719128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/guiproject/test" />
+    <SUITE FILE_PATH="coverage/doozy$classifier.coverage" NAME="classifier Coverage Results" MODIFIED="1580368464554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
+    <SUITE FILE_PATH="coverage/doozy$dynamicplot2.coverage" NAME="dynamicplot2 Coverage Results" MODIFIED="1579503265316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/guiproject/test" />
+    <SUITE FILE_PATH="coverage/doozy$download.coverage" NAME="download Coverage Results" MODIFIED="1580453437710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
+    <SUITE FILE_PATH="coverage/doozy$create_order.coverage" NAME="create_order Coverage Results" MODIFIED="1578908614082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
+    <SUITE FILE_PATH="coverage/doozy$orderwidget.coverage" NAME="orderwidget Coverage Results" MODIFIED="1579763457402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/gui" />
+    <SUITE FILE_PATH="coverage/doozy$createorder.coverage" NAME="createorder Coverage Results" MODIFIED="1580782190902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/module" />
+    <SUITE FILE_PATH="coverage/doozy$dock2.coverage" NAME="dock2 Coverage Results" MODIFIED="1579002666051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/guiproject/test" />
   </component>
 </project>

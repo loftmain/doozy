@@ -14,9 +14,9 @@ from PySide2.QtCore import Slot, Qt
 from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
                                QVBoxLayout, QGroupBox, QLabel,
                                QFormLayout, QRadioButton, QSpinBox, QHBoxLayout)
-from module.createorder import run_create_order
 
 from .markingwidget import LineEdit
+from module.createorder import run_create_order
 
 
 class CreateOrderWidget(QWidget):

@@ -17,6 +17,7 @@ from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
                                QVBoxLayout, QHBoxLayout, QGroupBox,
                                QGridLayout, QLabel, QComboBox, QSpinBox,
                                QLineEdit, QFormLayout, QRadioButton)
+
 from module.io import set_save_folder
 from module.marking import Marking
 

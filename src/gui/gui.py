@@ -9,8 +9,7 @@ gui1 runcher
 # Built-in/Generic Imports
 import os
 import sys
-
-sys.path.append(os.path.abspath(os.path.dirname(__file__) + "\\..\\"))
+sys.path.append(os.path.abspath(os.path.dirname(__file__)+ "\\..\\"))
 
 # Libs
 import PySide2

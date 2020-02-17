@@ -75,7 +75,7 @@ guiproject/save/order/save_order.csv
 guiproject/test/DJI_HM3UP.xlsx
 guiproject/test/sample.csv
 guiproject/test/sample.xlsx
-src/gui/order_save.csv
+src/gui1/order_save.csv
 src/module/dependent/DJI.csv
 src/module/independent/AMBNS.csv
 src/module/independent/BAA.csv
@@ -108,5 +108,5 @@ src/module/independent/USSLIND.csv
 src/module/independent/XTEXVA01CNM667S.csv
 src/module/independent/XTIMVA01KRM667S.csv
 src/module/input_order.xlsx
-src/gui/resultBacktesting.csv
+src/gui1/resultBacktesting.csv
 src/module/save/input_order.csv
