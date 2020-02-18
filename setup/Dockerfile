@@ -26,13 +26,11 @@ RUN git clone \
 
 RUN conda env create -f /src/doozy.git/setup/environment.yml
 
+SHELL ["conda", "run", "-n", "env", "/bin/bash", "-c"]
+RUN echo "source activate env" > ~/.bashrc
 ENV PATH /opt/conda/envs/env/bin:$PATH
 
 RUN mv /src/doozy.git/setup/benchmarks.py /opt/conda/envs/env/lib/python3.5/site-packages/zipline/data && \
 		mv /src/doozy.git/setup/loader.py /opt/conda/envs/env/lib/python3.5/site-packages/zipline/data
-
-SHELL ["conda", "run", "-n", "env", "/bin/bash", "-c"]
-
-ENTRYPOINT [ "/app/run.sh" ]
 
 CMD ["conda", "run", "-n", "env", "python", "/src/doozy.git/src/run.py"]
