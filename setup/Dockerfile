@@ -33,10 +33,5 @@ RUN mv /src/doozy.git/setup/benchmarks.py /opt/conda/envs/doozy_env/lib/python3.
 
 SHELL ["bin/bash", "--login", "-c"]
 
-# Initialize conda in bash config files:
-RUN conda init bash
-
-# Activate the environment
-RUN echo "conda activate doozy_env" > ~/.bashrc
 
 CMD ["python", "/src/doozy.git/src/run.py"]

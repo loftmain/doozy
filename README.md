@@ -27,7 +27,7 @@ window환경:
 docker 실행 후에 window power shell에서
 
 1.	도커 이미지 pull  
-	`docker pull loftmain/doozy`
+	`docker pull loftmain/doozy:0.1`
 
 2.	window 환경변수 세팅  
 	`set-variable -name DISPLAY -value YOUR-IP:0.0`
