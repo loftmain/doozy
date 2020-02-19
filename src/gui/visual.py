@@ -20,8 +20,8 @@ from module.io import get_refined_path
 if platform.system() == 'Windows':
     font_name = font_manager.FontProperties(fname="c:/Windows/Fonts/malgun.ttf").get_name()
 elif platform.system() == 'Linux':
-    font_name = font_manager.FontProperties(fname="src/doozy.git/setup/font/GSTTF.ttf").get_name()
-rc('font', family=font_name)
+    font_name = font_manager.FontProperties(fname="/src/doozy.git/setup/font/GSTTF.ttf").get_name()
+#rc('font', family=font_name)
 
 __author__ = 'Jinjae Lee <leejinjae7@gmail.com>'
 

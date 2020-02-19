@@ -1,13 +1,22 @@
 #!interpreter [project-doozy]
 # -*- coding: utf-8 -*-
+#
+# Copyright 2019 doozy
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
-"""
-gui1 runcher
-{License_info} 라이센스 정해야함
-"""
-
-import os
 # Built-in/Generic Imports
+import os
 import sys
 from datetime import datetime
 
@@ -18,19 +27,27 @@ from PySide2.QtWidgets import QDialog, QLabel, QProgressBar, QPushButton, QVBoxL
 from dateutil.relativedelta import relativedelta
 from fredapi import Fred
 
+# 임시로 개인 key 사용
 fred = Fred(api_key='3b2795f81c94f1a105d1e4fc3661a45e')
 
 
 class DlIndependentDialog(QDialog):
+    """
+    경제지표 다운로드 Dialog입니다.
+    """
+
     def __init__(self, path):
         super().__init__()
         self.setupUI()
         self.path = path
 
     def setupUI(self):
+        """
+        UI의 화면 설정
+        """
         self.setWindowTitle("independent download")
 
-        label1 = QLabel("30개의 경제 지표를 다운로드", self)
+        label1 = QLabel("70개의 경제 지표를 다운로드", self)
         self.progress = QProgressBar(self)
 
         self.btn = QPushButton("Download", self)
@@ -50,6 +67,9 @@ class DlIndependentDialog(QDialog):
 
 
     def inspect_index_folder(self):
+        """
+        다운로드 경로 설정
+        """
         if not os.path.exists(os.path.join(self.path, 'independent')):
             os.mkdir(os.path.join(self.path, 'independent'))
         folderpath = os.path.join(self.path, 'independent')
@@ -57,6 +77,9 @@ class DlIndependentDialog(QDialog):
 
 
     def inspect_column_file(self):
+        """
+        경제지표 리스트 지정
+        """
         line = 'AAA,AHETPI,ALTSALES,AMBNS,AMBSL,BAA,BAA10YM,BOGMBASE,BUSLOANS,BUSLOANSNSA,CES0500000003,' \
                'CEU0500000003,CIVPART,CPALTT01USM657N,CPALTT01USM659N,CPALTT01USM661S,CPIAUCNS,CPIAUCSL,' \
                'CPILFENS,CPILFESL,CSUSHPINSA,CSUSHPISA,DGORDER,DPCERAM1M225NBEA,DSPIC96,EXCHUS,EXCSRESNS,' \
@@ -71,6 +94,11 @@ class DlIndependentDialog(QDialog):
 
 
     def gathering(self):
+        """
+        경제지표 다운로드 프로그램
+        default start date: 2000-01-01
+        3개월 shift하여 저장
+        """
         folderpath = self.inspect_index_folder()
         index_list = self.inspect_column_file()
         if index_list == False: return False

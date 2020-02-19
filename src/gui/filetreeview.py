@@ -1,20 +1,33 @@
 #!interpreter [project-doozy]
 # -*- coding: utf-8 -*-
-
-"""
-gui1 runcher
-{License_info} 라이센스 정해야함
-"""
+#
+# Copyright 2019 doozy
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
 # Built-in/Generic Imports
 import sys
-
-from PySide2.QtCore import QFileInfo, QDir, QFile
 # Libs
+from PySide2.QtCore import QFileInfo, QDir, QFile
 from PySide2.QtWidgets import QTreeView, QAbstractItemView, QApplication, QFileSystemModel
 
 
 class Tree(QTreeView):
+    """
+    Treeview file system UI
+    default path: 실행시 current directory
+    """
+
     def __init__(self):
         QTreeView.__init__(self)
         self.model = QFileSystemModel()
@@ -31,6 +44,9 @@ class Tree(QTreeView):
         self.setDropIndicatorShown(True)
 
     def dragEnterEvent(self, event):
+        """
+        파일을 drag 할 수 있게 함
+        """
         m = event.mimeData()
         if m.hasUrls():
             for url in m.urls():
@@ -40,6 +56,10 @@ class Tree(QTreeView):
         event.ignore()
 
     def dropEvent(self, event):
+        """
+        drag 한 파일의 경로를 output합니다.
+        """
+
         if event.source():
             QTreeView.dropEvent(self, event)
         else:
@@ -70,13 +90,16 @@ class Tree(QTreeView):
                     event.acceptProposedAction()
 
     def change_root_index(self, path):
+        """
+        프로젝트를 바꿀시에 경로를 반영합니다.
+        """
+
         self.setRootIndex(self.model.index(path))
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
 
     mainWindow = Tree()
-    #mainWindow.resize(1200, 800)
     mainWindow.show()
 
     app.exec_()
