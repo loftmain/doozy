@@ -27,13 +27,13 @@ window환경:
 docker 실행 후에 window power shell에서
 
 1.	도커 이미지 pull  
-	`docker pull loftmain/doozy:0.1`
+	`docker pull loftmain/doozy:0.2`
 
 2.	window 환경변수 세팅  
 	`set-variable -name DISPLAY -value YOUR-IP:0.0`
 
 3.	도커 컨테이너 실행  
-	`docker run -it -e DISPLAY=$DISPLAY -v /c/User:/data loftamin/doozy:latest`
+	`docker run -it -e DISPLAY=$DISPLAY -v /c/User:/data loftmain/doozy:0.2`
 
 끝!  
 간단해!!
