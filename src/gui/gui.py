@@ -30,7 +30,6 @@ from PySide2.QtWidgets import (QDockWidget, QTabWidget, QTextBrowser, QFileDialo
     , QMainWindow, QAction, QLabel, QMessageBox)
 
 # Own modules
-from .download import DlIndependentDialog
 from .filetreeview import Tree
 from .markingwidget import MarkingWidget
 from .modelingoption import ModelingOption
@@ -38,6 +37,9 @@ from .orderexcute import OrderRunWidget
 from .orderwidget import CreateOrderWidget
 from .output import StdoutRedirect
 from .visual import PlotWidget
+from .indewidget import IndiWidget
+from .targetwidget import TargetWidget
+from .normalwiget import NormalWidget
 
 __author__ = 'jinjae lee'
 __copyright__ = 'Copyright 2020, doozy'
@@ -88,8 +90,8 @@ class MainWindow(QMainWindow):
         self._stdout.start()
         self._stdout.printOccur.connect(lambda x: self._append_text(x))
 
-        # text output dock
-        self.logDock = QDockWidget("Debug & processing Log ...", self)
+        # Debug & Processing Log text output dock
+        self.logDock = QDockWidget("Debug & Processing Log ...", self)
         self.logDock.setAllowedAreas(Qt.LeftDockWidgetArea |
                                      Qt.RightDockWidgetArea |
                                      Qt.BottomDockWidgetArea)
@@ -128,9 +130,13 @@ class MainWindow(QMainWindow):
         self.saveDataAction.setStatusTip("import files")
         self.saveDataAction.triggered.connect(self.dl_independents)
 
-        self.errorCheckDataAction = QAction("&지표 데이터 에러체크", self)
-        self.errorCheckDataAction.setStatusTip("import files")
-        self.errorCheckDataAction.triggered.connect(self.close)
+        self.savedeDataAction = QAction("&주가 데이터 파일저장", self)
+        self.savedeDataAction.setStatusTip("import files")
+        self.savedeDataAction.triggered.connect(self.dl_dependents)
+
+        self.normalDataAction = QAction("&데이터 정규화", self)
+        self.normalDataAction.setStatusTip("Data Normalization")
+        self.normalDataAction.triggered.connect(self.createNormalTab)
 
         self.exitAction = QAction("&Exit", self)
         self.exitAction.setIcon(QIcon(":/images/exit.png"))
@@ -197,7 +203,8 @@ class MainWindow(QMainWindow):
 
         fileMenu = self.menuBar().addMenu("&File")
         fileMenu.addAction(self.saveDataAction)
-        fileMenu.addAction(self.errorCheckDataAction)
+        fileMenu.addAction(self.savedeDataAction)
+        fileMenu.addAction(self.normalDataAction)
 
         viewMenu = self.menuBar().addMenu("&View")
         viewMenu.addAction(self.dockTree.toggleViewAction())
@@ -219,6 +226,10 @@ class MainWindow(QMainWindow):
         visualizationMenu.addAction(self.chartAction)
 
     def createStatusBar(self):
+        """
+        기능 미구현
+        :return:
+        """
         locationLabel = QLabel(" (  0,  0) ")
         locationLabel.setAlignment(Qt.AlignHCenter)
         locationLabel.setMinimumSize(locationLabel.sizeHint())
@@ -260,7 +271,16 @@ class MainWindow(QMainWindow):
         """
         경제 지표 저장하는 window를 실행합니다.
         """
-        dlg = DlIndependentDialog(os.curdir)
+        # dlg = DlIndependentDialog(os.curdir)
+        dlg = IndiWidget()
+        dlg.exec_()
+
+    def dl_dependents(self):
+        """
+        경제 지표 저장하는 window를 실행합니다.
+        """
+        # dlg = DlIndependentDialog(os.curdir)
+        dlg = TargetWidget()
         dlg.exec_()
 
     def _append_text(self, msg):
@@ -272,9 +292,14 @@ class MainWindow(QMainWindow):
         # refresh textedit show, refer) https://doc.qt.io/qt-5/qeventloop.html#ProcessEventsFlag-enum
         QApplication.processEvents(QEventLoop.ExcludeUserInputEvents)
 
+    def createNormalTab(self):
+        widget = NormalWidget()
+        self.tabWidget.addTab(widget, "Normalization")
+
     def createLabelTab(self):
         widget = MarkingWidget()
         """
+        # 디버깅용
         widget.destroyed.connect(
             lambda obj: print(
                 "deleted {}, count: {}".format(obj, self.tabWidget.count())

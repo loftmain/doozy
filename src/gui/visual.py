@@ -10,18 +10,19 @@ import pandas as pd
 from PySide2.QtGui import QIcon, QDropEvent
 from PySide2.QtWidgets import QApplication, QWidget, QMainWindow, QAction, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, \
     QSpacerItem, QSizePolicy, QPushButton, QComboBox
-from matplotlib import font_manager, rc
+from matplotlib import font_manager
 from matplotlib import style
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 from matplotlib.figure import Figure
-from module.io import get_refined_path
+
+from src.module.io import get_refined_path
 
 if platform.system() == 'Windows':
     font_name = font_manager.FontProperties(fname="c:/Windows/Fonts/malgun.ttf").get_name()
 elif platform.system() == 'Linux':
     font_name = font_manager.FontProperties(fname="/src/doozy.git/setup/font/GSTTF.ttf").get_name()
-#rc('font', family=font_name)
+# rc('font', family=font_name)
 
 __author__ = 'Jinjae Lee <leejinjae7@gmail.com>'
 

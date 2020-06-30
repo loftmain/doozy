@@ -17,6 +17,7 @@
 
 # Built-in/Generic Imports
 import sys
+
 # Libs
 from PySide2.QtCore import QFileInfo, QDir, QFile
 from PySide2.QtWidgets import QTreeView, QAbstractItemView, QApplication, QFileSystemModel

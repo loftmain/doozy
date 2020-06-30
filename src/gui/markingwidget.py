@@ -18,6 +18,7 @@
 # Built-in/Generic Imports
 import os
 import sys
+
 # Libs
 import pandas as pd
 from PySide2.QtCore import Slot
@@ -25,9 +26,10 @@ from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
                                QVBoxLayout, QHBoxLayout, QGroupBox,
                                QGridLayout, QLabel, QComboBox, QSpinBox,
                                QLineEdit, QFormLayout, QRadioButton)
+
 # Own modules
-from module.io import set_save_folder
-from module.marking import Marking
+from src.module.io import set_save_folder
+from src.module.marking import Marking
 
 
 class LineEdit(QLineEdit):
@@ -35,6 +37,7 @@ class LineEdit(QLineEdit):
     drag drop을 지원하는 QLineEdit
     파일을 끌어다가 놓으면 경로가 입력됨
     """
+
     def __init__(self):
         QLineEdit.__init__(self)
         self.setAcceptDrops(True)

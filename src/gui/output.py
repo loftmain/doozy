@@ -14,6 +14,10 @@ from PySide2.QtCore import QObject, Signal
 
 
 class StdoutRedirect(QObject):
+    """
+    Debug & Processing Log text output
+    프로그램 상의 text output을 받는 class
+    """
     printOccur = Signal(str, str, name="print")
 
     def __init__(self, *param):

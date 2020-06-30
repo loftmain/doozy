@@ -15,12 +15,16 @@ from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
                                QVBoxLayout, QGroupBox, QLabel, QComboBox,
                                QFormLayout, QLineEdit, QGridLayout)
 
-from .markingwidget import LineEdit
-from module.backtesting import backtesting
-from module.io import get_refined_path
+from src.gui.markingwidget import LineEdit
+from src.module.io import get_refined_path
+from src.module.tradesimulator import backtesting
 
 
 class OrderRunWidget(QWidget):
+    """
+
+    """
+
     def __init__(self):
         QWidget.__init__(self)
         self.setWindowTitle('orderexcute')

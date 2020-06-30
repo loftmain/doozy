@@ -18,22 +18,38 @@
 # Built-in/Generic Imports
 import os
 import sys
+
 # Libs
+import pandas as pd
 from PySide2.QtCore import QDate
 from PySide2.QtCore import Slot
 from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
                                QRadioButton, QVBoxLayout, QLineEdit,
                                QHBoxLayout, QGroupBox, QGridLayout,
                                QLabel, QComboBox, QFormLayout, QDateEdit)
+
 # Own modules
-from .markingwidget import LineEdit
-from module.classifier import run_modeling
-from module.io import set_save_folder
+from src.gui.markingwidget import LineEdit
+from src.module.classifier import run_modeling
+from src.module.io import set_save_folder
+from src.module.rnn_modeling import RNN_modeling
 
 
 class ModelingOption(QWidget):
     """
     Modeling Menu의 UI
+    예측
+    | 일간 예측 | 월간 예측|
+    일간 예측 미구현
+    사용할 알고리즘
+    | Random Forest | K-NN | Linear Regression | XGBoost |
+    Linear Regression 과 XGBoost 세팅 미구현
+    지정 독립변수 사용
+    -> , 로 독립변수마다 띄어주어야함
+    경로 지정
+    dependent file path: MARKING 된 주가 CSV파일경로 ( Drag & Drop )
+    condition list: HM4UP, LN4DN 과 같은 MARKING과 같은 이름 넣어줌
+    indepentdent folder path: 경제지표가 들은 폴더 경로 ( Drag & Drop )
 
     """
     def __init__(self):
@@ -52,7 +68,7 @@ class ModelingOption(QWidget):
         algorithmBox = QGroupBox("사용할 알고리즘", self)
         self.rfButton = QRadioButton("Random Forest", algorithmBox)
         self.knnButton = QRadioButton("K-NN", algorithmBox)
-        self.lrButton = QRadioButton("Linear Regression", algorithmBox)
+        self.rnnButton = QRadioButton("RNN", algorithmBox)
         self.xgbButton = QRadioButton("XGBoost", algorithmBox)
 
         groupBoxLayout1 = QHBoxLayout(predBox)
@@ -62,10 +78,11 @@ class ModelingOption(QWidget):
         groupBoxLayout2 = QHBoxLayout(algorithmBox)
         groupBoxLayout2.addWidget(self.rfButton)
         groupBoxLayout2.addWidget(self.knnButton)
-        groupBoxLayout2.addWidget(self.lrButton)
+        groupBoxLayout2.addWidget(self.rnnButton)
         groupBoxLayout2.addWidget(self.xgbButton)
         self.rfButton.toggled.connect(self.rfClicked)
         self.knnButton.toggled.connect(self.knnClicked)
+        self.rnnButton.toggled.connect(self.rnnClicked)
 
         gb_independent_opt = QGroupBox("독립변수 설정", self)
         self.bt_all = QRadioButton("독립변수 조합을 이용", gb_independent_opt)
@@ -151,6 +168,9 @@ class ModelingOption(QWidget):
         self.setLayout(self.mainlayout)
 
     def rfClicked(self):
+        """
+        Random Forest Radio Button 을 클릭시 나오는 UI
+        """
         if self.rfButton.text() == "Random Forest":
             if self.rfButton.isChecked():
                 # self.gb = QGroupBox(self.tr("Serial"))
@@ -183,6 +203,9 @@ class ModelingOption(QWidget):
                 self.update()
 
     def knnClicked(self):
+        """
+        K-NN Radio Button 을 클릭시 나오는 UI
+        """
         if self.knnButton.text() == "K-NN":
             if self.knnButton.isChecked():
                 # self.gb = QGroupBox(self.tr("Serial"))
@@ -199,7 +222,50 @@ class ModelingOption(QWidget):
                 self.clearLayout(self.grid_box)
                 self.update()
 
+    def rnnClicked(self):
+        """
+        Random Forest Radio Button 을 클릭시 나오는 UI
+        """
+        if self.rnnButton.text() == "RNN":
+            if self.rnnButton.isChecked():
+                # self.gb = QGroupBox(self.tr("Serial"))
+
+                self.le_layer = LineEdit()
+                self.cb_in_activ = QComboBox()
+                self.cb_in_activ.addItems(['relu', 'elu', 'selu', 'softplus', 'softsign'])
+                # self.cb_in_activ.setCurrentIndex(3)
+                self.cb_out_activ = QComboBox()
+                self.cb_out_activ.addItems(['softmax', 'linear', 'sigmoid'])
+                self.cb_epoch = QComboBox()
+                self.cb_epoch.addItems(['100', '200', '300', '400', '500'])
+                self.le_tr_size = LineEdit()
+                self.le_normal = LineEdit()
+
+                self.grid_box.addWidget(QLabel(self.tr("Layer Size")), 0, 0)
+                self.grid_box.addWidget(self.le_layer, 0, 1)
+
+                self.grid_box.addWidget(QLabel(self.tr("input Activation Function")), 1, 0)
+                self.grid_box.addWidget(self.cb_in_activ, 1, 1)
+
+                self.grid_box.addWidget(QLabel(self.tr("Output Activation Function")), 2, 0)
+                self.grid_box.addWidget(self.cb_out_activ, 2, 1)
+                self.grid_box.addWidget(QLabel(self.tr("Epoch")), 3, 0)
+                self.grid_box.addWidget(self.cb_epoch, 3, 1)
+                self.grid_box.addWidget(QLabel(self.tr("Training Size")), 4, 0)
+                self.grid_box.addWidget(self.le_tr_size, 4, 1)
+                self.grid_box.addWidget(QLabel(self.tr("normalization")), 5, 0)
+                self.grid_box.addWidget(self.le_normal, 5, 1)
+                self.gb.setLayout(self.grid_box)
+
+                self.update()
+            else:
+                self.clearLayout(self.grid_box)
+                self.update()
+
     def clicked_all(self):
+        """
+        독립변수 설정 -> 독립변수 조합을 이용 Radio 버튼을 클릭시 나오는 UI
+        """
         if self.bt_all.isChecked():
             self.startNum = QComboBox()
             self.startNum.insertItems(0, [str(x) for x in range(10)])
@@ -214,6 +280,9 @@ class ModelingOption(QWidget):
             self.clearLayout(self.groupBoxLayout3)
 
     def clicked_subset(self):
+        """
+        독립변수 설정 -> 지정 독립변수 사용 Radio 버튼을 클릭시 나오는 UI
+        """
         if self.bt_subset.isChecked():
             self.le_column_list = QLineEdit()
             self.le_column_list.setText("column1, column2, column3")
@@ -225,6 +294,9 @@ class ModelingOption(QWidget):
             self.clearLayout(self.groupBoxLayout3)
 
     def clearLayout(self, layout):
+        """
+        다른 Radio 벼튼을 눌렀을시 기존 정보들을 Clear 해주는 역할
+        """
         while layout.count():
             child = layout.takeAt(0)
             if child.widget():
@@ -232,6 +304,10 @@ class ModelingOption(QWidget):
 
     @Slot(name="clickedOkButton")
     def slot_clicked_ok_button(self):
+        """
+        OK button 눌렀을 시 프로그램에게 딕셔너리 정보를 구성하는 역할
+        :return:
+        """
         sig = True
         save_path = set_save_folder(os.curdir, 'modeling')
         dependent_file_path = self.dependent_file_path.text().split('file://')[1]
@@ -341,6 +417,25 @@ class ModelingOption(QWidget):
                             ]
                     }
                 print(start_setting)
+        # =============================================================================
+        #     RMM
+        # =============================================================================
+        elif self.rnnButton.isChecked():
+            if self.bt_subset.isChecked():
+                column_list = [col.strip() for col in self.le_column_list.text().split(',')]
+                mod = RNN_modeling()
+                data = pd.read_csv(dependent_file_path)
+                mod.set_option(column_list, self.condition_list.text().split(','),
+                               float(len(data) * float(self.le_tr_size.text())))
+                mod.set_model_option(self.le_layer.text(), self.cb_in_activ.currentText(),
+                                     self.cb_out_activ.currentText(), self.cb_epoch.currentText())
+                mod.merge_data(data, independent_file_path, self.le_normal.text(), 3)
+                predict, scoring = mod.modeling()
+                res = data[:-3][-35:]
+                res['predicted'] = predict
+                res.to_csv(save_path + str(scoring) + '.csv', header=True, index=False)
+
+                sig = False
             else:
                 print("미구현\n")
                 sig = False
