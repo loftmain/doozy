@@ -25,13 +25,13 @@ from PySide2.QtCore import Slot
 from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
                                QRadioButton, QVBoxLayout, QLineEdit,
                                QHBoxLayout, QGroupBox, QGridLayout,
-                               QLabel, QComboBox)
+                               QLabel, QComboBox, QFormLayout, QDateEdit)
+from module.classifier import run_modeling
+from module.io import set_save_folder
 
 # Own modules
-from src.gui.markingwidget import LineEdit
-from src.module.io import set_save_folder
-from src.module.normalizing_data import Normalization
-
+from gui.markingwidget import LineEdit
+from module.normalizing_data import Normalization
 
 class NormalWidget(QWidget):
 
@@ -59,6 +59,7 @@ class NormalWidget(QWidget):
         self.logexpButton.toggled.connect(self.logexpClicked)
         self.customButton.toggled.connect(self.customClicked)
         self.multicustomButton.toggled.connect(self.multiCustomClicked)
+
 
         self.gb = QGroupBox(self.tr("정규화 설명 및 사용자 커스터마이즈"))
         self.grid_box = QGridLayout()
@@ -215,7 +216,7 @@ class NormalWidget(QWidget):
         folder_name = self.folder_name.text().split('file://')[1]
         folder = os.listdir(folder_name)
         index_list = [file.split('.')[0] for file in folder]
-        index_df_list = [pd.read_csv(folder_name + '/' + file) for file in folder]
+        index_df_list = [pd.read_csv(folder_name+'/' + file) for file in folder]
         mod = Normalization()
         # =============================================================================
         #     RATE
@@ -230,8 +231,8 @@ class NormalWidget(QWidget):
                            index_list, 'normalization', 'LOGEXP', "")
             mod.scaling(os.curdir)
         elif self.customButton.isChecked():
-            # n_neighbors_list = [int(col.strip()) for col in self.le_n_neighbors.text().split(',')]
-            # column_list = [col.strip() for col in self.le_column_list.text().split(',')]
+            #n_neighbors_list = [int(col.strip()) for col in self.le_n_neighbors.text().split(',')]
+            #column_list = [col.strip() for col in self.le_column_list.text().split(',')]
             moon = self.save_name.text()
             mod.set_option(index_df_list,
                            index_list, 'normalization', 'USER', moon)

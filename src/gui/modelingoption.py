@@ -27,12 +27,12 @@ from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
                                QRadioButton, QVBoxLayout, QLineEdit,
                                QHBoxLayout, QGroupBox, QGridLayout,
                                QLabel, QComboBox, QFormLayout, QDateEdit)
+from module.classifier import run_modeling
+from module.io import set_save_folder
 
 # Own modules
-from src.gui.markingwidget import LineEdit
-from src.module.classifier import run_modeling
-from src.module.io import set_save_folder
-from src.module.rnn_modeling import RNN_modeling
+from gui.markingwidget import LineEdit
+from module.rnn_modeling import RNN_modeling
 
 
 class ModelingOption(QWidget):
@@ -233,7 +233,7 @@ class ModelingOption(QWidget):
                 self.le_layer = LineEdit()
                 self.cb_in_activ = QComboBox()
                 self.cb_in_activ.addItems(['relu', 'elu', 'selu', 'softplus', 'softsign'])
-                # self.cb_in_activ.setCurrentIndex(3)
+                #self.cb_in_activ.setCurrentIndex(3)
                 self.cb_out_activ = QComboBox()
                 self.cb_out_activ.addItems(['softmax', 'linear', 'sigmoid'])
                 self.cb_epoch = QComboBox()
@@ -426,9 +426,9 @@ class ModelingOption(QWidget):
                 mod = RNN_modeling()
                 data = pd.read_csv(dependent_file_path)
                 mod.set_option(column_list, self.condition_list.text().split(','),
-                               float(len(data) * float(self.le_tr_size.text())))
-                mod.set_model_option(self.le_layer.text(), self.cb_in_activ.currentText(),
-                                     self.cb_out_activ.currentText(), self.cb_epoch.currentText())
+                               int(len(data)*0.7))
+                mod.set_model_option(int(self.le_layer.text()), self.cb_in_activ.currentText(),
+                                     self.cb_out_activ.currentText(), int(self.cb_epoch.currentText()))
                 mod.merge_data(data, independent_file_path, self.le_normal.text(), 3)
                 predict, scoring = mod.modeling()
                 res = data[:-3][-35:]

@@ -20,15 +20,15 @@ import os
 import sys
 
 # Libs
+import pandas as pd
 from PySide2.QtCore import Slot, QDate
-from PySide2.QtWidgets import (QApplication, QPushButton,
+from PySide2.QtWidgets import (QApplication,  QPushButton,
                                QDialog, QHBoxLayout, QGroupBox,
                                QGridLayout, QLabel, QProgressBar,
                                QLineEdit, QFormLayout, QDateEdit)
-
 # Own modules
-from src.module.gathering_feature import Gathering_Feature
-
+from module.io import set_save_folder
+from module.gathering_feature import Gathering_Feature
 
 class IndiWidget(QDialog):
     def __init__(self):
@@ -47,6 +47,7 @@ class IndiWidget(QDialog):
         gb_layout_0 = QHBoxLayout(gb_0)
         gb_layout_0.addWidget(QLabel("폴더 이름 "))
         gb_layout_0.addWidget(self.folder_name)
+
 
         self.start_date = QLabel("경제지표 시작날짜: ", self)
         self.gathering_start_date = QDateEdit(self)
@@ -90,11 +91,11 @@ class IndiWidget(QDialog):
         self.progress.setValue(len(self.inde_list.text()))
 
     def run_gathering(self, dic):
+
         gathering = Gathering_Feature()
         gathering.set_option(dic['inde_list'], dic['folder_name'],
-                             dic['gathering_start_date'], dic['private_key'])
+                              dic['gathering_start_date'], dic['private_key'])
         gathering.gathering(os.curdir)
-
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

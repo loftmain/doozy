@@ -30,6 +30,7 @@ from PySide2.QtWidgets import (QDockWidget, QTabWidget, QTextBrowser, QFileDialo
     , QMainWindow, QAction, QLabel, QMessageBox)
 
 # Own modules
+from .download import DlIndependentDialog
 from .filetreeview import Tree
 from .markingwidget import MarkingWidget
 from .modelingoption import ModelingOption
@@ -271,7 +272,7 @@ class MainWindow(QMainWindow):
         """
         경제 지표 저장하는 window를 실행합니다.
         """
-        # dlg = DlIndependentDialog(os.curdir)
+        #dlg = DlIndependentDialog(os.curdir)
         dlg = IndiWidget()
         dlg.exec_()
 
@@ -279,7 +280,7 @@ class MainWindow(QMainWindow):
         """
         경제 지표 저장하는 window를 실행합니다.
         """
-        # dlg = DlIndependentDialog(os.curdir)
+        #dlg = DlIndependentDialog(os.curdir)
         dlg = TargetWidget()
         dlg.exec_()
 

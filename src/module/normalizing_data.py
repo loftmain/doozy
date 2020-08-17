@@ -5,7 +5,6 @@ Created on Wed Apr 15 16:49:44 2020
 @author: giho9
 """
 
-
 class Normalization:
     '''
     
@@ -55,7 +54,6 @@ class Normalization:
     
     
     '''
-
     def set_option(self, dilist, ilist, fname, nopt, exe):
         '''
         
@@ -82,13 +80,13 @@ class Normalization:
         None
 
         '''
-
+        
         self._dilist = dilist
         self._ilist = ilist
         self._fname = fname
         self._nopt = nopt
         self._exe = exe
-
+        
     def inspect_index_folder(self, path):
         '''
         
@@ -117,34 +115,38 @@ class Normalization:
         folderpath = \
             os.path.join(path, self._fname)
         return folderpath
-
+    
     def select_option(self, df, tag):
-
+        
         import numpy as np
-
+        
         if self._nopt == 'RATE':
-            df[tag + 'rate'] = (df[tag] / df[tag].shift(+1)) - 1
-
+             
+            df[tag+'rate'] = (df[tag] / df[tag].shift(+1)) -1
+            
         if self._nopt == 'LOGEXP':
-            df[tag + 'rate'] = (df[tag] / df[tag].shift(+1))
-            df[tag + 'EXP'] = np.exp(np.array(df[tag], dtype=np.float))
-            df[tag + 'rate' + 'EXP'] = np.exp(np.array(df[tag + 'rate'], dtype=np.float))
-            df[tag + 'LOG'] = np.log(np.array(df[tag], dtype=np.float))
-            df[tag + 'rate' + 'LOG'] = np.log(np.array(df[tag + 'rate'], dtype=np.float))
-            df[tag + 'logexp'] = df[tag + 'rate' + 'LOG'] * 100 - df[tag + 'rate' + 'EXP']
-
-            del df[tag + 'rate']
-            del df[tag + 'EXP']
-            del df[tag + 'rate' + 'EXP']
-            del df[tag + 'LOG']
-            del df[tag + 'rate' + 'LOG']
-
+            
+            df[tag+'rate'] = (df[tag] / df[tag].shift(+1))
+            df[tag+'EXP'] = np.exp(np.array(df[tag], dtype=np.float))
+            df[tag+'rate'+'EXP'] = np.exp(np.array(df[tag+'rate'], dtype=np.float))
+            df[tag+'LOG'] = np.log(np.array(df[tag], dtype=np.float))
+            df[tag+'rate'+'LOG'] = np.log(np.array(df[tag+'rate'], dtype=np.float))
+            df[tag+'logexp'] = df[tag+'rate'+'LOG'] * 100 - df[tag+'rate'+'EXP']
+            
+            del df[tag+'rate']
+            del df[tag+'EXP']
+            del df[tag+'rate'+'EXP']
+            del df[tag+'LOG']
+            del df[tag+'rate'+'LOG']
+        
         if self._nopt == 'USER':
-            df[tag + 'user'] = eval(self._exe)
-
+            
+            df[tag+'user'] = eval(self._exe)
+            
         if self._nopt == 'USERS':
+            
             exec(self._exe)
-
+        
         return df
 
     def scaling(self, path):
@@ -157,18 +159,18 @@ class Normalization:
         None.
 
         '''
-
+        
         import os
-
+        
         gpath = self.inspect_index_folder(path)
-
+        
         for indi, index in zip(self._dilist, self._ilist):
-
+            
             try:
                 data = self.select_option(indi, index)
-                print(index, ': success')
-
+                print(index,': success')
+            
                 data.to_csv(os.path.join
-                            (gpath, index) + '.csv', index=False)
+                            (gpath, index) + '.csv', index=False) 
             except:
-                print(index, ': error(The bad data exists)')
+                print(index,': error(The bad data exists)')

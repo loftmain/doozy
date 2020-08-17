@@ -5,7 +5,6 @@ Created on Tue Apr 14 14:42:59 2020
 @author: giho9
 """
 
-
 class Gathering_target:
     '''
     
@@ -47,7 +46,7 @@ class Gathering_target:
     >>> mod.gathering()
     # 지수데이터 받아오기
     '''
-
+    
     def set_option(self, code, fname, spoint, opt):
         '''
         
@@ -87,12 +86,12 @@ class Gathering_target:
         None
 
         '''
-
+        
         self._code = code
         self._fname = fname
         self._spoint = spoint
         self._opt = opt
-
+        
     def inspect_index_folder(self, path):
         '''
         
@@ -120,7 +119,7 @@ class Gathering_target:
         folderpath = \
             os.path.join(path, self._fname)
         return folderpath
-
+    
     def preprocessing(self, origin):
         '''
         
@@ -147,17 +146,17 @@ class Gathering_target:
         '''
 
         from dateutil.relativedelta import relativedelta
-
+        
         origin = origin.resample('MS').first()
         origin = origin.reset_index()
         origin.drop_duplicates(["Date"], keep='last', inplace=True)
-
-        for n in range(1, 4):
+        
+        for n in range(1,4):
             origin.loc[len(origin), 'Date'] = \
-                origin['Date'][len(origin) - n] + relativedelta(months=n)
-
+            origin['Date'][len(origin) - n] + relativedelta(months=n)
+            
         return origin
-
+    
     def gathering(self, path):
         '''
         
@@ -174,15 +173,15 @@ class Gathering_target:
         None
 
         '''
-
+        
         import os
-
+        
         gpath = self.inspect_index_folder(path)
-
+        
         if self._opt == 'PDR':
-
+            
             import pandas_datareader.data as web
-
+            
             try:
                 df = web.DataReader(self._code, 'yahoo', self._spoint)
             except:
@@ -191,26 +190,26 @@ class Gathering_target:
                 pass
 
             df = self.preprocessing(df)
-
+            
             df.to_csv(os.path.join
-                      (gpath, self._code) + '.csv', index=False)
-
+                      (gpath, self._code) + '.csv', index=False)  
+            
             print(self._code, ': 성공')
-
+            
         if self._opt == 'FDR':
-
+            
             import FinanceDataReader as fdr
-
+            
             try:
                 df = fdr.DataReader(self._code, self._spoint)
             except:
                 print(self._code,
                       ': 이름이 잘못되었거나 접속이 지연되고 있습니다')
                 pass
-
+            
             df = self.preprocessing(df)
-
+            
             df.to_csv(os.path.join
-                      (gpath, self._code) + '.csv', index=False)
-
+                      (gpath, self._code) + '.csv', index=False)  
+            
             print(self._code, ': 성공')

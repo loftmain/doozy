@@ -20,14 +20,15 @@ import os
 import sys
 
 # Libs
+import pandas as pd
 from PySide2.QtCore import Slot, QDate
 from PySide2.QtWidgets import (QApplication, QDialog, QPushButton,
                                QHBoxLayout, QGroupBox, QGridLayout,
                                QLabel, QLineEdit, QFormLayout, QDateEdit,
                                QRadioButton, QProgressBar)
-
 # Own modules
-from src.module.gathering_target import Gathering_target
+from module.gathering_target import Gathering_target
+
 
 
 class TargetWidget(QDialog):
@@ -47,6 +48,7 @@ class TargetWidget(QDialog):
         gb_layout_0 = QHBoxLayout(gb_0)
         gb_layout_0.addWidget(QLabel("폴더 이름 "))
         gb_layout_0.addWidget(self.folder_name)
+
 
         self.start_date = QLabel("주가 시작날짜: ", self)
         self.gathering_start_date = QDateEdit(self)
@@ -110,9 +112,8 @@ class TargetWidget(QDialog):
 
         gathering = Gathering_target()
         gathering.set_option(dic['depend_list'], dic['folder_name'],
-                             dic['gathering_start_date'], dic['datareader'])
+                              dic['gathering_start_date'], dic['datareader'])
         gathering.gathering(os.curdir)
-
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

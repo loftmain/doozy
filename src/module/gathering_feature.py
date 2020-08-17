@@ -5,7 +5,6 @@ Created on Mon Apr 13 17:24:07 2020
 @author: giho9
 """
 
-
 class Gathering_Feature:
     '''
     
@@ -41,7 +40,7 @@ class Gathering_Feature:
     경제지표 받아오기
     
     '''
-
+    
     def set_option(self, features, fname, spoint, key):
         '''
         클래스 멤버변수를 설정하는 함수이다.
@@ -75,7 +74,7 @@ class Gathering_Feature:
         self._key = key
         self._fname = fname
         self._spoint = spoint
-
+    
     def inspect_index_folder(self, path):
         '''
         경제지표 파일들을 저장할 폴더를 만드는 함수이다.
@@ -98,11 +97,11 @@ class Gathering_Feature:
         import os
         if not os.path.exists(os.path.join(path, self._fname)):
             os.mkdir(os.path.join(path, self._fname))
-
+            
         folderpath = \
             os.path.join(path, self._fname)
         return folderpath
-
+    
     def preprocessing(self, origin, ind):
         '''
         Fredapi에서 받아온 경제지표 데이터프레임을 전처리하는 함수이다.
@@ -144,21 +143,21 @@ class Gathering_Feature:
         import pandas as pd
         from datetime import datetime
         from dateutil.relativedelta import relativedelta
-
+        
         tp = datetime.strptime('2000-01-01', '%Y-%m-%d').date()
         origin.drop_duplicates(["date"], keep='last', inplace=True)
         origin['Date'] = origin['date'].dt.date
-        origin.rename(columns={'value': ind}, inplace=True)
+        origin.rename(columns={'value':ind}, inplace=True)
         origin = origin[['Date', ind]]
         origin.drop(origin[origin.Date < tp].index, inplace=True)
         origin.index = pd.RangeIndex(len(origin.index))
-
-        for n in range(1, 4):
+        
+        for n in range(1,4):
             origin.loc[len(origin), 'Date'] = \
-                origin['Date'][len(origin) - n] + relativedelta(months=n)
-
+            origin['Date'][len(origin) - n] + relativedelta(months=n)
+        
         return origin
-
+        
     def gathering(self, path):
         '''
         fred로부터 경제지표 데이터를 받아, csv file에 개별 저장하는 함수
@@ -170,24 +169,24 @@ class Gathering_Feature:
         None
 
         '''
-
+        
         from fredapi import Fred
         import os
-
+        
         gpath = self.inspect_index_folder(path)
 
         pkey = Fred(api_key=self._key)
 
         for index in self._features:
-
+            
             try:
                 data = pkey.get_series_all_releases(index)
             except:
                 print(index, ': 이름이 잘못되었거나 접속이 지연되고 있습니다')
                 continue
-
+            
             data = self.preprocessing(data, index)
-
+            
             data.to_csv(os.path.join
-                        (gpath, index) + '.csv', index=False)
+                      (gpath, index) + '.csv', index=False)
             print(index, ': 성공')

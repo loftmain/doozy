@@ -4,8 +4,7 @@ import warnings
 from itertools import combinations
 
 import numpy as np
-import pandas as pd
-import statsmodels.formula.api as sm
+import pandas as pd 
 from sklearn import neighbors
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
@@ -95,22 +94,6 @@ def check_classifier(setting, log_data):
         else:
             print("columns list option ERROR!!!")
 
-    elif setting["classifier"] == "LR":
-        print("LR")
-        lr = SA_LinearRegression(
-            column_list=column_list,
-            condition_list=setting["condition_list"],
-            dependent_path=setting["dependent_file_path"],
-            independent_path=setting["independent_path"],
-            saved_path=setting["save_path"],
-            start_date=setting["start_date"],
-            seperate_date=setting["seperate_date"],
-            end_date=setting["end_date"])
-
-        if setting["column_option_list"]['option'] == "subset":
-            lr.analyze(log=log_data)
-        elif setting["column_option_list"]['option'] == "all":
-            print("구현예정")
 
     elif setting["classifier"] == "xgboost":
         print("XGBoost")
@@ -402,64 +385,6 @@ class SA_xgboost(SA):
                                          'n_estimators={} min_child_weight={} max_depth={} gamma={}'
                                              .format(n_estimators, min_child_weight, max_depth, gamma)]
 
-                    # self.save_csv_file(pre_dataframe, "xgboost", condition, columns)
-
-
-class SA_LinearRegression(SA):
-    def __init__(self,
-                 condition_list,
-                 dependent_path,
-                 independent_path,
-                 saved_path,
-                 start_date,
-                 seperate_date,
-                 end_date,
-                 column_list=None):
-        super().__init__(
-            condition_list,
-            dependent_path,
-            independent_path,
-            saved_path,
-            start_date,
-            seperate_date,
-            end_date,
-            column_list)
-
-    def analyze(self, log):
-        super().read_excel_files()
-        for columns in self.column_list:
-            for condition in self.condition_list:
-                columns.append(condition)
-                X_train, y_train, X_test, y_test = super().seperate_data(columns, condition)
-
-                columns.remove(condition)
-                print(condition + ' ~' + '+'.join(columns))
-                model = sm.ols(formula=condition + ' ~' + '+'.join(columns),
-                               data=X_train).fit()
-                y_predict = model.predict(X_test)
-                r_square = model.rsquared
-                print('R-SQUARE:', r_square)
-                print('Pvalue :', model.pvalues)
-                self.y_prediction = y_predict.apply(lambda x: 0 if x < 0.5 else 1)
-                accuracy = accuracy_score(y_test, self.y_prediction)
-                precision = precision_score(y_test, self.y_prediction)
-                recall = recall_score(y_test, self.y_prediction)
-
-                pre_dataframe = self.dataframe.loc[self.seperate_date:, :]
-                pre_dataframe = pre_dataframe.drop(pre_dataframe.index[0])
-                pre_dataframe[condition + '_predict'] = self.y_prediction
-                result_data = 'accuracy: {} precision: {}  recall:{}\n {}  "LR" {}\n' \
-                    .format(round(accuracy, 2), round(precision, 2), round(recall, 2), condition, columns)
-                print(result_data)
-                log.loc[len(log)] = ["LR", condition, columns, accuracy, precision, recall,'None']
-                self.save_csv_file(pre_dataframe, "LR", condition, columns)
-                """
-
-
-                    print(result_data)
-                    log.loc[len(log)] = ["KNN", condition, columns, accuracy, precision, recall, margin, close_increase_rate]
-
-                    self.save_csv_file(pre_dataframe, "KNN", condition, columns)"""
 
 def run_modeling(setting):
     log_data = pd.DataFrame(columns=['classifier', 'condition', 'columns', 'accuracy',

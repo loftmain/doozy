@@ -15,9 +15,9 @@ from PySide2.QtWidgets import (QApplication, QWidget, QPushButton,
                                QVBoxLayout, QGroupBox, QLabel, QComboBox,
                                QFormLayout, QLineEdit, QGridLayout)
 
-from src.gui.markingwidget import LineEdit
-from src.module.io import get_refined_path
-from src.module.tradesimulator import backtesting
+from gui.markingwidget import LineEdit
+from module.tradesimulator import backtesting
+from module.io import get_refined_path
 
 
 class OrderRunWidget(QWidget):
