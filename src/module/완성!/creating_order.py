@@ -31,7 +31,8 @@ def _hmbs(df, data, opt):
             temp = data[data['year'] == year]
             temp = temp[temp['month'] == month]
             
-            if (year == 2020) and (month == 8): break
+            if (year == datetime.datetime.today().year) \
+                and (month == datetime.datetime.today().month): break
         
             comp_v = temp['Adj Close'][temp.index[0]]
 
@@ -60,7 +61,8 @@ def _lmbs(df, data, opt):
             temp = data[data['year'] == year]
             temp = temp[temp['month'] == month]
             
-            if (year == 2020) and (month == 8): break
+            if (year == datetime.datetime.today().year) \
+                and (month == datetime.datetime.today().month): break
         
             comp_v = temp['Adj Close'][temp.index[0]]
 
