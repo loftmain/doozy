@@ -1,2 +1,0 @@
-,classifier,condition,columns,accuracy,precision,recall,option
-0,RF,HM4UP,"['CSUSHPINSA', 'PPIACO', 'NEWORDER']",0.5970149253731343,0.2727272727272727,0.13636363636363635,n_estimators=100 max_depth=8 random_state=0

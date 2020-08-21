@@ -146,7 +146,7 @@ class SA(object):
 
     def save_csv_file(self, dataframe, Classifier, condition, columns):
         dependent_name = self.dependent_path.split("/")
-        dataframe.index = pd.to_datetime(dataframe.index.strftime("%Y-%m-%d %H:%M:%S"))
+        dataframe.index = pd.to_datetime(dataframe.index.strftime("%Y-%m-%d"))
         # dataframe.index = dataframe.index.dt.strftime("%Y-%m-%d %H:%M:%S")
         dataframe.index.name = 'Date'
         if Classifier == "KNN":
@@ -155,13 +155,13 @@ class SA(object):
                 self.saved_path + '/' + str(self.n_neighbors) + Classifier + '_' + dependent_name[-1] + "_" + str(
                     condition) + str(
                     columns) + str(self.start_date) + "_" + str(self.seperate_date) + '.csv',
-                date_format='%Y-%m-%d %H:%M:%S',
+                date_format='%Y-%m-%d',
                 index=True)
         else:
             dataframe.to_csv(
                 self.saved_path + '/' + Classifier + '_' + dependent_name[-1] + "_" + str(condition) + str(
                     columns) + str(self.start_date) + "_" + str(self.seperate_date) + '.csv',
-                date_format='%Y-%m-%d %H:%M:%S',
+                date_format='%Y-%m-%d',
                 index=True)
 
     def get_independent_columns(self):

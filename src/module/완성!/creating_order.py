@@ -137,14 +137,14 @@ def run_create_order(setting):
 
 if __name__ == '__main__':
 
-    path = 'predict.csv'  # form에서 입력받음 [파일경로]
-    option = ['predict', 0.04]  # [컬럼이름과, 비율]
+    path = '3KNN_HM4DN1.csv_HM4UP.csv'  # form에서 입력받음 [파일경로]
+    option = ['HM4UP_predict', 0.04]  # [컬럼이름과, 비율]
     # HMBLS, LMBLS는 option[1]에 math.inf를 삽입하면됨
 
     df = input_df(path, option[0])
     print(df)
     start, end = calculate_date(df)
-    index = '^IXIC' # form에서 입력받음
+    index = '^DJI' # form에서 입력받음
     print(start, end)
     yahoo = read_df_from_yahoo(index, start, end)
     strategy = 'HMBS' # form에서 입력받음 [전략]

@@ -4,6 +4,10 @@ Created on Wed Jul 15 16:58:46 2020
 
 @author: giho9
 """
+import pandas as pd
+import pathlib
+import json
+import os
 
 class Simulator:
 
@@ -560,7 +564,7 @@ class Simulator:
             
             self.selling(sr, volcount, volmoney)
         
-    def write_trlog(self, tpath):
+    def write_trlog(self, path, folder_name):
         
         '''
         Write TraingLog.json
@@ -579,14 +583,22 @@ class Simulator:
     
         '''
         
-        import json
-        
+        if not os.path.exists(os.path.join(path, 'save')):
+            os.mkdir(os.path.join(path, 'save'))
+        save_path = os.path.join(path, 'save')
+        if not os.path.exists(os.path.join(save_path, 'simulation')):
+            os.mkdir(os.path.join(save_path, 'simulation'))
+        save_path = os.path.join(save_path, 'simulation')
+        if not os.path.exists(os.path.join(save_path, folder_name)):
+            os.mkdir(os.path.join(save_path, folder_name))
+        save_path = os.path.join(save_path, folder_name)
+
         tdict = self._trd_log.to_dict(orient='record')
         #json.dumps(tdict, ensure_ascii=False, indent='\t')
-        with open(tpath+'TradingLog.json', 'w+', encoding='utf-8') as make_file:
+        with open(save_path+ '/' + 'TradingLog.json', 'w+', encoding='utf-8') as make_file:
             json.dump(tdict, make_file, ensure_ascii=False, indent='\t')
     
-    def write_stlog(self, spath):
+    def write_stlog(self, path, folder_name):
         
         '''
         Write TraingLog.json
@@ -604,13 +616,21 @@ class Simulator:
             
     
         '''
-        
-        import json
-        
+
+        if not os.path.exists(os.path.join(path, 'save')):
+            os.mkdir(os.path.join(path, 'save'))
+        save_path = os.path.join(path, 'save')
+        if not os.path.exists(os.path.join(save_path, 'simulation')):
+            os.mkdir(os.path.join(save_path, 'simulation'))
+        save_path = os.path.join(save_path, 'simulation')
+        if not os.path.exists(os.path.join(save_path, folder_name)):
+            os.mkdir(os.path.join(save_path, folder_name))
+        save_path = os.path.join(save_path, folder_name)
+
         sdict = self._stu_log.to_dict(orient='record')
         sdict = {'cash' : self._cash, 'stock' : sdict}
         #json.dumps(tdict, ensure_ascii=False, indent='\t')
-        with open(spath+'Status.json', 'w+', encoding='utf-8') as make_file:
+        with open(save_path + '/'+'Status.json', 'w+', encoding='utf-8') as make_file:
             json.dump(sdict, make_file, ensure_ascii=False, indent='\t')
         
     def simulation(self):
@@ -672,13 +692,36 @@ class Simulator:
         
         print('error code {} : {}'.format(erc, error[erc]))
 
+def run_simulator(setting):
+    save_path = os.path.join(os.path.join(setting['path'],'save/simulation'),
+                             setting['save_folder_name'])
+    file = pathlib.Path(save_path+ '/order.json')
+    text = file.read_text(encoding='utf-8')
+    js = json.loads(text)
+    order = pd.DataFrame(js)
+
+    # file = pathlib.Path(os.getcwd()+'\\statuslog.json')
+    # text = file.read_text(encoding='utf-8')
+    # status = json.loads(text)
+
+    mod = Simulator()
+
+    mod.insert_order(order)
+
+    # mod.set_status(status)
+
+    mod.set_cash(setting['starting_money'])
+
+    mod.simulation()
+
+    mod.write_trlog(setting['path'], setting['save_folder_name'])
+
+    mod.write_stlog(setting['path'], setting['save_folder_name'])
+
 
 if __name__ == '__main__':
     
-    import pandas as pd
-    import pathlib
-    import json
-    import os
+
 
     file = pathlib.Path(os.getcwd()+'/order.json')
     text = file.read_text(encoding='utf-8')

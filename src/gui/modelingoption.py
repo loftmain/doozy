@@ -329,7 +329,7 @@ class ModelingOption(QWidget):
                                     'type_option_list': {'n_neighbors_list': n_neighbors_list},
                                     'column_option_list': \
                                         {'option': 'subset', 'column_list': [column_list]},
-                                    'condition_list': condition_list.text(),
+                                    'condition_list': condition_list,
                                     'dependent_file_path': dependent_file_path,
                                     'independent_path': independent_file_path,
                                     'save_path': save_path,
