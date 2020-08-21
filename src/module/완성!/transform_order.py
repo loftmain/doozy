@@ -57,7 +57,7 @@ def write_file(wdf):
 
 if __name__ == '__main__':
     
-    df = pd.read_csv('input_order.csv')
+    df = pd.read_csv('test.csv')
     
     code = '133690' # ETF 종목 코드
     name = 'TIGER 미국나스닥100' # ETF 종목 이름

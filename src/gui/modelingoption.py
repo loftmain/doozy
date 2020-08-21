@@ -61,7 +61,7 @@ class ModelingOption(QWidget):
         self.okButton = QPushButton("ok", self)
         self.okButton.clicked.connect(self.slot_clicked_ok_button)
 
-        self.button1 = QRadioButton("일간 예측", predBox)
+        # self.button1 = QRadioButton("일간 예측", predBox)
         self.button2 = QRadioButton("월간 예측", predBox)
         self.button2.setChecked(True)
 
@@ -72,7 +72,7 @@ class ModelingOption(QWidget):
         self.xgbButton = QRadioButton("XGBoost", algorithmBox)
 
         groupBoxLayout1 = QHBoxLayout(predBox)
-        groupBoxLayout1.addWidget(self.button1)
+        # groupBoxLayout1.addWidget(self.button1)
         groupBoxLayout1.addWidget(self.button2)
 
         groupBoxLayout2 = QHBoxLayout(algorithmBox)
@@ -309,6 +309,7 @@ class ModelingOption(QWidget):
         :return:
         """
         sig = True
+        condition_list = [col.strip() for col in self.condition_list.text().split(',')]
         save_path = set_save_folder(os.curdir, 'modeling')
         dependent_file_path = self.dependent_file_path.text().split('file://')[1]
         independent_file_path = self.independent_file_path.text().split('file://')[1]
@@ -328,7 +329,7 @@ class ModelingOption(QWidget):
                                     'type_option_list': {'n_neighbors_list': n_neighbors_list},
                                     'column_option_list': \
                                         {'option': 'subset', 'column_list': [column_list]},
-                                    'condition_list': self.condition_list.text().split(','),
+                                    'condition_list': condition_list.text(),
                                     'dependent_file_path': dependent_file_path,
                                     'independent_path': independent_file_path,
                                     'save_path': save_path,
@@ -351,7 +352,7 @@ class ModelingOption(QWidget):
                                     'type_option_list': {'n_neighbors_list': n_neighbors_list},
                                     'column_option_list': \
                                         {'option': 'all', 'range_of_column_no': range_of_column_no},
-                                    'condition_list': self.condition_list.text().split(','),
+                                    'condition_list': condition_list,
                                     'dependent_file_path': dependent_file_path,
                                     'independent_path': independent_file_path,
                                     'save_path': save_path,
@@ -380,7 +381,7 @@ class ModelingOption(QWidget):
                                                      'bootstrap': bool(self.cb_bootstrap.currentText())},
                                 'column_option_list': \
                                     {'option': 'subset', 'column_list': [column_list]},
-                                'condition_list': self.condition_list.text().split(','),
+                                'condition_list': condition_list,
                                 'dependent_file_path': dependent_file_path,
                                 'independent_path': independent_file_path,
                                 'save_path': save_path,
@@ -406,7 +407,7 @@ class ModelingOption(QWidget):
                                                          'bootstrap': bool(self.cb_bootstrap.currentText())},
                                     'column_option_list': \
                                         {'option': 'all', 'range_of_column_no': range_of_column_no},
-                                    'condition_list': self.condition_list.text().split(','),
+                                    'condition_list': condition_list,
                                     'dependent_file_path': dependent_file_path,
                                     'independent_path': independent_file_path,
                                     'save_path': save_path,
@@ -425,7 +426,7 @@ class ModelingOption(QWidget):
                 column_list = [col.strip() for col in self.le_column_list.text().split(',')]
                 mod = RNN_modeling()
                 data = pd.read_csv(dependent_file_path)
-                mod.set_option(column_list, self.condition_list.text().split(','),
+                mod.set_option(column_list, condition_list,
                                int(len(data)*0.7))
                 mod.set_model_option(int(self.le_layer.text()), self.cb_in_activ.currentText(),
                                      self.cb_out_activ.currentText(), int(self.cb_epoch.currentText()))

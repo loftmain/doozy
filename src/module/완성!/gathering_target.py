@@ -95,38 +95,35 @@ class Gathering_target:
         self._fname = fname
         self._spoint = spoint
         self._opt = opt
-        
-    def inspect_index_folder(self):
+
+    def inspect_index_folder(self, path):
         '''
-        
+
         지수데이터 파일을 저장할 폴더를 만드는 함수이다.
-        
+
         폴더가 이미 존재한다면 생성하지 않고, 존재하지 않는다면 생성한다.
-        
+
         self : object
-        
+
         self._fname : str
-        
+
                 지수데이터를 넣을 폴더이름
 
         Returns
         -------
         folderpath : str
-        
+
             입력받은 폴더명으로 만들어진 폴더경로를 반환한다.
 
         '''
         import os
-        
-        if not os.path.exists(os.path.join(os.getcwd(), self._fname)):
-            os.mkdir(os.path.join(os.path.dirname
-                          (os.path.realpath(__file__)), self._fname))
-            
+        if not os.path.exists(os.path.join(path, self._fname)):
+            os.mkdir(os.path.join(path, self._fname))
+
         folderpath = \
-            (os.path.join(os.path.dirname
-                         (os.path.realpath(__file__)), self._fname))
+            os.path.join(path, self._fname)
         return folderpath
-    
+
     def preprocessing(self, origin):
         '''
         
@@ -183,7 +180,7 @@ class Gathering_target:
         
         import os
         
-        gpath = self.inspect_index_folder()
+        gpath = self.inspect_index_folder(path)
         
         if self._opt == 'PDR':
             
@@ -206,27 +203,7 @@ class Gathering_target:
                       (gpath, self._code) + '.csv', index=False)  
             
             print(self._code, ': 성공')
-            
-        if self._opt == 'FDR':
-            
-            import FinanceDataReader as fdr
-            
-            try:
-                df = fdr.DataReader(self._code, self._spoint)
-            except:
-                print(self._code,
-                      ': 이름이 잘못되었거나 접속이 지연되고 있습니다')
-                pass
-            
-            fdf = self.preprocessing(df)
-            
-            fdf = fdf[
-                ['Date', 'Open', 'High', 'Low', 'Close', 'Volume', 'Change']]
-            
-            fdf.to_csv(os.path.join
-                      (gpath, self._code) + '.csv', index=False)  
-            
-            print(self._code, ': 성공')
+
 
 if __name__ == "__main__":
          

@@ -7,7 +7,9 @@ Created on Wed Apr 15 16:49:44 2020
 
 class Normalization:
     '''
-    
+
+    20200819 126~149 LINE 옵션 입력할 때 대문자만 입력가능하게 변경
+
     지표데이터를 정규화 한다.
     
     정규화 종류
@@ -115,38 +117,34 @@ class Normalization:
         folderpath = \
             os.path.join(path, self._fname)
         return folderpath
-    
+
     def select_option(self, df, tag):
-        
+
         import numpy as np
-        
+
         if self._nopt == 'RATE':
-             
-            df[tag+'rate'] = (df[tag] / df[tag].shift(+1)) -1
-            
+            df[tag + 'rate'] = (df[tag] / df[tag].shift(+1)) - 1
+
         if self._nopt == 'LOGEXP':
-            
-            df[tag+'rate'] = (df[tag] / df[tag].shift(+1))
-            df[tag+'EXP'] = np.exp(np.array(df[tag], dtype=np.float))
-            df[tag+'rate'+'EXP'] = np.exp(np.array(df[tag+'rate'], dtype=np.float))
-            df[tag+'LOG'] = np.log(np.array(df[tag], dtype=np.float))
-            df[tag+'rate'+'LOG'] = np.log(np.array(df[tag+'rate'], dtype=np.float))
-            df[tag+'logexp'] = df[tag+'rate'+'LOG'] * 100 - df[tag+'rate'+'EXP']
-            
-            del df[tag+'rate']
-            del df[tag+'EXP']
-            del df[tag+'rate'+'EXP']
-            del df[tag+'LOG']
-            del df[tag+'rate'+'LOG']
-        
+            df[tag + 'rate'] = (df[tag] / df[tag].shift(+1))
+            df[tag + 'EXP'] = np.exp(np.array(df[tag], dtype=np.float))
+            df[tag + 'rate' + 'EXP'] = np.exp(np.array(df[tag + 'rate'], dtype=np.float))
+            df[tag + 'LOG'] = np.log(np.array(df[tag], dtype=np.float))
+            df[tag + 'rate' + 'LOG'] = np.log(np.array(df[tag + 'rate'], dtype=np.float))
+            df[tag + 'logexp'] = df[tag + 'rate' + 'LOG'] * 100 - df[tag + 'rate' + 'EXP']
+
+            del df[tag + 'rate']
+            del df[tag + 'EXP']
+            del df[tag + 'rate' + 'EXP']
+            del df[tag + 'LOG']
+            del df[tag + 'rate' + 'LOG']
+
         if self._nopt == 'USER':
-            
-            df[tag+'user'] = eval(self._exe)
-            
+            df[tag + 'user'] = eval(self._exe)
+
         if self._nopt == 'USERS':
-            
             exec(self._exe)
-        
+
         return df
 
     def scaling(self, path):

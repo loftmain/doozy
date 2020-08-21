@@ -215,7 +215,7 @@ class NormalWidget(QWidget):
         save_path = set_save_folder(os.curdir, 'normalization')
         folder_name = self.folder_name.text().split('file://')[1]
         folder = os.listdir(folder_name)
-        index_list = [file.split('.')[0] for file in folder]
+        index_list = sorted([file.split('.')[0] for file in folder])
         index_df_list = [pd.read_csv(folder_name+'/' + file) for file in folder]
         mod = Normalization()
         # =============================================================================

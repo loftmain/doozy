@@ -78,7 +78,7 @@ class Gathering_Feature:
         self._fname = fname
         self._spoint = spoint
     
-    def inspect_index_folder(self):
+    def inspect_index_folder(self, path):
         '''
         경제지표 파일들을 저장할 폴더를 만드는 함수이다.
         
@@ -98,14 +98,11 @@ class Gathering_Feature:
 
         '''
         import os
-        
-        if not os.path.exists(os.path.join(os.getcwd(), self._fname)):
-            os.mkdir(os.path.join(os.path.dirname
-                          (os.path.realpath(__file__)), self._fname))
-            
+        if not os.path.exists(os.path.join(path, self._fname)):
+            os.mkdir(os.path.join(path, self._fname))
+
         folderpath = \
-            (os.path.join(os.path.dirname
-                         (os.path.realpath(__file__)), self._fname))
+            os.path.join(path, self._fname)
         return folderpath
     
     def preprocessing(self, origin, ind):
@@ -164,7 +161,7 @@ class Gathering_Feature:
         
         return origin
         
-    def gathering(self):
+    def gathering(self, path):
         '''
         fred로부터 경제지표 데이터를 받아, csv file에 개별 저장하는 함수
         
@@ -179,7 +176,7 @@ class Gathering_Feature:
         from fredapi import Fred
         import os
         
-        gpath = self.inspect_index_folder()
+        gpath = self.inspect_index_folder(path)
 
         pkey = Fred(api_key=self._key)
 

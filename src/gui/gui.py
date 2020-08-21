@@ -170,9 +170,9 @@ class MainWindow(QMainWindow):
         self.MarkingCreateAction.triggered.connect(self.createLabelTab)
 
         # modeling menu
-        self.modelCreateAction = QAction("&Create", self)
-        self.modelCreateAction.setStatusTip("create best modeling")
-        self.modelCreateAction.triggered.connect(self.close)
+        # self.modelCreateAction = QAction("&Create", self)
+        # self.modelCreateAction.setStatusTip("create best modeling")
+        # self.modelCreateAction.triggered.connect(self.close)
 
         self.modelOptionAction = QAction("&Modeling option setting", self)
         self.modelOptionAction.setStatusTip("Modeling option setting")
@@ -216,11 +216,11 @@ class MainWindow(QMainWindow):
         MarkingMenu.addAction(self.MarkingCreateAction)
 
         modelingMenu = self.menuBar().addMenu("&Modeling")
-        modelingMenu.addAction(self.modelCreateAction)
+        # modelingMenu.addAction(self.modelCreateAction)
         modelingMenu.addAction(self.modelOptionAction)
-        modelingMenu.addAction(self.orderCreateAction)
 
         simulationMenu = self.menuBar().addMenu("&Simulation")
+        simulationMenu.addAction(self.orderCreateAction)
         simulationMenu.addAction(self.orderexcuteAction)
 
         visualizationMenu = self.menuBar().addMenu("&Visualization")

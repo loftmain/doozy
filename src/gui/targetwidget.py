@@ -59,14 +59,14 @@ class TargetWidget(QDialog):
 
         datareaderBox = QGroupBox("datareader 설정", self)
         self.pdrButton = QRadioButton("pandas datareader", datareaderBox)
-        self.fdrButton = QRadioButton("finance datareader", datareaderBox)
+        # self.fdrButton = QRadioButton("finance datareader", datareaderBox)
         self.pdrButton.setChecked(True)
         self.dopt = 'PDR'
         groupBoxLayout = QHBoxLayout(datareaderBox)
         groupBoxLayout.addWidget(self.pdrButton)
-        groupBoxLayout.addWidget(self.fdrButton)
+        # groupBoxLayout.addWidget(self.fdrButton)
         self.pdrButton.toggled.connect(self.drClicked)
-        self.fdrButton.toggled.connect(self.drClicked)
+        # self.fdrButton.toggled.connect(self.drClicked)
 
         self.progress = QProgressBar(self)
         self.progress.setValue(0)

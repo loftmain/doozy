@@ -26,18 +26,17 @@ def _hmbs(df, data, opt):
             datetime_obj = datetime.datetime.strptime(row['Date'], '%Y-%m-%d %H:%M:%S')
 
             year, month, day = datetime_obj.year, datetime_obj.month, datetime_obj.day
+
             temp = data[data['year'] == year]
             temp = temp[temp['month'] == month]
-            #temp = temp.reset_index()
-            print(year, month, row)
-            # 현재 기준 마지막달 까지 할 경우 오류남
-            if (year == 2020) and (month == 1):
-                break
+
+            if (year == 2020) and (month == 8): break
+
             comp_v = temp['Adj Close'][temp.index[0]]
 
             for y, _ in temp.iterrows():
 
-                if (temp['Adj Close'][y]/comp_v)-1 >= opt[1] and status == True: # n% opt
+                if (temp['Adj Close'][y] / comp_v) - 1 >= opt[1] and status == True:  # n% opt
                     data['buy'][temp.index[0]] = 1
                     data['sell'][y] = 1
                     status = True
@@ -46,8 +45,8 @@ def _hmbs(df, data, opt):
             if status == False:
                 data['buy'][temp.index[0]] = 1
                 data['sell'][temp.index[-1]] = 1
+        return data
 
-    return data
 
 def _lmbs(df, data, opt):
     status = False
@@ -60,6 +59,9 @@ def _lmbs(df, data, opt):
 
             temp = data[data['year'] == year]
             temp = temp[temp['month'] == month]
+
+            if (year == 2020) and (month == 8): break
+
             comp_v = temp['Adj Close'][temp.index[0]]
 
             for y, _ in temp.iterrows():
@@ -73,7 +75,7 @@ def _lmbs(df, data, opt):
             if status == False:
                 data['buy'][temp.index[0]] = 1
                 data['sell'][temp.index[-1]] = 1
-    return data
+        return data
 
 
 def input_df(path, column):
