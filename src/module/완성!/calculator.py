@@ -80,9 +80,15 @@ class Calculator:
                                       'asset', 
                                       'cumulative'])
         
+        self._last_log = pd.DataFrame(columns=
+                                     ['datetime', 
+                                      'asset', 
+                                      'cumulative'])
+        
         self._weeks = list()
         self._months = list()
         self._years = list()
+        self._endate = list()
         
     def insert_log(self, log):
         
@@ -120,7 +126,7 @@ class Calculator:
         import pandas as pd
         
         fod = self._trd_log['order_datetime'][0]
-        lod = self._trd_log['order_datetime'][len(trade)-1]
+        lod = self._trd_log['order_datetime'][len(self._trd_log)-1]
         di = pd.date_range(start=fod, end=lod)
         dl = di.strftime("%Y-%m-%d").tolist()
         
@@ -192,7 +198,22 @@ class Calculator:
             self._years.append(y)
 
         self._years = sorted(list(set(self._years)))
-
+    
+    def create_endate(self):
+        '''
+            마지막 날짜만 남긴다.
+            
+            Parameters
+            ----------
+            None.
+            
+            Returns
+            -------
+            None.
+        '''
+        
+        self._endate.append(self._dates[-1])
+    
     def rated(self, rdf, rdt):
         
         '''
@@ -245,7 +266,8 @@ class Calculator:
         ast = sum(ist) + int(rdf.tail(1)['res_cash'])
         
         cum = round(
-            (ast) / (int(trade.head(1).order_value + trade.head(1).res_cash))
+            (ast) / (int(self._trd_log.head(1).order_value + \
+                         self._trd_log.head(1).res_cash))
             ,3)
         
         atlog = {'datetime' : t, 
@@ -274,10 +296,11 @@ class Calculator:
         if opt == 'week': dates = self._weeks
         if opt == 'month': dates = self._months
         if opt == 'year': dates = self._years
+        if opt =='all': dates = self._endate
         
         for dt in dates:
  
-            tdf = trade.query("order_datetime < '%s'"%dt).\
+            tdf = self._trd_log.query("order_datetime < '%s'"%dt).\
                 drop_duplicates(['item_code'], keep='last')
             
             log = self.rated(tdf, dt)
@@ -294,6 +317,11 @@ class Calculator:
                 self._yast_log = \
                     self._yast_log.append(log, ignore_index='True')
                 print(self._yast_log)
+            if opt == 'all':
+                self._last_log = \
+                    self._last_log.append(log, ignore_index='True')
+                print(self._last_log)
+                
                 
     def write_atlog(self, apath, nopt):
         
@@ -319,6 +347,7 @@ class Calculator:
         if nopt == 'week': adict = self._wast_log.to_dict(orient='record')
         if nopt == 'month': adict = self._mast_log.to_dict(orient='record')
         if nopt == 'year': adict = self._yast_log.to_dict(orient='record')
+        if nopt == 'all': adict = self._last_log.to_dict(orient='record')
         
         #json.dumps(tdict, ensure_ascii=False, indent='\t')
         with open(apath+'Asset'+nopt+'.json', 'w+', encoding='utf-8') as make_file:
@@ -344,11 +373,13 @@ if __name__ == '__main__':
     mod.create_weeks()
     mod.create_months()
     mod.create_years()
-
+    mod.create_endate()
+    
     #mod.calculation('week')
-    mod.calculation('month')
+    #mod.calculation('month')
     #mod.calculation('year')
+    #mod.calculation('all')
     
     #mod.write_atlog('', 'week')
-    mod.write_atlog('', 'month')
+    #mod.write_atlog('', 'month')
     #mod.write_atlog('', 'year')
