@@ -282,7 +282,9 @@ class Simulator:
             self.print_error(4)
             return False
         
-        if not int(pdf['High']) > int(pr.order_price) > int(pdf['Low']):
+        ran = int(pr.order_price)*0.01
+        
+        if not int(pdf['High'])+ran > int(pr.order_price) > int(pdf['Low'])-ran:
             self.print_error(3)
             return False
         
