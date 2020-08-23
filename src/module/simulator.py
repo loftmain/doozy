@@ -7,6 +7,7 @@ Created on Wed Jul 15 16:58:46 2020
 import pandas as pd
 import pathlib
 import json
+import copy
 import os
 
 class Simulator:
@@ -718,6 +719,13 @@ def run_simulator(setting):
 
     mod.write_stlog(setting['path'], setting['save_folder_name'])
 
+    df = copy.deepcopy(mod._trd_log)
+    df['portfolio_value'] = pd.to_numeric(df['price']) * pd.to_numeric(df['hold'])
+    df['portfolio_value'] = pd.to_numeric(df['res_cash']) + pd.to_numeric(df['portfolio_value'])
+    df['buy'] = df['order_type']=='buy'
+    df['sell'] = df['order_type']=='sell'
+    df.rename(columns = {'price' : 'DJI'}, inplace = True)
+    df.to_csv(save_path+'/'+'portfolio.csv', index=False, encoding='utf-8')
 
 if __name__ == '__main__':
     
