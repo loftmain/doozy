@@ -1,0 +1,344 @@
+[
+	{
+		"order_price": "42000",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "buy",
+		"order_datetime": "2016-11-01",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "42900",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "sell",
+		"order_datetime": "2016-11-30",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "44200",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "buy",
+		"order_datetime": "2016-12-01",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "44700",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "sell",
+		"order_datetime": "2016-12-29",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "54000",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "buy",
+		"order_datetime": "2017-02-01",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "46700",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "sell",
+		"order_datetime": "2017-02-28",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "68700",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "buy",
+		"order_datetime": "2017-09-01",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "82900",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "sell",
+		"order_datetime": "2017-09-29",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "74400",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "buy",
+		"order_datetime": "2018-02-01",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "76800",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "sell",
+		"order_datetime": "2018-02-28",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "81300",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "buy",
+		"order_datetime": "2018-04-02",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "84500",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "sell",
+		"order_datetime": "2018-04-30",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "83100",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "buy",
+		"order_datetime": "2018-05-02",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "93400",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "sell",
+		"order_datetime": "2018-05-31",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "83700",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "buy",
+		"order_datetime": "2018-07-02",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "86300",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "sell",
+		"order_datetime": "2018-07-31",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "80600",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "buy",
+		"order_datetime": "2018-09-03",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "73100",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "sell",
+		"order_datetime": "2018-09-28",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "73700",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "buy",
+		"order_datetime": "2018-10-01",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "68200",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "sell",
+		"order_datetime": "2018-10-31",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "80700",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "buy",
+		"order_datetime": "2019-05-02",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "65300",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "sell",
+		"order_datetime": "2019-05-31",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "66600",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "buy",
+		"order_datetime": "2019-06-03",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "69500",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "sell",
+		"order_datetime": "2019-06-28",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "70000",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "buy",
+		"order_datetime": "2019-07-01",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "76900",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "sell",
+		"order_datetime": "2019-07-31",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "82000",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "buy",
+		"order_datetime": "2019-10-01",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "82000",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "sell",
+		"order_datetime": "2019-10-31",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "83100",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "buy",
+		"order_datetime": "2019-11-01",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "80900",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "sell",
+		"order_datetime": "2019-11-29",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "80500",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "buy",
+		"order_datetime": "2019-12-02",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "94100",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "sell",
+		"order_datetime": "2019-12-30",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "92100",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "buy",
+		"order_datetime": "2020-03-02",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "83300",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "sell",
+		"order_datetime": "2020-03-31",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "81000",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "buy",
+		"order_datetime": "2020-05-04",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "81500",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "sell",
+		"order_datetime": "2020-05-29",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "85300",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "buy",
+		"order_datetime": "2020-07-01",
+		"item_code": "000660"
+	},
+	{
+		"order_price": "82800",
+		"order_value": "",
+		"order_option": "all",
+		"item_name": "SAMSUNG",
+		"order_type": "sell",
+		"order_datetime": "2020-07-31",
+		"item_code": "000660"
+	}
+]
